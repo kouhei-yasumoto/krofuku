@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>酒販業界の中の人が本音で選ぶ、3,000円以下のウイスキー10選 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="クロフク編集長が厳選したウイスキー10選。年間数百本を試飲した酒販業界のプロが本当におすすめする3000円以下のウイスキー。スコッチからアイリッシュ、ジャパニーズまで。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-count {
+      font-size: 52px;
+      font-weight: bold;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+      position: relative;
+    }
+    .hero-count span { font-size: 20px; font-weight: normal; color: #bbb; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .product-num {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+      min-width: 30px;
+    }
+    .product-name { flex: 1; line-height: 1.5; }
+    .product-region {
+      font-size: 12px;
+      font-weight: normal;
+      color: var(--muted);
+    }
+    .product-price {
+      font-size: 13px;
+      font-weight: normal;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* Bottle image placeholder */
+    .bottle-wrap { padding-top: 30px; margin-bottom: 24px; }
+    .bottle-img {
+      width: 160px;
+      margin: 0 auto;
+      aspect-ratio: 1/2.6;
+      background: linear-gradient(to bottom, #2a1800, #1a0f00);
+      border: 1px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      border-radius: 4px 4px 2px 2px;
+    }
+    .bottle-img .b-icon { font-size: 36px; }
+    .bottle-img .b-label { font-size: 10px; color: #888; letter-spacing: 0.05em; text-align: center; padding: 0 10px; line-height: 1.5; }
+    .bottle-img::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 22px;
+      background: #2a1800;
+      border: 1px solid #333;
+      border-bottom: none;
+      border-radius: 2px 2px 0 0;
+    }
+    .bottle-img::after {
+      content: '';
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 10px;
+      background: var(--gold);
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* 実際の商品画像用スタイル */
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .conclusion p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .product-heading { flex-wrap: wrap; }
+      .author-block { flex-direction: column; }
+      .conclusion { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下のウイスキー10選" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🥃 Whisky</span>
+    <span class="meta-date">2026.03.28</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">酒販業界の中の人が本音で選ぶ、<br>3,000円以下のウイスキー10選</h1>
+
+  <div class="article-body">
+    <p>ウイスキーって、気づいたら高い。</p>
+    <p>人気のジャパニーズウイスキーは定価すら見かけないし、ちょっといいやつを飲もうとすると、気軽には手が出ない価格になっている。</p>
+    <p>でも、3,000円以下でも本当に美味しいウイスキーはある。</p>
+    <p>酒販業界で働く僕が、自分自身の舌と、日々ウイスキーに触れている業界の仲間たちの評価をもとに、胸を張っておすすめできる10本を選んだ。産地はジャパニーズだけでなく、スコッチ、バーボン、アイリッシュ、カナディアンまで幅広く。選んだ基準はひとつ、本当に旨いかどうかだ。知名度より中身で選んだ10本がこれだ。</p>
+    <p class="note-text">※ 本記事の価格は2026年3月時点の参考価格です。店舗やECサイトにより異なる場合があります。</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ① -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">①</span>
+      <span class="product-name">グレングラント アルボラリス<span class="product-region">（スコッチ・スペイサイド）</span></span>
+      <span class="product-price">約2,500円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/01-glen-grant.jpg" alt="グレングラント アルボラリス" class="product-img">
+    </div>
+    <p class="product-desc">シングルモルトがこの価格で飲めるのかと、最初に飲んだとき正直驚いた。スペイサイドらしいフルーティーでクリーンな味わいで、バーボン樽とシェリー樽の組み合わせが絶妙なバランスを生んでいる。ウイスキー初心者にも飲みやすく、飲み慣れた人にとっても普段飲みとして満足できる一本。コスパという言葉がこれほど似合うウイスキーは他にそうはない。</p>
+    <a href="https://amzn.to/4ciVCaE" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ② -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">②</span>
+      <span class="product-name">グレンターナー ポートカスクフィニッシュ<span class="product-region">（スコッチ・スペイサイド）</span></span>
+      <span class="product-price">約2,900円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/02-glen-turner.jpg" alt="グレンターナー ポートカスクフィニッシュ" class="product-img">
+    </div>
+    <p class="product-desc">①のグレングラントと同じスペイサイド産だが、こちらはまったく別の個性を持つ一本。スペイサイドの老舗グレンマレイ蒸留所で造られたシングルモルトを、バーボン樽で熟成した後にさらにポートワイン樽で後熟させている。バニラの甘さにレーズンやドライフルーツの深みが重なる贅沢なダブルカスク仕様。明治屋が正規輸入しているので手に入りやすく、2,000円台でこの手の凝った造りが楽しめるのは破格だ。ストレートで樽の個性をじっくり味わってほしい。</p>
+    <a href="https://amzn.to/4sKvc7t" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ③ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">③</span>
+      <span class="product-name">ブラックブッシュ<span class="product-region">（アイリッシュ）</span></span>
+      <span class="product-price">約2,600円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/03-black-bush.png" alt="ブラックブッシュ" class="product-img">
+    </div>
+    <p class="product-desc">アイリッシュウイスキーの中でも、これは特別だと思っている。通常のブレンデッドウイスキーはモルト原酒の比率が30〜50%程度のものが多いが、このブラックブッシュはなんと80%以上。オロロソシェリー樽とバーボン樽の2種類で最長7年熟成した贅沢な仕様にもかかわらず、価格は2,600円前後。深みのある甘さとリッチな味わいは、この価格帯では頭ひとつ抜けている。</p>
+    <a href="https://amzn.to/4tqsQe9" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ④ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">④</span>
+      <span class="product-name">バスカー アイリッシュウイスキー<span class="product-region">（アイリッシュ）</span></span>
+      <span class="product-price">約2,700円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/04-busker.jpg" alt="バスカー アイリッシュウイスキー" class="product-img">
+    </div>
+    <p class="product-desc">2020年に誕生したばかりのアイリッシュウイスキーの新星。アイルランド・カーロウ州のロイヤルオーク蒸溜所が手がけるこの一本は、シングルモルト、シングルポットスチル、シングルグレーンの3種の原酒をブレンドし、バーボン樽・シェリー樽に加えてマルサラワイン樽という珍しい樽まで使っている。このマルサラワイン樽が生むトロピカルフルーツのような華やかな香りと、なめらかでトロリとした口当たりが最大の魅力だ。③のブラックブッシュが老舗の重厚な味わいなら、こちらは新世代の軽やかな華やかさ。同じアイリッシュでもここまで違うのかと驚くはずだ。</p>
+    <a href="https://amzn.to/4bUnrVl" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑤ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑤</span>
+      <span class="product-name">I.W.ハーパー ゴールドメダル<span class="product-region">（バーボン）</span></span>
+      <span class="product-price">約2,600円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/05-iw-harper.png" alt="I.W.ハーパー ゴールドメダル" class="product-img">
+    </div>
+    <p class="product-desc">バーボンといえばジムビームやメーカーズマークを思い浮かべる人が多いかもしれないが、I.W.ハーパーもぜひ知ってほしい。トウモロコシの配合率が86%と他のバーボンより高く、そのおかげでバニラや蜂蜜のような甘い香りが際立ち、口当たりが非常にまろやかだ。1885年以降、世界各国の博覧会で5つの金賞を重ねてきた実力派でありながら、価格は約2,600円。バーボン特有のクセが苦手な人にも飲みやすく、ハイボールにしても上品にまとまる。この価格でこの品質は、正直お得すぎる。</p>
+    <a href="https://amzn.to/47uhEEQ" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑥ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑥</span>
+      <span class="product-name">カナディアンクラブ クラシック12年<span class="product-region">（カナディアン）</span></span>
+      <span class="product-price">約2,600円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/06-canadian-club.jpg" alt="カナディアンクラブ クラシック12年" class="product-img">
+    </div>
+    <p class="product-desc">カナディアンウイスキーは5大ウイスキーのひとつでありながら、日本では圧倒的に知名度が低い。しかし、スムースで飲みやすいという特性は、ウイスキーを日常的に楽しみたい人にとって大きな武器になる。スタンダードの「カナディアンクラブ」と価格差がほとんどないのに、12年熟成によるオーク樽の深みとリッチなフレーバーがしっかり加わっている。コスパの観点からいえばかなりお得な一本だ。</p>
+    <a href="https://amzn.to/4s5VD6A" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑦ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑦</span>
+      <span class="product-name">岩井トラディション<span class="product-region">（ジャパニーズ）</span></span>
+      <span class="product-price">約2,700円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/07-iwai.jpg" alt="岩井トラディション" class="product-img">
+    </div>
+    <p class="product-desc">マルスウイスキーといえば「駒ヶ岳」や「越百」を思い浮かべる人が多いかもしれないが、この岩井トラディションはそれらよりずっと手頃な価格で本格的な味わいが楽しめる隠れた名品だ。本坊酒造のマルス駒ヶ岳蒸溜所が手がけるブレンデッドウイスキーで、熟した果実やバニラ、キャラメルの甘いアロマが特徴。ジャパニーズウイスキーの入門としても、普段飲みとしても優秀な一本。</p>
+    <a href="https://amzn.to/4sVzqsY" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑧ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑧</span>
+      <span class="product-name">戸河内プレミアム<span class="product-region">（ジャパニーズ）</span></span>
+      <span class="product-price">約2,900円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/08-togouchi.png" alt="戸河内プレミアム" class="product-img">
+    </div>
+    <p class="product-desc">広島県のSAKURAO DISTILLERYが手がける、ちょっと変わった経歴を持つウイスキーだ。安芸太田町にある鉄道用トンネルを貯蔵庫として活用し、年間を通じて冷涼な環境でじっくりと熟成させるという、他の蒸留所では真似できない「トンネル熟成」が最大の特徴。この安定した環境が、フルーティーで繊細な味わいを生み出している。しかもジャパニーズウイスキーの自主基準を満たす純国産原酒100%。この価格帯で純国産というのは現在かなり貴重だ。</p>
+    <a href="https://amzn.to/47B2LjZ" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑨ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑨</span>
+      <span class="product-name">須藤本家 房総 ブレンデッドウイスキー<span class="product-region">（ジャパニーズ）</span></span>
+      <span class="product-price">約2,400円</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/09-boso.jpg" alt="須藤本家 房総 ブレンデッドウイスキー" class="product-img">
+    </div>
+    <p class="product-desc">千葉県初の地ウイスキーだ。君津市の名水の里・久留里にある須藤本家は、明治から続く清酒蔵であり、焼酎製造で蒸留のノウハウを積み重ねてきた酒蔵でもある。2018年に県内で初めてウイスキーの製造免許を取得し、約3年の試行錯誤を経て誕生したのがこの「房総」だ。自社製モルトと英国産スコッチのブレンドで、スモーキーさは控えめ、日本人好みの甘く華やかな香りに仕上げている。まだまだ若い蒸留所だが、平成の名水百選に選ばれた久留里の水で仕込むポテンシャルは大きい。地ウイスキーの未来を応援する意味でも、一度は飲んでみてほしい一本。</p>
+    <a href="https://amzn.to/4s9rKCt" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑩ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑩</span>
+      <span class="product-name">ホワイトオーク あかし シェリーカスク<span class="product-region">（ジャパニーズ）</span></span>
+      <span class="product-price">約2,800円 ※500ml</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/10-akashi.jpg" alt="ホワイトオーク あかし シェリーカスク" class="product-img">
+    </div>
+    <p class="product-desc">最後の一本は、兵庫県明石市の江井ヶ嶋酒造が手がける「あかし」ブランドのシェリーカスク。江井ヶ嶋酒造は1888年創業で、1919年にはウイスキー製造免許を取得しており、実はサントリー山崎蒸溜所よりも歴史が古い。その老舗がシェリー樽で熟成したモルトをキーモルトに、英国産グレーンとブレンドしたのがこの一本だ。シェリーカスクならではの果実感とやさしい甘み、そして46度という飲みごたえのある度数が魅力。注意点として容量は500mlと他の銘柄より小さいが、度数が高い分一杯あたりの満足度は十分。約2,800円でシェリー樽の個性をしっかり味わえる貴重な存在だ。</p>
+    <a href="https://amzn.to/4v3M4Ys" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <p>この10本、どれもハズレなしだ。迷ったらまずグレングラント アルボラリスかブラックブッシュあたりから試してみてほしい。</p>
+    <p>自分へのちょっとしたご褒美に、仲間との楽しい席に、ぜひ1本試してみてほしい。きっと自分だけのお気に入りの一本が見つかるはずだ。</p>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">Sake Magazine Editor</div>
+      <p class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</p>
+    </div>
+  </div>
+
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧に戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップへ戻る</a>
+      <a href="#">プロフィール</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトを経由してAmazonで商品を購入された場合、当サイトに紹介料が支払われることがあります。これにより購入者様の商品代金に変動はありません。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

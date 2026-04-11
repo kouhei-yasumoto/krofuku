@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>酒販業界の中の人が本音で選ぶ、3,000円以下の赤ワイン10選 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="クロフク編集長が厳選した赤ワイン10選。フランス・イタリア・アメリカなど、世界各地の本当においしい3000円以下の赤ワイン。ソムリエ顔負けの目利きが選んだ逸品をレビュー。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .article-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: relative;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .region-heading {
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 40px 0 28px;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .product-num {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+      min-width: 30px;
+    }
+    .product-name { flex: 1; line-height: 1.5; }
+    .product-region {
+      font-size: 12px;
+      font-weight: normal;
+      color: var(--muted);
+    }
+    .product-price {
+      font-size: 13px;
+      font-weight: normal;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* Product image */
+    .bottle-wrap { padding-top: 30px; margin-bottom: 24px; }
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .conclusion p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .product-heading { flex-wrap: wrap; }
+      .author-block { flex-direction: column; }
+      .conclusion { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-wine.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下の赤ワイン10選">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🍷 Wine</span>
+    <span class="meta-date">2026.04.05</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">酒販業界の中の人が本音で選ぶ、<br>3,000円以下の赤ワイン10選</h1>
+
+  <div class="article-body">
+    <p>ワインは、世界だ。<br>一本のボトルの中に、その土地の気候、歴史、造り手の想いが詰まっている。フランスの優雅さ、イタリアの情熱、新世界の躍動感。それぞれの地域が、それぞれのやり方でぶどうと向き合い、ワインを造っている。</p>
+    <p>そしてそれは、飲む側にとって最高の楽しみでもある。<br>同じ赤ワインでも、産地が違えば、造り手が違えば、全く別の表情を見せてくれる。毎回新しい発見がある。飲むたびに「あ、こんな味わいもあるんだ」と驚かされる。その驚きと喜びがあるから、ワイン選びは本当に面白いんだ。</p>
+    <p>酒販業界で働く僕も、そのワイン選びの面白さに何度も救われてきた。自分の舌で何度も飲んで、業界の仲間たちとも情報を交わして、本当に「これは絶対に外さない」と確信を持てた10本がある。フランス、イタリア、アメリカ、チリ、そして日本。世界中の産地から、それぞれの個性を持つワインを集めた。今回は、3,000円以下で購入できるものを紹介する。この10本の中に、きっと君の新しい「当たり」がある。</p>
+    <p class="note-text">※ 本記事の価格は2026年4月上旬時点のAmazon参考価格です。店舗やECサイトにより異なる場合があります。また、ワインはヴィンテージによって価格が変わる場合があります。</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- フランス -->
+  <div class="region-heading">フランス</div>
+
+  <!-- ① -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">①</span>
+      <span class="product-name">アルベール・ビショー コトー・ブルギニョン<span class="product-region">（フランス・ブルゴーニュ）</span></span>
+      <span class="product-price">約¥2,600</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-01.jpg" alt="アルベール・ビショー コトー・ブルギニョン" class="product-img">
+    </div>
+    <p class="product-desc">ブルゴーニュを代表するネゴシアン、アルベール・ビショーの手がける赤ワイン。コトー・ブルギニョンはブルゴーニュの中でも気軽に楽しめるアペラシオンでありながら、この一本は相当に質が高い。ピノ・ノワール由来のチェリーやラズベリーのフルーティーな香りに、ブルゴーニュ特有の上品さが加わっている。タンニンがこなれており、今すぐに飲んでも熟成させても楽しめる懐の深さが魅力だ。ワイン初心者がブルゴーニュの世界に触れるなら、まずこの一本から始めてほしい。</p>
+    <a href="https://amzn.to/41MM2GX" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ② -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">②</span>
+      <span class="product-name">ジョルジュ・デュブッフ ムーラン・ナ・ヴァン<span class="product-region">（フランス・ボジョレー）</span></span>
+      <span class="product-price">約¥2,700</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-02.jpg" alt="ジョルジュ・デュブッフ ムーラン・ナ・ヴァン" class="product-img">
+    </div>
+    <p class="product-desc">ボジョレー地区の大手ネゴシアンとして知られるジョルジュ・デュブッフが手がける、ムーラン・ナ・ヴァン。ボジョレーの中でも最高ランクのクリュのひとつであり、この価格で飲める贅沢は本当に貴重だ。ガメイ種から生み出されるチャーミングな香りと、ジューシーな果実味、そして程よいタンニンのバランスが秀逸。冷やして飲んでも、少し温度を上げて飲んでも、どちらでも美味しく楽しめる。食事とのペアリングも容易で、フランス赤ワインの素晴らしさを実感できる一本。</p>
+    <a href="https://amzn.to/4sZP6vE" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ③ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">③</span>
+      <span class="product-name">ルー・デュモン 紅の豚<span class="product-region">（フランス・ラングドック地方）</span></span>
+      <span class="product-price">約¥2,800</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-03.jpg" alt="ルー・デュモン 紅の豚" class="product-img">
+    </div>
+    <p class="product-desc">南フランス・ラングドック地方から、ユニークなネーミングのワインが登場。「紅の豚」は、ブルゴーニュ在住の日本人醸造家・仲田晃司氏が手がけるルー・デュモンとスタジオジブリのコラボレーションで生まれた一本だ。メルローを主体に、シラー、カベルネ・ソーヴィニヨン、カベルネ・フランをブレンド。ベリー系の果実にほのかなスパイスが加わり、バランスの良い複雑な味わいが特徴。南フランスの太陽の恵みを感じさせつつ、飲み口は軽やかでジューシー。約2,800円という価格でこの完成度は驚くほどお手頃だ。</p>
+    <a href="https://amzn.to/4sjP5kS" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- イタリア -->
+  <div class="region-heading">イタリア</div>
+
+  <!-- ④ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">④</span>
+      <span class="product-name">フォンタナフレッダ バルベーラ・ダルバ<span class="product-region">（イタリア・ピエモンテ）</span></span>
+      <span class="product-price">約¥2,600</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-04.jpg" alt="フォンタナフレッダ バルベーラ・ダルバ" class="product-img">
+    </div>
+    <p class="product-desc">ピエモンテ州の名門、フォンタナフレッダが手がける赤ワイン。バルベーラはピエモンテを代表するぶどう品種のひとつで、この一本はその特性を見事に表現している。濃いルビー色から想像される通り、ベリー系の濃厚な香りと、心地よい酸が特徴だ。バルベーラ特有の高い酸度が、飲んだ時の爽やかさを生み出しており、イタリアンな食事との相性は最高。フォンタナフレッダという名門生産者による、ピエモンテの実直な一本。</p>
+    <a href="https://amzn.to/4c5Rw4j" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑤ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑤</span>
+      <span class="product-name">ベリーニ キアンティ<span class="product-region">（イタリア・トスカーナ）</span></span>
+      <span class="product-price">約¥2,000</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-05.jpg" alt="ベリーニ キアンティ" class="product-img">
+    </div>
+    <p class="product-desc">トスカーナを代表するワイン産地から、手頃な価格のキアンティが登場。ベリーニはトスカーナの老舗生産者のひとつで、この伝統的なワインスタイルを守り続けている。サンジョヴェーゼ種のフレッシュな香りと、明るいルビー色が特徴。タンニンは柔らかく、飲み口は優しいながら、トスカーナの大地の味わいはしっかり感じられる。この価格でキアンティの本来の姿を知ることができるのは、大きな魅力だ。毎日飲みのワインとしても、食卓の相棒としても最適な一本。</p>
+    <a href="https://amzn.to/3NWaRNz" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- アメリカ -->
+  <div class="region-heading">アメリカ</div>
+
+  <!-- ⑥ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑥</span>
+      <span class="product-name">ロバート・モンダヴィ プライベート・セレクション ピノ・ノワール<span class="product-region">（アメリカ・カリフォルニア）</span></span>
+      <span class="product-price">約¥2,000</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-06.jpg" alt="ロバート・モンダヴィ プライベート・セレクション ピノ・ノワール" class="product-img">
+    </div>
+    <p class="product-desc">カリフォルニアワインの歴史を作ったロバート・モンダヴィのプライベート・セレクション。ピノ・ノワールはカリフォルニアでも高い評価を受けるぶどう品種のひとつだ。この一本は、赤系果実の華やかな香りに、樽からくるバニラやスパイスのニュアンスが心地よく調和している。タンニンも丸みを帯びており、飲み口は優しい。ロバート・モンダヴィという信頼のブランドと、この価格のバランス。アメリカンワインの実力を知るなら、ぜひ試してほしい一本だ。</p>
+    <a href="https://amzn.to/3Q1p9wT" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- チリ -->
+  <div class="region-heading">チリ</div>
+
+  <!-- ⑦ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑦</span>
+      <span class="product-name">コンチャ・イ・トロ マルケス・デ・カーサ・コンチャ カベルネ・ソーヴィニヨン<span class="product-region">（チリ・マイポ・ヴァレー）</span></span>
+      <span class="product-price">約¥2,700</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-07.jpg" alt="コンチャ・イ・トロ マルケス・デ・カーサ・コンチャ" class="product-img">
+    </div>
+    <p class="product-desc">チリを代表する大手生産者、コンチャ・イ・トロの上級ライン。マルケス・デ・カーサ・コンチャはコンチャ・イ・トロの中でも特に品質にこだわったシリーズであり、この価格でそれが手に入る喜びは大きい。カベルネ・ソーヴィニヨン種由来の深みのある香りと、骨格のしっかりとした味わいが特徴。チリのテロワールを感じさせる個性的な一本でありながら、飲みやすさも備えている。</p>
+    <a href="https://amzn.to/3Op1MwR" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑧ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑧</span>
+      <span class="product-name">コノスル シングル・ヴィンヤード ピノ・ノワール<span class="product-region">（チリ・カサブランカ・ヴァレー）</span></span>
+      <span class="product-price">約¥2,600</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-08.jpg" alt="コノスル シングル・ヴィンヤード ピノ・ノワール" class="product-img">
+    </div>
+    <p class="product-desc">チリのコノスルが手がける、シングル・ヴィンヤード・シリーズのピノ・ノワール。シングル・ヴィンヤード（単一畑）というネーミングが示す通り、特定の畑の個性を最大限に表現した一本だ。カサブランカ・ヴァレーの冷涼な気候が生み出す、華やかで透明感のある赤系果実の香りが秀逸。ピノ・ノワールらしい繊細さと、チリワインの豊かな果実味が見事に調和している。ワインの個性を知りたい時に、ぜひ試してほしい。</p>
+    <a href="https://amzn.to/4tlhkjW" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 日本 -->
+  <div class="region-heading">日本</div>
+
+  <!-- ⑨ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑨</span>
+      <span class="product-name">シャトー・メルシャン 穂坂マスカット・ベーリーA<span class="product-region">（日本・山梨県）</span></span>
+      <span class="product-price">約¥2,900</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-09.jpg" alt="シャトー・メルシャン 穂坂マスカット・ベーリーA" class="product-img">
+    </div>
+    <p class="product-desc">日本のワイン産業の歴史を刻むシャトー・メルシャンが手がける、日本固有のぶどう品種・マスカット・ベーリーAのワイン。穂坂はシャトー・メルシャンの主要な畑のひとつで、この地の特性を最大限に引き出したのが今回の一本だ。マスカット・ベーリーAらしいチャーミングなベリーの香りに、和のニュアンスが加わった独特の個性が特徴。日本のワイン造りの底力を感じさせる、丁寧で素晴らしい一本。日本産のぶどう品種による新しいワインの可能性を知るなら、これを試してほしい。</p>
+    <a href="https://amzn.to/4vgRbos" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑩ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑩</span>
+      <span class="product-name">グランポレール 甲斐ノワール<span class="product-region">（日本・山梨県）</span></span>
+      <span class="product-price">約¥2,500</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/wine-10.jpg" alt="グランポレール 甲斐ノワール" class="product-img">
+    </div>
+    <p class="product-desc">山梨県を代表するワイナリー、グランポレールが手がける、日本生まれのぶどう品種・甲斐ノワール。この品種は山梨県果樹試験場でブラック・クィーンとカベルネ・ソーヴィニヨンを交配して育成された山梨県原産の黒ぶどうだ。ベリー系の果実の香りにカベルネ・ソーヴィニヨン由来のスパイシーさが加わり、凝縮感のある味わいが楽しめる。タンニンはこなれており、飲み口は優しい。日本ワインの未来を示唆する、可能性に満ちた一本。日本のワイン造りの進化を肌で感じられるチャンスだ。</p>
+    <a href="https://amzn.to/3Op1ZQF" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <p>この10本、どれもハズレなしだ。迷ったらまずアルベール・ビショーかベリーニあたりから試してみてほしい。</p>
+    <p>自分へのちょっとしたご褒美に、大事な人との席に、ぜひ1本試してみてほしい。きっと自分だけのお気に入りの一本が見つかるはずだ。</p>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">Sake Magazine Editor</div>
+      <p class="author-bio">ウイスキー、ワイン、日本酒を中心に、ありとあらゆるお酒を年間数百本試飲してきた酒販業界の現場の人間。実際に飲んで確かめた本音の評価をお届けします。</p>
+    </div>
+  </div>
+
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧に戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップへ戻る</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトを経由してAmazonで商品を購入された場合、当サイトに紹介料が支払われることがあります。これにより購入者様の商品代金に変動はありません。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
