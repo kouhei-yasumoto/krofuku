@@ -47,9 +47,9 @@
       align-items: center;
       height: 58px;
     }
-    .logo-wrap { display: flex; flex-direction: column; }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
     .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
-    .logo-ja { font-size: 16px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
 
     /* ===== HERO ===== */
     .hero {
@@ -322,7 +322,27 @@
     <div class="line"></div>
   </div>
 
-  <!-- 記事1（ビッグピート） NEW -->
+  <!-- 記事：東洋美人 NEW -->
+  <div class="article-card" onclick="window.location.href='article-toyo-bijin.html'" style="cursor:pointer;margin-top:20px;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-toyo-bijin.jpg" alt="美しさと旨さが同居する山口の秘宝 東洋美人" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Japanese Sake — Editor's Pick</p>
+      <h3>美しさと旨さが同居する山口の秘宝<br>東洋美人</h3>
+      <p class="card-excerpt">山口県萩市の澄川酒造場が醸す「東洋美人」。初代が亡き妻を偲んでつけた名を持つこの蔵は、2013年の豪雨被害から見事に復活。醇道一途シリーズをはじめ、純米大吟醸・辛口など個性豊かな720ml商品を厳選してご紹介します。</p>
+      <p class="card-meta">2026.04.14 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">東洋美人 純米吟醸 醇道一途 西都の雫</div>
+        </div>
+        <a href="https://www.amazon.co.jp/dp/B093V49FB8/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-toyo-bijin.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 記事1（ビッグピート） -->
   <div class="article-card" onclick="window.location.href='article-bigpeat.html'" style="cursor:pointer;margin-top:20px;">
     <div class="card-thumb" style="padding:0;">
       <img src="images/header-bigpeat.jpg" alt="ピート好きは絶対ハマる！アイラの最強ブレンドウイスキー BIG PEAT" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
@@ -335,7 +355,6 @@
       <div class="amz-cta">
         <div class="amz-cta-text">
           <div class="prod">Douglas Laing Big Peat</div>
-          <div class="price">参考価格 ¥5,900前後</div>
         </div>
         <a href="https://www.amazon.co.jp/dp/B008CYYV5G/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
       </div>
@@ -356,7 +375,6 @@
       <div class="amz-cta">
         <div class="amz-cta-text">
           <div class="prod">ドメーヌ・ド・ラ・ロマネ・コンティ リシュブール</div>
-          <div class="price">参考価格 ¥1,380,000前後</div>
         </div>
         <a href="https://amzn.to/4vdPbx3" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
       </div>
@@ -379,7 +397,6 @@
       <div class="amz-cta">
         <div class="amz-cta-text">
           <div class="prod">PUNK IPA 6本</div>
-          <div class="price">参考価格 ¥2,900前後</div>
         </div>
         <a href="https://amzn.to/3QnFTyw" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
       </div>
@@ -399,8 +416,7 @@
       <p class="card-meta">2026.04.05 — クロフク編集長</p>
       <div class="amz-cta">
         <div class="amz-cta-text">
-          <div class="prod">① アルベール・ビショー コトー・ブルギニョン</div>
-          <div class="price">参考価格 ¥2,600前後</div>
+          <div class="prod">アルベール・ビショー コトー・ブルギニョン</div>
         </div>
         <a href="https://amzn.to/41MM2GX" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
       </div>
@@ -420,8 +436,7 @@
       <p class="card-meta">2026.04.04 — クロフク編集長</p>
       <div class="amz-cta">
         <div class="amz-cta-text">
-          <div class="prod">① 大七酒造 生酛本醸造 1800ml</div>
-          <div class="price">参考価格 ¥2,500前後</div>
+          <div class="prod">大七酒造 生酛本醸造 1800ml</div>
         </div>
         <a href="https://amzn.to/4djgX4S" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
       </div>
@@ -441,8 +456,7 @@
       <p class="card-meta">2026.03.28 — クロフク編集長</p>
       <div class="amz-cta">
         <div class="amz-cta-text">
-          <div class="prod">① グレングラント アルボラリス 700ml</div>
-          <div class="price">参考価格 ¥2,500前後</div>
+          <div class="prod">グレングラント アルボラリス 700ml</div>
         </div>
         <a href="https://www.amazon.co.jp/" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
       </div>
