@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>【神の雫 アニメ放送記念】飲んでみたくなるワインガイド｜第1巻～第5巻編</title>
+  <meta name="description" content="アニメ『神の雫』放送記念。第1巻～第5巻に登場する12本のワインを厳選紹介。神咲雫と一緒にワインの世界への扉を開く、実際に手に入る価格帯のワインガイド。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-info {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    /* 実際の商品画像用スタイル */
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 130px;
+      max-height: 240px;
+    }
+    .product-img.medium {
+      max-width: 240px;
+      max-height: 380px;
+    }
+    .product-img.large {
+      max-width: 300px;
+      max-height: 450px;
+    }
+    .product-img.medium-large {
+      max-width: 270px;
+      max-height: 415px;
+    }
+    .product-img.medium-small {
+      max-width: 185px;
+      max-height: 310px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .image-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin: -20px 0 20px 0;
+      font-style: italic;
+    }
+
+    .article-card-horizontal {
+      display: flex;
+      gap: 20px;
+    }
+    .article-card-horizontal .image-col {
+      flex: 0 0 200px;
+    }
+    .article-card-horizontal .text-col {
+      flex: 1;
+    }
+
+    @media (max-width: 600px) {
+      .article-card-horizontal {
+        flex-direction: column;
+      }
+      .article-card-horizontal .image-col {
+        flex: none;
+      }
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .conclusion p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .author-block { flex-direction: column; }
+
+      /* スマホ表示での画像サイズ調整 */
+      .product-img.small {
+        max-width: 130px;
+        max-height: 240px;
+      }
+      .product-img.medium {
+        max-width: 240px;
+        max-height: 380px;
+      }
+      .product-img.large {
+        max-width: 300px;
+        max-height: 450px;
+      }
+      .product-img.medium-large {
+        max-width: 270px;
+        max-height: 415px;
+      }
+      .product-img.medium-small {
+        max-width: 185px;
+        max-height: 310px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-kaminoshizuku-vol1.jpg" alt="【神の雫 アニメ放送記念】飲んでみたくなるワインガイド" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🍷 Wine</span>
+    <span class="meta-date">2026.04.10</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">【神の雫 アニメ放送記念】<br>飲んでみたくなるワインガイド<br>第1巻～第5巻編</h1>
+
+  <div class="article-body">
+    <p>こんにちは、クロフク編集長です。</p>
+    <p>4月10日からアニメが始まった『神の雫』。この傑作ワイン漫画は、2004年から2014年にかけて『モーニング』誌で連載され、世界中で1500万部以上を売り上げた伝説的な作品です。</p>
+    <p>僕も、この漫画を通じてワインの世界に目覚めた一人です。だからこそ、伝えたい。</p>
+    <p>神の雫の面白さは、決して「高いワインが素晴らしい」という単純な話ではないということを。値段ではなく、自分の舌で感じた「美味しさ」こそが全てだ、と──この漫画は繰り返し教えてくれます。</p>
+    <p>今回は第1巻～第5巻に登場するワインの中から、実際に手に入る価格帯を重視しながら12本を厳選してご紹介します。アニメを観ながら、漫画を読みながら、ぜひこれらのワインを手にして、神咲雫と一緒に「ワインの世界」への扉を開いてみませんか？</p>
+    <p class="note-text">📝 お読みいただく前に：記事内でご紹介するワインの画像、リンク先は、漫画に登場したヴィンテージ（生産年）とは異なる場合があります。また、漫画の連載当時（2004年～2014年）と現在では、ワインの価格が大きく変動しているものもあります。作中では「当時手ごろな価格」として紹介されたワインも、現在は相当に値上がりしていることが多くあります。最新の価格は、必ずご確認の上、ご購入ください。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">第1巻：物語の始まり</h2>
+  </div>
+
+  <!-- 1. ドメーヌ・ド・ラ・ロマネ・コンティ リシュブール -->
+  <div class="product-item">
+    <div class="product-heading">1. ドメーヌ・ド・ラ・ロマネ・コンティ リシュブール</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ブルゴーニュ</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-01.jpg" alt="ドメーヌ・ド・ラ・ロマネ・コンティ リシュブール" class="product-img medium-large">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>第1巻の冒頭、レストランで客からクレームを受けたみやびの窮地を、雫が神業のようなデキャンタージュで救った──あの物語の始まりを告げる名シーンで登場するワインです。物語では1999年のヴィンテージが登場します。作中ではレストランで10万円以下の価格で提供されていますが、現在の相場を考えると、なんとも羨ましい時代です……。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>DRC（ドメーヌ・ド・ラ・ロマネ・コンティ）のリシュブールは、「百の花の香りを集めたような」と例えられる、華やかで圧倒的な香りを持つグラン・クリュです。ロマネ・コンティの畑の北側に位置し、DRCが造るワインの中でも特に華やかさと力強さを兼ね備えた存在として知られています。</p>
+    <p class="product-desc">雫はワインの知識がゼロだったのに、デキャンタージュの腕だけは父の英才教育で磨かれていた。そのギャップが、物語のスタートを鮮やかに彩るんです。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>神の雫の物語がここから始まった──その原点ともいえるワインを知ることで、漫画の世界がさらに深く味わえます。</p>
+    <a href="https://amzn.to/4vdPbx3" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 2. シャトー・モンペラ -->
+  <div class="product-item">
+    <div class="product-heading">2. シャトー・モンペラ</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ボルドー</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-02.jpg" alt="シャトー・モンペラ" class="product-img medium">
+    </div>
+    <p class="image-note">画像は2014年のワインです</p>
+    <p class="product-desc"><strong>登場シーン：</strong>藤枝のワインバーで、雫が「人生で初めて飲むワイン」として登場。物語では2001年のヴィンテージが登場します。高級ワイン・オーパス・ワンとの飲み比べで、雫が「こっちが好きだ」と選んだ運命の1本。作中では、このワインをロックバンドの「クイーン」に例えた表現が登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>「値段が高い＝美味しい」ではなく、「自分の舌が感じた美味しさが全て」という、神の雫の哲学が凝縮された最も象徴的なシーンです。</p>
+    <p class="product-desc">シャトー・モンペラは、ボルドーで造られるワイン。1864年のガイドブックにも記載されている由緒あるシャトーですが、1998年にデスパーニュ家の手に移った当時は、テロワールは素晴らしいものの、畑は荒廃していたといいます。そこをデスパーニュ家が立て直し、現在では格付けシャトーに迫る高い評価を得ています。</p>
+    <p class="product-desc">実際に飲んでみると、この価格帯ではありえないような濃厚さと重さを感じます。作中、このワインをロックバンドのクイーンに例えた理由も、なんとなくわかる気がするんです。クイーンといえば、何度もオーバーダビングを重ねてコーラスやギターの音を幾重にも積み上げた、あの音の濃密さが特徴。その「重なり合う豊かさ」が、このワインの味わいと重なる──そんな表現だったのかなと思います。滑らかな口当たりの中に熟した果実の力強さ、そしてなめし皮のような複雑なニュアンスが特徴で、ステーキとのペアリングで真価を発揮します。</p>
+    <p class="product-desc">さらに嬉しいことに、2024年10月には「モンペラ キュヴェ 神の雫」という特別版（ルージュ・ブラン）が発売されました。第1巻の表紙がラベルに使われた、ファン必携のコラボレーション商品です。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>神咲雫が人生で初めて感じた「ワインの美しさ」を、あなたも追体験できます。</p>
+    <a href="https://amzn.to/4czbTIE" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">第1巻～第2巻：ワインが呼び起こす記憶と感情</h2>
+  </div>
+
+  <!-- 3. エマニュエル・ルジェ ヴォーヌ・ロマネ プルミエ・クリュ クロ・パラントゥ 1999 -->
+  <div class="product-item">
+    <div class="product-heading">3. エマニュエル・ルジェ ヴォーヌ・ロマネ プルミエ・クリュ クロ・パラントゥ 1999</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ブルゴーニュ</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-03.jpg" alt="エマニュエル・ルジェ ヴォーヌ・ロマネ プルミエ・クリュ クロ・パラントゥ 1999" class="product-img medium">
+    </div>
+    <p class="image-note">画像は2012年のワインです</p>
+    <p class="product-desc"><strong>登場シーン：</strong>第1巻で、レストランの社長・美島がアンヌとの特別な夜のために用意していた「年間700本のみ造られる伝説のワイン」──アンリ・ジャイエのクロ・パラントゥ 1999。しかし、そのワインが割れてしまい、代わりとなる1本を探すストーリーへと繋がります。そこで雫が見つけ出したのが、エマニュエル・ルジェのクロ・パラントゥ 1999でした。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>これは、この記事で最も強調したいワインです。</p>
+    <p class="product-desc">アンヌが、雫の手で明かされたワインを飲んだ時、見える光景がありました。苺畑にたたずむ乙女は振り返り、その余韻は永遠かと思うほど続く。その光景に込められたアンヌの想いは、<strong>「ずっと一緒にいたい」</strong>でした。</p>
+    <p class="product-desc">そこに込められた想いが、美島の心を揺さぶり、涙させたんです。</p>
+    <p class="product-desc"><strong>重要な背景：</strong>神の雫では、「エマニュエル・ルジェが造ったクロ・パラントゥは、アンリ・ジャイエが造ったという噂がある」と語られており、ルジェのワインがそれほど傑出した品質であることを示唆しています。エマニュエル・ルジェは、ブルゴーニュのヴォーヌ・ロマネ地区で、ジャイエの伝統を受け継ぎながら独自のスタイルで高い評価を得ている天才醸造家です。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>ワインを通じて「ずっと一緒にいたい」という想いを感じることができる。それが、神の雫が教えてくれる最も大切なことです。</p>
+    <a href="https://amzn.to/4smKJcM" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">第2巻：屋敷を賭けたブラインドテイスティング</h2>
+  </div>
+
+  <!-- 4. シャトー・ムートン・ロートシルト 1982 -->
+  <div class="product-item">
+    <div class="product-heading">4. シャトー・ムートン・ロートシルト 1982</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ボルドー</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-04.jpg" alt="シャトー・ムートン・ロートシルト 1982" class="product-img medium-small">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>第2巻で、雫と一青が屋敷を賭けてブラインドテイスティングした対決ワイン。物語では1982年のヴィンテージが登場します。一青が「ミレーの晩鐘」に例えた、格調高いボルドーの五大シャトー。一方、雫はこのワインから、母との葡萄畑での思い出──そして永遠の別れを感じ取ります。ワインが呼び起こす「記憶」と「感情」の力を、早くも第2巻で描いた名シーンです。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>ムートン・ロートシルトは、ボルドー五大シャトーの一つで、世界で最も有名なワインの一つです。1982年は「20世紀最高のボルドー」とも称される伝説的なヴィンテージで、このワインの名声をさらに高めた年でもあります。</p>
+    <p class="product-desc">ブラインドテイスティングで、自分の舌がどこまで感じ取れるのか、試してみてください。このワインの持つ格調と力強さは、テイスティングの目を開く一つの基準になるでしょう。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>ボルドーの最高峰の味わいを知ることで、ワイン選びの視点が大きく変わります。</p>
+    <a href="https://amzn.to/4c2gC5u" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">第3巻：料理とワインの結婚（マリアージュ）</h2>
+  </div>
+
+  <!-- 5. ルイ・ジャド シャブリ -->
+  <div class="product-item">
+    <div class="product-heading">5. ルイ・ジャド シャブリ</div>
+    <div class="product-info">ワイン種：白ワイン / 生産国：フランス・シャブリ</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-05.jpg" alt="ルイ・ジャド シャブリ" class="product-img medium">
+    </div>
+    <p class="image-note">画像はシャペル オー ルーです</p>
+    <p class="product-desc"><strong>登場シーン：</strong>第3巻の「マ・ファミーユ編」で、料理とワインのマリアージュ（結婚）をテーマにした白ワイン利き酒対決に登場します。物語では正確にはルイ・ジャド シャブリ セリエ・ド・ラ・サブリエール 2002が登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>神の雫では、単に「高級なワインが素晴らしい」だけではなく、「料理とワインの組み合わせ」という考え方が登場します。これが、本当のワインの楽しさなんです。</p>
+    <p class="product-desc">ルイ・ジャドのシャブリは、ミネラル感たっぷりの白ワインで、牡蠣や白身魚との相性が抜群です。このワインを通じて、白ワインの美しさと、料理とのペアリングの大切さを学ぶことができます。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>白ワインの美しさを知ることで、ワイン選びの世界がグッと広がります。</p>
+    <a href="https://amzn.to/4cmpf9X" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">第4巻：対決の連鎖</h2>
+  </div>
+
+  <!-- 6. シャトー・ド・サン・コム コート・デュ・ローヌ -->
+  <div class="product-item">
+    <div class="product-heading">6. シャトー・ド・サン・コム コート・デュ・ローヌ</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ローヌ</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-06.jpg" alt="シャトー・ド・サン・コム コート・デュ・ローヌ" class="product-img medium-large">
+    </div>
+    <p class="image-note">画像は2022年のワインです</p>
+    <p class="product-desc"><strong>登場シーン：</strong>物語では第4巻の「イタリアワイン vs フランスワイン対決」の1000円台フランス側対決ワインとして登場。正確にはシャトー・ド・サン・コム コート・デュ・ローヌ レ・ドゥ・アルビオン 2001が登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>神の雫の最大のポイントは、「手ごろな価格で美味しいワインが存在する」ということを教えてくれることです。</p>
+    <p class="product-desc">この対決では、フランスのローヌ地域のワインと、イタリアのワインが飲み比べられます。当時は手ごろな価格でも、十分に美味しく、個性的なワインが存在することを知ることができるシーンです。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>フランスワインの伝統的な味わいを体験できる1本です。</p>
+    <a href="https://amzn.to/4vnSi5y" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 7. ベッレンダ コントラーダ・ディ・コンチェニゴ コッリ・ディ・コネリアーノ -->
+  <div class="product-item">
+    <div class="product-heading">7. ベッレンダ コントラーダ・ディ・コンチェニゴ コッリ・ディ・コネリアーノ</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：イタリア・ヴェネト</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-07.jpg" alt="ベッレンダ コントラーダ・ディ・コンチェニゴ コッリ・ディ・コネリアーノ" class="product-img medium-large">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>物語では第4巻の「イタリアワイン vs フランスワイン対決」の1000円台イタリア側対決ワインとして登場。2000年のヴィンテージが登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>イタリア北部のヴェネト州から造られるこのワインは、フランスワインとは全く異なる個性を持っています。フランスとイタリアではこんなに違う味わいが存在することを学べるシーンです。同じ条件でも、選び方次第で全く異なる体験ができる──それがワインの世界の面白さなんです。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>イタリアワインの個性と力強さを知ることで、ワイン選びの幅が大きく広がります。</p>
+    <a href="https://amzn.to/3QeVv7r" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 8. ドメーヌ・レシュノー マルサネ -->
+  <div class="product-item">
+    <div class="product-heading">8. ドメーヌ・レシュノー マルサネ</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ブルゴーニュ</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-08.jpg" alt="ドメーヌ・レシュノー マルサネ" class="product-img medium-large">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>物語では第4巻の「イタリアワイン vs フランスワイン対決」の2000円台フランス側対決ワインとして登場。正確にはレシュノー マルサネ レ・サンパニー 2001が登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>神の雫は、「隠れた名ワインが存在する」ことを教えてくれます。マルサネは、ブルゴーニュの北端に位置する小さな村のワインですが、実は高い品質を持っています。大手シャトーの高級ワインではなく、小規模な生産者からこそ、本当の掘り出し物が生まれることがあるんです。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>ブルゴーニュの本質を感じることができる、奥深い1本です。</p>
+    <a href="https://amzn.to/4vlz3cX" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 9. カーサ・ヴィニコラ・ダンジェロ カンネート -->
+  <div class="product-item">
+    <div class="product-heading">9. カーサ・ヴィニコラ・ダンジェロ カンネート</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：イタリア・バジリカータ州</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-09.jpg" alt="カーサ・ヴィニコラ・ダンジェロ カンネート" class="product-img medium-large">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>物語では第4巻の「イタリアワイン vs フランスワイン対決」の2000円台イタリア側対決ワインとして登場。2000年のヴィンテージが登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>南イタリア・バジリカータ州のアリアニコ種から造られるこのワインは、「南のバローロ」とも称されるアリアニコの力強さと、太陽をたっぷり浴びた果実味が特徴です。1930年創業のダンジェロは、アリアニコ種の存在を世界に知らしめた名門ワイナリーです。</p>
+    <p class="product-desc">この対決では、ブルゴーニュのレシュノー・マルサネの繊細さと、この南イタリアの太陽を感じる力強さという、まったく異なる個性のぶつかり合いが展開されます。同じグレードの異なる地域のワインで、こんなに違うワインの世界が広がっていることを、鮮やかに教えてくれるシーンです。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>南イタリアの太陽と大地を感じる、個性的な1本です。</p>
+    <p style="color: var(--muted); font-size: 13px; margin: 20px 0;">※このワインはAmazonでの販売が終了しています。取扱店の確認をおすすめします。</p>
+  </div>
+
+  <!-- 10. シャトー・ボイド・カントナック マルゴー -->
+  <div class="product-item">
+    <div class="product-heading">10. シャトー・ボイド・カントナック マルゴー</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ボルドー</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-10.jpg" alt="シャトー・ボイド・カントナック マルゴー" class="product-img medium-small">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>物語では第4巻の「ボルドー左岸対決」の上級対決ワインとして登場。2001年のヴィンテージが登場します。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>第4巻では、さらに格上の対決として上質なボルドー左岸ワインが登場します。シャトー・ボイド・カントナックは、マルゴーのカントナック村に位置するメドック第3級格付けシャトー。当時は手ごろな価格帯でありながら、ボルドーの本格的な上質さを感じることができるワインとして紹介されていました。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>ボルドーの本格的な赤ワインを体験できる、格付けシャトーの1本です。</p>
+    <a href="https://amzn.to/4virnZb" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 11. ロッジョ・デル・フィラーレ -->
+  <div class="product-item">
+    <div class="product-heading">11. ロッジョ・デル・フィラーレ</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：イタリア・マルケ州</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-11.jpg" alt="ロッジョ・デル・フィラーレ" class="product-img large">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>物語では第4巻の「ボルドー左岸対決」の上級対決ワインとして登場。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>イタリア中部のマルケ州から造られるこのワインは、サンジョヴェーゼとモンテプルチアーノという2つのぶどう品種をブレンドした、力強くもエレガントな1本です。ボルドーとイタリアではこんなに違う個性が存在する。同じテイストの異なる地域のワインを比較することで、ワイン選びの目を開く道になります。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>イタリアワインの本質的な個性を感じることができる、上質な1本です。</p>
+    <a href="https://amzn.to/47WQ03w" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">第5巻：ヴィンテージを知るワイン</h2>
+  </div>
+
+  <!-- 12. ドメーヌ・ロベール・グロフィエ ボンヌ・マール グラン・クリュ 2001 -->
+  <div class="product-item">
+    <div class="product-heading">12. ドメーヌ・ロベール・グロフィエ ボンヌ・マール グラン・クリュ 2001</div>
+    <div class="product-info">ワイン種：赤ワイン / 生産国：フランス・ブルゴーニュ</div>
+    <div class="bottle-wrap">
+      <img src="images/kaminoshizuku-vol1-12.jpg" alt="ドメーヌ・ロベール・グロフィエ ボンヌ・マール グラン・クリュ 2001" class="product-img large">
+    </div>
+    <p class="product-desc"><strong>登場シーン：</strong>第5巻で、ロベールが雫にヴィンテージとは何かを教えるために飲ませた1本です。2001年はやや雨の多い厳しい年。そのロベールのセリフが、このシーンの中でも特に印象的です。</p>
+    <p class="product-desc">「厳しい年を生き抜いて選び抜かれた葡萄というのは、その内側の奥の奥にグレートヴィンテージにはない生命力を秘めている……グレートヴィンテージもまたよし、じゃが厳しかったヴィンテージもまたワインなんじゃよ」</p>
+    <p class="product-desc">また、このワインは「容易に近づけないストイックさと深い内向性。簡単には解き明かせない難しさ。よくできたミステリー小説みたいなワイン」とも表現されています。</p>
+    <p class="product-desc"><strong>なぜこのワインなのか：</strong>ドメーヌ・ロベール・グロフィエは、シャンボール・ミュジニー村を拠点とするブルゴーニュの名門です。このボンヌ・マールは、ふくよかなボディと丸みのある味わいが特徴のグラン・クリュ（特級畑）。</p>
+    <p class="product-desc">「グレートヴィンテージもまたよし、厳しかったヴィンテージもまたワイン」──このセリフは、ワイン選びへの向き合い方を変えてくれます。困難な年のワインにも物語と生命力が宿っている。それが、神の雫が伝えたいことの一つです。</p>
+    <p class="product-desc"><strong>ぜひ試していただきたい理由：</strong>ヴィンテージへの先入観を取り払い、「そのワインの物語」を味わう視点を教えてくれる1本です。</p>
+    <a href="https://amzn.to/4vn54Bs" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="article-body" style="margin-top: 44px;">
+    <h2 class="section-heading">最後に：ワインを通じて「想い」を感じる</h2>
+    <p>神の雫という作品を通じて、僕たちが学ぶことの一つ。それは、「ワインは、値段では測れない」ということです。</p>
+    <p>1000円のワインにも、100万円のワインにも、造り手の人生が詰まっている。ぶどうを育てた農家の想い、醸造家の哲学、そして時間の経過とともに熟成された物語──すべてのワインが、その価格を超えた何かを持っているんです。</p>
+    <p>この記事で紹介した12本も同じ。神の雫という物語の中で輝いたこれらのワインは、単なる商品ではなく、各章の物語を象徴する存在です。</p>
+    <p>ただ、一つだけ現実の話をさせてください。神の雫の連載当時（2004年～2014年）から時間が経ち、ワイン市場は大きく変わりました。当時手ごろだったワインが、今では相当値上がりしているものも多い。「今、3000円以下で本当に美味しい赤ワインを探したい」という方には、こちらの記事もおすすめです：</p>
+  </div>
+
+  <!-- 関連記事カード -->
+  <div style="margin: 24px 0 44px;">
+    <div class="article-card" style="margin: 0; border: 1px solid var(--border); padding: 20px;">
+      <div class="article-card-horizontal">
+        <div class="image-col">
+          <img src="images/header-wine.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下の赤ワイン10選" style="width: 100%; height: 150px; object-fit: contain; background: #0d0d0d; display: block; border-radius: 4px;">
+        </div>
+        <div class="text-col">
+          <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">🍷 Wine — Editor's Pick</p>
+          <h3 style="font-size: 16px; font-weight: bold; color: var(--dark); margin-bottom: 12px; line-height: 1.5; font-family: 'Hiragino Mincho ProN', serif;">酒販業界の中の人が本音で選ぶ、<br>3,000円以下の赤ワイン10選</h3>
+          <p style="font-size: 14px; color: #2a2a2a; line-height: 1.7; margin-bottom: 12px;">現在の価格帯で、本当に美味しく、個性的なワインを厳選。今このとき、あなたの「好き」を叶えてくれる1本がここにあります。</p>
+          <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;">2026.04.05 — クロフク編集長</p>
+          <a href="article-wine-10.html" style="display: inline-block; background: var(--gold); color: #fff; padding: 10px 24px; text-decoration: none; font-weight: bold; border-radius: 2px; font-size: 13px; letter-spacing: 0.05em;">記事を読む →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>でも、時代が変わっても、ワイン選びの本質は変わりません。</p>
+    <p>あなたがワインを選ぶときに大切なのは「値段」ではなく「心」です。あなたが何を感じるのか。あなたの舌が何を求めているのか。神咲雫が教えてくれたように、「自分の舌で感じた『好き』を信じること」──そこにこそ、正解があるんです。</p>
+    <p>あなたが今、手にしたワイン。それが高かろうが安かろうが、有名だろうが無名だろうが、そこに込められた想いは変わりません。</p>
+    <p>その物語を、味わってください。</p>
+    <p>乾杯！🍷</p>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">EDITOR-IN-CHIEF</div>
+      <div class="author-bio">酒販業界で働く傍ら、お酒の魅力を伝えるための記事を執筆。ウイスキー、日本酒、ワイン、ビール……あらゆるお酒の沼にハマっている。特に好きなのは、常識を超えるものたち。</div>
+    </div>
+  </div>
+
+  <!-- BACK NAV -->
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-disclosure">
+      このサイトはAmazonアソシエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+    </div>
+    <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "クロフク編集長のお酒マガジン",
+  "url": "https://kurofuku-magazine.com",
+  "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+}
+</script>
+
+</body>
+</html>

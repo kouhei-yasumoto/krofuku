@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>酒販業界の中の人が本音で選ぶ、3,000円以下の日本酒10選 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="クロフク編集長が厳選した日本酒10選。酒販業界で働くプロが年間数百本を試飲する中で選んだ、本当においしい3000円以下の日本酒。東北・北陸・関東の蔵元から選び抜いた逸品。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .article-hero img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* 地域見出し */
+    .region-heading {
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding-bottom: 8px;
+      margin: 48px 0 32px;
+    }
+    .region-heading--with-top-border {
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: 48px;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .product-num {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+      min-width: 30px;
+    }
+    .product-name { flex: 1; line-height: 1.5; }
+    .product-region {
+      font-size: 12px;
+      font-weight: normal;
+      color: var(--muted);
+    }
+    .product-price {
+      font-size: 13px;
+      font-weight: normal;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .bottle-wrap { margin-bottom: 24px; }
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .conclusion p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .product-heading { flex-wrap: wrap; }
+      .author-block { flex-direction: column; }
+      .conclusion { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-sake.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下の日本酒10選">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🍶 Sake</span>
+    <span class="meta-date">2026.04.04</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">酒販業界の中の人が本音で選ぶ、<br>3,000円以下の日本酒10選</h1>
+
+  <div class="article-body">
+    <p>3,000円。<br>一見、日本酒を探すには微妙な予算だ。安すぎず、高すぎず。その狭い枠の中に、本当に旨い酒が眠っているのか。正直、自信を持って答えられる人は少ないと思う。</p>
+    <p>でも、酒販業界で働く僕だからこそ気づいたことがある。その予算帯には、実は宝物がいくつも隠れているんだ。</p>
+    <p>知名度だけで選べば見落とすような、しかし飲んだら思わず唸るような。そんな素晴らしい日本酒たちが、3,000円以下で確実に存在する。</p>
+    <p>自分で何度も飲んで、業界の仲間たちとも語り合って、本当に「これは外さない」と確信を持てた10本だけを選び抜いた。全国の蔵から、様々なスタイルの酒を集めた。あえて同じ蔵から2本選んだものもある。それだけ懐が深い蔵だということだ。この10本の中に、きっと君の「当たり」がある。</p>
+    <p class="note-text">※ 本記事の価格は2026年4月上旬時点のAmazon参考価格です。店舗やECサイトにより異なる場合があります。</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 東北 -->
+  <div class="region-heading">東北地方</div>
+
+  <!-- ① -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">①</span>
+      <span class="product-name">大七酒造 生酛本醸造 1800ml<span class="product-region">（福島県）</span></span>
+      <span class="product-price">約¥2,500</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-01.jpg" alt="大七酒造 生酛本醸造" class="product-img">
+    </div>
+    <p class="product-desc">福島県の大七酒造は、江戸時代から続く老舗蔵。その「生酛本醸造」は、昔ながらの製法で丹精込めて造られている。生酛造りだから、複雑で深い味わいが特徴。本醸造という位置づけながら、その中身は相当にレベルが高い。地酒の歴史と伝統を感じさせる、真摯な一本。日本酒の本当の良さを知りたいなら、まずこれを試してほしい。</p>
+    <a href="https://amzn.to/4djgX4S" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ② -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">②</span>
+      <span class="product-name">墨廼江 純米吟醸 蔵の華 1800ml<span class="product-region">（宮城県）</span></span>
+      <span class="product-price">約¥2,600</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-02.png" alt="墨廼江 純米吟醸 蔵の華" class="product-img">
+    </div>
+    <p class="product-desc">宮城県の墨廼江が造る、純米吟醸「蔵の華」。蔵の華という宮城県産の酒造好適米を使い、品質の高さにこだわった一本だ。吟醸らしいフルーティーな香りと、純米ならではのコク、そして爽やかさが同居している。2,600円前後で購入できることもあり、自分へのご褒美にも、大事な人へのギフトにも最適。</p>
+    <a href="https://amzn.to/4v81YRH" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ③ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">③</span>
+      <span class="product-name">上喜元 出羽の里 純米 1800ml<span class="product-region">（山形県）</span></span>
+      <span class="product-price">約¥2,200</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-03.jpg" alt="上喜元 出羽の里 純米" class="product-img">
+    </div>
+    <p class="product-desc">山形県の上喜元が造る、「出羽の里」という山形県産の酒米を使った純米酒。上喜元は山形県を代表する蔵のひとつで、その信頼度は折り紙付きだ。この価格で、この完成度は本当に素晴らしい。飲みやすさと旨味のバランスが絶妙で、日本酒初心者にも、飲み慣れた人にも満足させる力がある。山形県産酒米×山形県を代表する蔵、という組み合わせの素晴らしさを感じられる一本。</p>
+    <a href="https://amzn.to/4bLV7Wx" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ④ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">④</span>
+      <span class="product-name">上喜元 特別純米 出羽燦々 1800ml<span class="product-region">（山形県）</span></span>
+      <span class="product-price">約¥2,800</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-04.jpg" alt="上喜元 特別純米 出羽燦々" class="product-img">
+    </div>
+    <p class="product-desc">山形県の上喜元による、もう一本の逸品。「出羽燦々」という名の山形県産酒米を使った特別純米だ。同じ蔵から2本選んだのは、それだけこの蔵の実力が突出しているから。上喜元の技術の高さが遺憾なく発揮された一本で、香りの華やかさと、米の旨味、そして後口の爽やかさが見事に調和している。③の出羽の里と飲み比べると、蔵の懐の深さ、そしてこの地域の日本酒の底力を思い知らされる。</p>
+    <a href="https://amzn.to/488J7vS" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 北陸・甲信越 -->
+  <div class="region-heading region-heading--with-top-border">北陸・甲信越地方</div>
+
+  <!-- ⑤ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑤</span>
+      <span class="product-name">蓬莱 純米吟醸 家伝手造り 1800ml<span class="product-region">（岐阜県）</span></span>
+      <span class="product-price">約¥2,800</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-05.jpg" alt="蓬莱 純米吟醸 家伝手造り" class="product-img">
+    </div>
+    <p class="product-desc">岐阜県飛騨高山の渡辺酒造店が造る、丹精込めた純米吟醸だ。「家伝手造り」という名のとおり、古い手法を守り続けながら造られている。酒造好適米「飛騨ほまれ」を使い、爽やかで透明感のある香りと、深みのある旨味が特徴。3,000円を切る価格で、この品質は本当にコスパに優れている。冷酒でも燗でも、どちらでも美味しく飲める懐の深さが魅力。</p>
+    <a href="https://amzn.to/4v7NYqW" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑥ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑥</span>
+      <span class="product-name">黒龍酒造 九頭竜 純米 1800ml<span class="product-region">（福井県）</span></span>
+      <span class="product-price">約¥2,900</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-06.jpg" alt="黒龍酒造 九頭竜 純米" class="product-img">
+    </div>
+    <p class="product-desc">福井県の黒龍酒造が手がける「九頭竜 純米」。黒龍といえば、高級感漂う日本酒として知られているが、この九頭竜シリーズはその良さを3,000円以下で味わえる選択肢だ。福井県産の五百万石を使い、スッキリとした後口ながら、ちゃんと米の旨味がある。品質を落とさず価格を抑えた、蔵の真摯な姿勢が感じられる一本。</p>
+    <a href="https://amzn.to/4cjCuJI" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑦ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑦</span>
+      <span class="product-name">白瀧酒造 淡麗辛口魚沼 純米 1800ml<span class="product-region">（新潟県）</span></span>
+      <span class="product-price">約¥2,500</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-07.jpg" alt="白瀧酒造 淡麗辛口魚沼 純米" class="product-img">
+    </div>
+    <p class="product-desc">新潟を代表する酒どころ・魚沼から、淡麗辛口の純米酒が登場。新潟といえば淡麗辛口、そしてこの白瀧はその系統を極めた一本だ。水のように透き通った味わいながら、ちゃんと米の旨味がある。食事とのペアリングを考えると、これ以上の相性はないかもしれない。和食、洋食を問わず、食卓に合う懐の広さが最大の武器。</p>
+    <a href="https://amzn.to/4sNGxDN" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑧ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑧</span>
+      <span class="product-name">千曲錦酒造 淡麗辛口 千曲錦 1800ml<span class="product-region">（長野県）</span></span>
+      <span class="product-price">約¥2,600</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-08.jpg" alt="千曲錦酒造 淡麗辛口 千曲錦" class="product-img">
+    </div>
+    <p class="product-desc">長野県の千曲錦酒造が手がける、信州流の淡麗辛口。浅間山系の伏流水を使い、シンプルで潔い味わいに仕上げている。後味が綺麗で、ずっと飲んでいられる「飲み飽きない」タイプだ。価格も手頃で、毎日飲みとしても、少しいい食事の席でも対応できるバランスの良さ。地酒の素晴らしさを実感できる一本。</p>
+    <a href="https://amzn.to/4v4mtP4" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- 関東・東海 -->
+  <div class="region-heading region-heading--with-top-border">関東・東海地方</div>
+
+  <!-- ⑨ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑨</span>
+      <span class="product-name">澤乃井 本醸造大辛口 1800ml<span class="product-region">（東京都）</span></span>
+      <span class="product-price">約¥2,600</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-09.jpg" alt="澤乃井 本醸造大辛口" class="product-img">
+    </div>
+    <p class="product-desc">東京・奥多摩の澤乃井が仕込む、大辛口の本醸造。江戸時代から続く老舗蔵の、スタンダード商品だからこそ信頼できる。辛口というより「大辛口」と銘打つだけあって、スッキリ&ドライな後口が心地よい。アルコール度数は15度ながら日本酒度+12のキレがあり、燗にするとさらにキレが出る。昔ながらの飲み方を復活させたいなら、まずこの一本から始めてほしい。</p>
+    <a href="https://amzn.to/4tnCPka" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑩ -->
+  <div class="product-item">
+    <div class="product-heading">
+      <span class="product-num">⑩</span>
+      <span class="product-name">正雪 特別本醸造 1800ml<span class="product-region">（静岡県）</span></span>
+      <span class="product-price">約¥2,500</span>
+    </div>
+    <div class="bottle-wrap">
+      <img src="images/sake-10.jpg" alt="正雪 特別本醸造" class="product-img">
+    </div>
+    <p class="product-desc">静岡県から、素敵な特別本醸造がやってきた。この正雪（しょうせつ）は、静岡市清水区由比にある神沢川酒造場が真摯に造った本当にいい酒だ。知名度こそ全国区ではないかもしれないが、地酒ファンの間では確かな評価を得ている。特別本醸造とは、通常の本醸造より醸造に工夫を加えたもの。その工夫が見事に実を結んだ結果、これだけの品質が¥2,500で手に入る。静岡の蔵の仕事ぶりを知るには絶好の一本。</p>
+    <a href="https://amzn.to/4bWirkB" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <p>3,000円という予算で、本当の「いい酒」に出会うことはできる。この10本は、その証明だ。どれを選んでも、その値段を大きく上回る価値を感じるはずだ。迷ったなら、まず1本選んでみてほしい。試しに飲んでみる。その時の「あ、これいいな」という瞬間――。その感動が、君の日本酒選びの指標になるはずだ。</p>
+    <p>次の一本へ。その先の一本へ。こうやって自分の「好き」を積み重ねていく。そういう小さな冒険が、本当の楽しさだと思う。</p>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">Sake Magazine Editor</div>
+      <p class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</p>
+    </div>
+  </div>
+
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧に戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップへ戻る</a>
+      <a href="#">プロフィール</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトを経由してAmazonで商品を購入された場合、当サイトに紹介料が支払われることがあります。これにより購入者様の商品代金に変動はありません。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

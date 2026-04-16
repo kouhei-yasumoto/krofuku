@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プロフィール — クロフク編集長のお酒マガジン</title>
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* HEADER */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px; margin: 0 auto; padding: 0 20px;
+      display: flex; align-items: center; height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 16px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--dark);
+      padding: 36px 20px 32px;
+      text-align: center;
+    }
+    .page-hero .hero-tag {
+      display: inline-block;
+      font-size: 10px; letter-spacing: 0.35em; color: var(--gold);
+      border: 1px solid var(--gold); padding: 3px 14px; margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .page-hero h1 {
+      font-size: clamp(20px, 4vw, 28px); color: #fff;
+      font-family: 'Hiragino Mincho ProN', serif; letter-spacing: 0.06em;
+    }
+
+    /* MAIN */
+    .main-wrap { max-width: 800px; margin: 0 auto; padding: 48px 20px 80px; }
+
+    /* PROFILE CARD */
+    .profile-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 40px 40px 48px;
+    }
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-avatar {
+      width: 120px; height: 120px; min-width: 120px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .profile-meta {}
+    .profile-name {
+      font-size: 22px; font-weight: bold; color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 4px;
+    }
+    .profile-role {
+      font-size: 10px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 12px;
+    }
+    .profile-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .profile-tag {
+      font-size: 11px; padding: 3px 12px;
+      border: 1px solid var(--border);
+      color: var(--muted); border-radius: 2px;
+    }
+
+    .profile-body { font-size: 15px; color: #333; line-height: 2.0; }
+    .profile-body p { margin-bottom: 20px; }
+    .profile-body p:last-child { margin-bottom: 0; }
+
+    .profile-section-label {
+      font-size: 10px; letter-spacing: 0.25em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 12px; margin-top: 32px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .profile-section-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .genre-list {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .genre-item {
+      background: #f7f5f2; border: 1px solid var(--border);
+      padding: 8px 18px; font-size: 13px; color: var(--dark);
+    }
+    .genre-item span { color: var(--gold); margin-right: 6px; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--gold); letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--gold); padding-bottom: 1px;
+      margin-top: 36px;
+    }
+    .back-link:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; }
+    .footer-logo { font-size: 15px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 4px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 16px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .profile-card { padding: 24px 20px 32px; }
+      .profile-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-tag">Profile</div>
+  <h1>クロフク編集長について</h1>
+</section>
+
+<!-- MAIN -->
+<div class="main-wrap">
+  <div class="profile-card">
+
+    <div class="profile-top">
+      <div class="profile-avatar"></div>
+      <div class="profile-meta">
+        <div class="profile-name">クロフク編集長</div>
+        <div class="profile-role">Sake Magazine Editor / 酒販業界人</div>
+        <div class="profile-tags">
+          <span class="profile-tag">🥃 Whisky</span>
+          <span class="profile-tag">🍶 Sake</span>
+          <span class="profile-tag">🍷 Wine</span>
+          <span class="profile-tag">🍺 Beer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-body">
+      <div class="profile-section-label">About</div>
+
+      <p>酒販業界の現場で長年働きながら、年間数百本のお酒を試飲してきました。<br>流通・販売の最前線で働いてきたからこそ見えてくる、本物の「いい一本」とは何かを、常に問い続けています。<br>このマガジンは、その経験と目利きから得た「本当においしいお酒」を、心からお届けするために立ち上げました。</p>
+
+      <p>市場にあふれる情報に惑わされず、実際に確かめた本音の評価がポリシーです。<br>「このお酒、どれを選べばいいの？」という方に、業界経験から得た正直な視点でお答えしていきます。<br>華やかな晩餐から気軽な晩酌まで、どんなシーンにも合う一本を一緒に探していく──そんなお酒との出会いのお手伝いができたら幸いです。</p>
+
+      <div class="profile-section-label">好きなお酒</div>
+      <div class="genre-list">
+        <div class="genre-item"><span>🥃</span>ウイスキー（スコッチ・アイラ、ジャパニーズ）</div>
+        <div class="genre-item"><span>🍷</span>赤ワイン（フランス・アメリカ・日本）</div>
+        <div class="genre-item"><span>🍾</span>シャンパン</div>
+        <div class="genre-item"><span>🍶</span>日本酒（而今・磯自慢・東洋美人）</div>
+        <div class="genre-item"><span>🍺</span>クラフトビール（ブリュードッグ・ミッケラー）</div>
+      </div>
+
+      <div class="profile-section-label">このマガジンについて</div>
+      <p>厳選した複数本の紹介記事に加えて、特定の銘柄やテーマを深掘りする記事もお届けしています。<br>コスパ重視の本音レビューから、推しの一本への想いまで、様々なアプローチでお酒の世界をご紹介します。<br>紹介している商品にはAmazonアソシエイトのリンクを含む場合がありますが、忖度なしで本当にいいと思ったものだけを選んでいます。</p>
+    </div>
+
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップページへ戻る</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="profile.html">プロフィール</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトを経由してAmazonで商品を購入された場合、当サイトに紹介料が支払われることがあります。これにより購入者様の商品代金に変動はありません。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

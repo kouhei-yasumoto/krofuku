@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>クロフク編集長のお酒マガジン｜ウイスキー・日本酒・ワイン3000円以下のおすすめ</title>
+  <meta name="description" content="酒販業界での経験から本当におすすめするウイスキー・日本酒・ワイン。年間数百本を試飲した目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "クロフク編集長のお酒マガジン",
+    "url": "https://kurofuku-magazine.com",
+    "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+      --tag-bg: #f0ebe3;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--dark);
+    }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--dark);
+      padding: 44px 20px 40px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 3px 14px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(20px, 4vw, 32px);
+      color: #fff;
+      font-family: 'Hiragino Mincho ProN', serif;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-desc { font-size: 13px; color: #999; max-width: 480px; margin: 0 auto; }
+
+    /* ===== MAIN ===== */
+    .main-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .sec-label h2 { font-size: 13px; font-weight: bold; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
+    .sec-label .line { flex: 1; height: 1px; background: var(--border); }
+
+    /* ===== ARTICLE CARD ===== */
+    .article-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      display: block;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+    /* Thumbnail */
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 16/7;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 50%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-thumb::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .thumb-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 14px;
+      letter-spacing: 0.1em;
+      position: relative;
+    }
+    .thumb-icon { font-size: 52px; position: relative; }
+    .thumb-count {
+      font-size: 48px;
+      font-weight: bold;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+      position: relative;
+    }
+    .thumb-count span { font-size: 18px; font-weight: normal; color: #bbb; }
+    .thumb-title {
+      font-size: clamp(13px, 2.5vw, 17px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    /* Body */
+    .card-body { padding: 24px 28px 28px; }
+    .card-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .card-body h3 {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+    .card-excerpt {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .card-meta {
+      font-size: 11px;
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+
+    /* Amazon CTA inside card */
+    .amz-cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fafaf8;
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .amz-cta-text { flex: 1; }
+    .amz-cta-text .prod { font-size: 13px; color: var(--dark); font-weight: bold; }
+    .amz-cta-text .price { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .amz-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 9px 16px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .amz-btn:hover { background: #e08800; }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+    }
+    .read-link:hover { opacity: 0.7; }
+
+    /* ===== MORE ARTICLES placeholder ===== */
+    .coming-soon {
+      margin-top: 32px;
+      padding: 36px 24px;
+      background: #fff;
+      border: 1px dashed var(--border);
+      text-align: center;
+      color: #ccc;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+    }
+    .coming-soon span { display: block; font-size: 28px; margin-bottom: 10px; }
+
+    /* ===== PROFILE (simple, below articles) ===== */
+    .profile-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      min-width: 100px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .profile-body {}
+    .profile-name { font-size: 15px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .profile-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .profile-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      padding: 32px 20px;
+      margin-top: 60px;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .footer-logo { font-size: 15px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 4px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 16px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .card-body { padding: 18px 18px 22px; }
+      .card-body h3 { font-size: 17px; }
+      .amz-cta { flex-direction: column; align-items: flex-start; }
+      .profile-block { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Editor's Review Magazine</div>
+  <h1>酒販業界の中の人が<em>本音で選ぶ</em>、<br>お酒レビューマガジン</h1>
+  <p class="hero-desc">酒販業界の現場経験と目利きから、<br>情報を発信いたします。<br>本当にいいお酒との出会いをあなたに。</p>
+</section>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <div class="sec-label">
+    <h2>Articles</h2>
+    <div class="line"></div>
+  </div>
+
+  <!-- 記事：東洋美人 NEW -->
+  <div class="article-card" onclick="window.location.href='article-toyo-bijin.html'" style="cursor:pointer;margin-top:20px;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-toyo-bijin.jpg" alt="美しさと旨さが同居する山口の秘宝 東洋美人" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Japanese Sake — Editor's Pick</p>
+      <h3>美しさと旨さが同居する山口の秘宝<br>東洋美人</h3>
+      <p class="card-excerpt">山口県萩市の澄川酒造場が醸す「東洋美人」。初代が亡き妻を偲んでつけた名を持つこの蔵は、2013年の豪雨被害から見事に復活。醇道一途シリーズをはじめ、純米大吟醸・辛口など個性豊かな720ml商品を厳選してご紹介します。</p>
+      <p class="card-meta">2026.04.14 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">東洋美人 純米吟醸 醇道一途 西都の雫</div>
+        </div>
+        <a href="https://www.amazon.co.jp/dp/B093V49FB8/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-toyo-bijin.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 記事1（ビッグピート） -->
+  <div class="article-card" onclick="window.location.href='article-bigpeat.html'" style="cursor:pointer;margin-top:20px;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-bigpeat.jpg" alt="ピート好きは絶対ハマる！アイラの最強ブレンドウイスキー BIG PEAT" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🥃 Whisky — Editor's Pick</p>
+      <h3>ピート好きは絶対ハマる！<br>アイラの最強ブレンドウイスキー<br>BIG PEAT</h3>
+      <p class="card-excerpt">ダグラスレイン社が誇るアイラ・ブレンデッドモルト『BIG PEAT』。薬品のような独特の香りが魅力。Ardbeg、Caol Ila、Bowmore、Port Ellen...アイラの全てが詰まった究極の一本。5つのバリエーションから自分好みの一本を見つけてください。</p>
+      <p class="card-meta">2026.04.16 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">Douglas Laing Big Peat</div>
+        </div>
+        <a href="https://www.amazon.co.jp/dp/B008CYYV5G/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-bigpeat.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 記事2（神の雫ワイン） -->
+  <div class="article-card" onclick="window.location.href='article-kaminoshizuku-wine-vol1.html'" style="cursor:pointer;margin-top:20px;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-kaminoshizuku-vol1.jpg" alt="【神の雫 アニメ放送記念】飲んでみたくなるワインガイド" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍷 Wine — Special</p>
+      <h3>【神の雫 アニメ放送記念】<br>飲んでみたくなるワインガイド</h3>
+      <p class="card-excerpt">漫画『神の雫』の第1巻～第5巻に登場する12本のワインを厳選紹介。神咲雫と一緒にワインの世界への扉を開く、当時の物語を追体験できるワインガイドです。</p>
+      <p class="card-meta">2026.04.10 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">ドメーヌ・ド・ラ・ロマネ・コンティ リシュブール</div>
+        </div>
+        <a href="https://amzn.to/4vdPbx3" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-kaminoshizuku-wine-vol1.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  
+
+  <!-- 記事2（ブリュードッグ） -->
+  <div class="article-card" onclick="window.location.href='article-brewdog.html'" style="cursor:pointer;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-brewdog.jpg" alt="スコットランドのパンクブルワリー・BREWDOGの世界へようこそ" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍺 Beer — Editor's Pick</p>
+      <h3>スコットランドのパンクブルワリー<br>BREWDOGの世界へようこそ！</h3>
+      <p class="card-excerpt">「常識に逆らう」をキーワードに、個性的でパンクなビールを生み出し続けるスコットランドのクラフトビール「BrewDog」。PUNK IPAから究極の1本BORN TO DIEまで、ブリュードッグの魅力を13本厳選してご紹介します。</p>
+      <p class="card-meta">2026.04.05 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">PUNK IPA 6本</div>
+        </div>
+        <a href="https://amzn.to/3QnFTyw" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-brewdog.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 記事3（赤ワイン） -->
+  <div class="article-card" onclick="window.location.href='article-wine-10.html'" style="cursor:pointer;margin-top:20px;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-wine.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下の赤ワイン10選" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍷 Wine — Editor's Pick</p>
+      <h3>酒販業界の中の人が本音で選ぶ、<br>3,000円以下の赤ワイン10選</h3>
+      <p class="card-excerpt">「ワイン選びは冒険だ」という想いから、フランス・イタリア・アメリカ・チリ・日本の5つの産地から、それぞれの個性を持つ赤ワイン10本を厳選しました。世界の多様な味わいを3,000円以下で体験できます。</p>
+      <p class="card-meta">2026.04.05 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">アルベール・ビショー コトー・ブルギニョン</div>
+        </div>
+        <a href="https://amzn.to/41MM2GX" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-wine-10.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 記事4（日本酒） -->
+  <div class="article-card" onclick="window.location.href='article-sake-10.html'" style="margin-top:20px;cursor:pointer;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-sake.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下の日本酒10選" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Sake — Editor's Pick</p>
+      <h3>酒販業界の中の人が本音で選ぶ、<br>3,000円以下の日本酒10選</h3>
+      <p class="card-excerpt">「日本酒を飲んでみたいけど、どれを選べばいいかわからない」そんな方へ。東北・北陸・関東東海を横断し、酒販の現場で働くクロフク編集長が本音で厳選した、コスパ最強の10本をご紹介します。</p>
+      <p class="card-meta">2026.04.04 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">大七酒造 生酛本醸造 1800ml</div>
+        </div>
+        <a href="https://amzn.to/4djgX4S" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-sake-10.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 記事5（ウイスキー） -->
+  <div class="article-card" onclick="window.location.href='article-whisky-10.html'" style="margin-top:20px;cursor:pointer;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下のウイスキー10選" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🥃 Whisky — Editor's Pick</p>
+      <h3>酒販業界の中の人が本音で選ぶ、<br>3,000円以下のウイスキー10選</h3>
+      <p class="card-excerpt">「ウイスキーを飲んでみたいけど、どれを選べばいいかわからない」そんな方へ。スコッチ・アイリッシュ・ジャパニーズを横断し、酒販の現場で働くクロフク編集長が本音で厳選した、コスパ最強の10本をご紹介します。</p>
+      <p class="card-meta">2026.03.28 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">グレングラント アルボラリス 700ml</div>
+        </div>
+        <a href="https://www.amazon.co.jp/" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+      </div>
+      <a href="article-whisky-10.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <!-- 準備中プレースホルダー -->
+  <div class="coming-soon">
+    <span>✍️</span>
+    次の記事を準備中です…
+  </div>
+
+  <!-- プロフィール -->
+  <a href="profile.html" class="profile-block" style="cursor:pointer;">
+    <div class="profile-avatar"></div>
+    <div class="profile-body">
+      <div class="profile-name">クロフク編集長</div>
+      <div class="profile-role">Sake Magazine Editor</div>
+      <p class="profile-bio">ウイスキー、ワイン、日本酒を中心に、ありとあらゆるお酒を年間数百本試飲してきた酒販業界の現場の人間。実際に飲んで確かめた本音の評価をお届けします。</p>
+    </div>
+  </a>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="profile.html">プロフィール</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトを経由してAmazonで商品を購入された場合、当サイトに紹介料が支払われることがあります。これにより購入者様の商品代金に変動はありません。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ピート好きは絶対ハマる！アイラの最強ブレンドウイスキー、BIG PEAT | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="ピート好きは絶対ハマる！アイラの最強ブレンドウイスキー『BIG PEAT』。薬品のような独特の香りが魅力。BIG PEATの魅力と、厳選5本をご紹介。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #0d0d0d;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-info {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .product-img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      margin: 0 auto 20px;
+      border: 1px solid var(--border);
+      padding: 8px;
+      background: #fff;
+      display: block;
+      object-fit: contain;
+    }
+    .product-img-small {
+      max-width: 200px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #e5e0d8;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .article-wrap { padding: 24px 16px 60px; }
+      .author-block { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧</a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <img src="images/header-bigpeat.jpg" alt="最高のピートを感じられるビッグピート特集" />
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">Whisky</span>
+    <span class="meta-date">2026年4月16日</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">ピート好きは絶対ハマる！<br>アイラの最強ブレンドウイスキー<br>BIG PEAT</h1>
+
+  <div class="article-body">
+    <p>アイラ。スコットランドの西海岸に浮かぶ小さな島です。人口約3,200人の静かな島なのですが、ここはウイスキーの世界では一大勢力を誇る地域なのです。なぜなら、世界で最も有名で、最も愛されるピーテッド・ウイスキーが数多く生み出されているからです。Ardbeg、Bowmore、Caol Ila、Laphroaig...名前を聞くだけで、ピーティーなウイスキー好きの心がときめく蒸留所ばかりです。</p>
+    
+    <p>僕はアイラのウイスキーが好きです。いや、好きではなく、愛しているといった方がいいかもしれません。あの独特の香り、煙ったようなピートの香りが鼻に抜ける瞬間。そして口に含んだ時の、ものすごく複雑で奥深い味わい。それは甘さもあれば、塩辛さもあって、時には薫製のような香りまで感じられます。こんなウイスキーの世界は他にありません。</p>
+
+    <p>もっとも、周りからは「よくそんな薬品みたいなのが好きですね」と言われることも多いです。気持ちはわかります。アイラのウイスキーは、確かに一般的ではありません。ですが本当のところは、そもそも薬品が好きなんだ！文句あるか！と言ってやりたいところです。（笑）そのくらい強烈な個性があるからこそ、僕たちはアイラに惹かれるのです。</p>
+
+    <p>そこで今回ご紹介したいのが「ビッグピート」です。ダグラスレイン社が誇るアイラ・ブレンデッドモルトなのですが、これが本当に最高です。Ardbeg、Caol Ila、Bowmore、そして伝説の蒸留所Port Ellen...アイラを代表する蒸留所のモルトをブレンドしたもので、アイラの全てが詰まっています。2009年にリリースされたビッグピートは、スモールバッチ生産、無着色、チルフィルター非使用の46% ABV。ピート好きのための究極の一本です。</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2 class="section-heading">ビッグピート、全5本のオススメ</h2>
+
+  <!-- ① -->
+  <div class="product-item">
+    <div class="product-heading">① Douglas Laing Big Peat</div>
+    <div class="product-info">46% / 700ml / ブレンデッドモルト</div>
+    <img src="https://images-na.ssl-images-amazon.com/images/P/B008CYYV5G.09.LZZZZZZZ.jpg" alt="Douglas Laing Big Peat" class="product-img" loading="lazy">
+    <p class="product-desc">ビッグピートの標準版です。これを飲まずしてビッグピートは語れません。Ardbeg由来の力強い炭火感、Bowmoreのバランスの取れた甘さ、Caol Ilaのオイリーさ、Port Ellenの稀有な優雅さ...複数の銘蒸留所のキャラクターが見事に調和した一本です。灰、塩辛いビーチキャラクター、ほのかな甘みが交錯する複雑性が特徴で、ピート好きなら絶対に持っておくべき一本です。</p>
+    <a href="https://www.amazon.co.jp/dp/B008CYYV5G/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ② -->
+  <div class="product-item">
+    <div class="product-heading">② Douglas Laing Big Peat 12 Years Old</div>
+    <div class="product-info">46% / 700ml / ブレンデッドモルト</div>
+    <img src="https://images-na.ssl-images-amazon.com/images/P/B08LT8WL36.09.LZZZZZZZ.jpg" alt="Douglas Laing Big Peat 12 Years Old" class="product-img" loading="lazy">
+    <p class="product-desc">12年熟成版です。スタンダード版よりもまろやかで、熟成による奥行きが加わっています。チャーオーク、煙突の香り、岩場の海塩...深みが増しています。46%の高い度数はそのままなので、飲み応えも十分です。スタンダードとは違う表情を見せてくれます。ビッグピートの魅力を二つの角度から楽しみたいのであれば、この組み合わせは最高です。</p>
+    <a href="https://www.amazon.co.jp/dp/B08LT8WL36/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ③ -->
+  <div class="product-item">
+    <div class="product-heading">③ Big Peat Fèis Ìle 2025 Limited Edition</div>
+    <div class="product-info">50% / 700ml / ブレンデッドモルト（2025年限定）</div>
+    <img src="https://m.media-amazon.com/images/I/61+S-vYTPfL._AC_SL1477_.jpg" alt="Big Peat Fèis Ìle 2025 Limited Edition" class="product-img" loading="lazy">
+    <p class="product-desc">2025年の限定版です。Fèis Ìle（アイラフェスティバル）を記念した特別なリリースなのです。2010年ヴィンテージのモルトを厳選し、リフィル・ホッグスヘッドで熟成されています。通常版よりもさらに個性的で力強いです。甘い煙、海塩のニュアンス、スモーキーなBBQキャラが際立っています。限定品だからこそ、見つけたら迷わず手に取ってください。</p>
+    <a href="https://www.amazon.co.jp/dp/B0FH291YZG/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ④ -->
+  <div class="product-item">
+    <div class="product-heading">④ Big Peat 15周年記念 レッドワインカスクフィニッシュ</div>
+    <div class="product-info">50% / 700ml / ブレンデッドモルト（並行輸入品）</div>
+    <img src="https://m.media-amazon.com/images/I/71O6VW2Bk2L._AC_SL1500_.jpg" alt="Big Peat 15周年記念 レッドワインカスクフィニッシュ" class="product-img product-img-small" loading="lazy">
+    <p class="product-desc">15周年記念のレッドワインカスク仕上げ版です。レッドワイン樽で仕上げられることで、ビッグピートの力強いピート感に、ワインカスク由来のフルーティーさと奥行きが加わり、さらに複雑な層が生まれています。通常版の磯臭さと甘みに、赤ワインの柔らかさが融合する、ユニークな一本です。ビッグピートの新たな魅力を発見できる限定品といえるでしょう。</p>
+    <a href="https://www.amazon.co.jp/dp/B0FVFLHQJN/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ⑤ -->
+  <div class="product-item">
+    <div class="product-heading">⑤ Big Peat 温泉エディション 2024</div>
+    <div class="product-info">46% / 700ml / ブレンデッドモルト（日本限定）</div>
+    <img src="https://m.media-amazon.com/images/I/61GW06FZdRL._AC_.jpg" alt="Big Peat 温泉エディション 2024" class="product-img product-img-small" loading="lazy">
+    <p class="product-desc">温泉エディション2024です。日本限定でリリースされた、300本限定の特別版なのです。Big Peat公式も「温泉で楽しむのにぴったり」と謳う日本向けエディション。ビッグピート本来の力強いピート感を保ちながら、日本の文化と調和する独特の仕上がりになっています。アイラのウイスキーを温泉で楽しむという、日本人だからこそできる体験を可能にした、コレクター必携の一本といえるでしょう。</p>
+    <a href="https://www.amazon.co.jp/dp/B0DY75XTWH/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <hr class="section-divider">
+
+  <p>この5本、どれもハズレはありません。迷ったらまずスタンダードのビッグピートから試してみてください。きっと皆さんも、このアイラの魔力に取り憑かれるはずです。</p>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">Sake Magazine Editor</div>
+      <p class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</p>
+    </div>
+  </div>
+
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧に戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップへ戻る</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトを経由してAmazonで商品を購入された場合、当サイトに紹介料が支払われることがあります。これにより購入者様の商品代金に変動はありません。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

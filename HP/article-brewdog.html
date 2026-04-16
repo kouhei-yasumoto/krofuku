@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スコットランドのパンクブルワリー・BREWDOGの世界へようこそ｜クロフク編集長オススメビール</title>
+  <meta name="description" content="クロフク編集長が大好きなスコットランドのクラフトビール「BrewDog」。パンクスピリットに満ちたブリュードッグの銘柄を、PUNK IPAから究極の1本BORN TO DIEまで厳選してご紹介。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+
+    /* 実際の商品画像用スタイル */
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    /* ===== SPECIAL SECTIONS ===== */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+    .special-section h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 16px;
+      margin-top: 24px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .special-section h3:first-child { margin-top: 0; }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .conclusion p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .author-block { flex-direction: column; }
+      .conclusion { padding: 22px 20px; }
+      .special-section { padding: 22px 20px; }
+
+      /* スマホ表示での画像サイズ調整 */
+      .product-img.small {
+        max-width: 130px;
+        max-height: 240px;
+      }
+      .product-img.medium {
+        max-width: 240px;
+        max-height: 380px;
+      }
+      .product-img.large {
+        max-width: 300px;
+        max-height: 450px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-brewdog.jpg" alt="スコットランドの反逆者・ブリュードッグの世界へようこそ" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🍺 Beer</span>
+    <span class="meta-date">2026.04.05</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">スコットランドのパンクブルワリー<br>BREWDOGの世界へようこそ！<br><span style="font-size: 0.75em;">-クロフク編集長オススメビール-</span></h1>
+
+  <div class="article-body">
+    <p>こんにちは、クロフク編集長です。</p>
+    <p>今回は、僕が大好きなスコットランドのクラフトビール「<strong>BrewDog（ブリュードッグ）</strong>」について、オススメの銘柄をお届けします。</p>
+    <p>ウイスキーや日本酒の記事では、価格帯や容量で区切ることが多いですが、ビールはちょっと違う。ブリュードッグは「<strong>常識に逆らう</strong>」をキーワードに、めちゃくちゃ個性的でパンクなビールを次々と生み出してるブルワリー。だからこそ、スタイルの多様性を楽しむ方がええんです。</p>
+    <p>さあ、ブリュードッグの世界に飛び込みましょう。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">スコットランドから舞い降りた「パンクな異端児」</h2>
+    <p>創業者のジェームス・ワットとマーティン・ディッキーは、当時のイギリスビール業界に心底ウンザリしていた。工業生産されたラガーばっかり、つまらねぇエールばっかり……。「これはあかん。自分たちで、本当に飲みたいビールを作ろう」。そう決めた2人は、古いバンの荷台からビールを売る生活をスタートさせたんです。</p>
+    <p>その時の合言葉は「<strong>さぁ、世界を変えてやろう</strong>」。</p>
+    <p>正気か……？でも、それがブリュードッグ。常識を打ち破る、革新的な製法で造りだされた高品質なビール。独創的で、時には過激で挑発的なマーケティング。</p>
+    <p>設立からわずか2年でスコットランド最大の独立系醸造所に。かつては英国売上No.1クラフトブルワリーとして、世界60ヶ国以上で販売され、直営バーは100店舗以上にまで拡大しました。日本でも六本木にアジア初のオフィシャルバーがありました（2025年末で閉店）。</p>
+    <p>2026年3月、ブリュードッグはアメリカのTilray Brands社に買収され、独立系ブルワリーとしての歴史に一つの区切りがつきました。多くのバーが閉店し、経営体制も大きく変わった。でも、ブリュードッグのビールは今も造られ続けている。ブランドの魂は、まだ死んでいない。</p>
+    <p>ブリュードッグの使命は、シンプル。</p>
+    <p>「<strong>人々を、俺たちと同じくらいクラフトビールに夢中にさせる</strong>」</p>
+    <p>それが、この記事を書く理由です。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">まずはこの3本から ── ネットで買えるブリュードッグ</h2>
+    <p>ブリュードッグのビールは、日本ではまだまだ手に入りにくい。でも、以下の3本はネット通販で購入できます。まずはここから始めてみてください。</p>
+  </div>
+
+  <!-- PUNK IPA -->
+  <div class="product-item">
+    <div class="product-heading">PUNK IPA</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-01.jpg" alt="PUNK IPA" class="product-img medium">
+    </div>
+    <p class="product-desc">これはもう説明不要。ブリュードッグのフラッグシップであり、クラフトビール革命の象徴。</p>
+    <p class="product-desc">アルコール度数は5.4%。大量のアメリカンホップを贅沢に使い、ホップのアロマを最大限に引き出したIPA。クリアなゴールデンカラー。グレープフルーツとトロピカルフルーツの香りが広がり、後味はシャープな苦み。</p>
+    <p class="product-desc">「世界一のIPAを目指し、採算度外視で造られた至高のIPA」なんて説明もありますが、実際に飲むと「あ、この人たちマジだ」って感じるんです。ホップの苦味じゃなくて、生命力を感じる。パイナップル、ライチのようなトロピカルフルーツとキャラメル……ホップってこんなに多彩なんかって、初めて知らされる。</p>
+    <p class="product-desc">ブリュードッグを飲んだことない人は、ここからスタート。</p>
+    <a href="https://amzn.to/3QnFTyw" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- ELVIS JUICE -->
+  <div class="product-item">
+    <div class="product-heading">ELVIS JUICE</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-02.jpg" alt="ELVIS JUICE" class="product-img small">
+    </div>
+    <p class="product-desc">ホップとシトラスフレーバーの研究を重ねて造り上げたフルーティなIPA。この銘柄も、ブリュードッグを代表する1本。</p>
+    <p class="product-desc">パンクIPAよりも、若干フルーティーで親しみやすい。ホップの苦味はしっかりあるけど、シトラス感がそれを優しく包み込む感じ。飲み口が良くて、ついつい飲み進めちゃう危険性あり。</p>
+    <p class="product-desc">「ちょっと苦いビールはちょっと……」って人にも、「もっと複雑な味わいが欲しい」って人にも刺さる。バランスの取れた傑作です。</p>
+    <a href="https://amzn.to/4c6o7af" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <!-- HAZY JANE -->
+  <div class="product-item">
+    <div class="product-heading">HAZY JANE</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-03.jpg" alt="HAZY JANE" class="product-img small">
+    </div>
+    <p class="product-desc">曇りが美しいニューイングランド IPA。</p>
+    <p class="product-desc">最大の特徴は、苦味を抑えたこと。その代わりに、ホップ由来の爽やかなフルーティ感が前に出てきます。スムースな飲み口で、いくらでも飲める危険性。</p>
+    <p class="product-desc">「IPAは好きだけど、あの強い苦みはちょっと……」という人にウケがいい1本。でも侮るなかれ。複雑さはちゃんと仕込まれてる。飲み進めるたびに、異なるフレーバーが顔を出す。</p>
+    <p class="product-desc">ニューイングランド系のIPAが好きなら、これは必飲。</p>
+    <a href="https://amzn.to/4cchOlN" target="_blank" class="amz-link">▶ Amazonで見る</a>
+  </div>
+
+  <div class="bottle-wrap" style="margin: 44px 0 0;">
+    <img src="images/brewdog-04.jpg" alt="Brewdog Tasting Set" class="product-img medium">
+  </div>
+
+  <div class="article-body" style="margin-top: 24px; padding: 28px 32px; background: #fff; border: 1px solid var(--border); text-align: center;">
+    <p style="margin-bottom: 16px;"><strong>どれから飲むか迷うなら、この3本がそれぞれ2本ずつ楽しめる「ブリュードッグ 飲み比べ6本 ギフトセット（パンクIPA・エルビスジュース・ヘイジージェーン）」もあるので、ぜひ参考にしてほしい。</strong></p>
+    <a href="https://amzn.to/41R6eYh" target="_blank" class="amz-link">▶ ギフトセットを見る</a>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">お店で見かけたら飲んでほしい ── ブリュードッグの実力派たち</h2>
+    <p>ここからは、2026年4月上旬現在、ネットでの購入は難しい銘柄たち。でも、バーやショップで見かけたら迷わず手に取ってほしい。どれもブリュードッグの実力が詰まった1本です。</p>
+    <p>ブリュードッグの公式サイトには、ブリュードッグが飲めるお店・買えるお店のマップが掲載されているので、ぜひチェックしてみてください。バーで樽生を飲むもよし、購入してご自宅でゆっくり楽しむもよし。</p>
+  </div>
+
+  <!-- DOUBLE PUNK -->
+  <div class="product-item">
+    <div class="product-heading">DOUBLE PUNK</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-05.jpg" alt="DOUBLE PUNK" class="product-img">
+    </div>
+    <p class="product-desc">パンクIPAをさらに強烈にした、インペリアルIPA。アルコール度数は8.2%。</p>
+    <p class="product-desc">ホップの使用量も増えている。爆発するかのようなホップの香りが、飲む人を虜にします。「怒涛のアメリカンホップで強烈な印象」と表現されることもありますが、マジそれ。</p>
+    <p class="product-desc">IPAが好きな人、ホップが好きな人は、これを飲むとブリュードッグの本気が分かる。苦いし、苦いし、苦いのに……なぜかうまい。その不思議さを体験してください。</p>
+  </div>
+
+  <!-- DEAD PONY CLUB -->
+  <div class="product-item">
+    <div class="product-heading">DEAD PONY CLUB</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-06.jpg" alt="DEAD PONY CLUB" class="product-img small">
+    </div>
+    <p class="product-desc">超爽快系アメリカンペールエール。アルコール度数は3.8%。</p>
+    <p class="product-desc">グラスに注ぐと、クリアーなペールストローカラー。「干草の上でそよ風に吹かれている」という、そんな心地よい印象が香りから漂ってくる。香ばしくも元気なアメリカンホップの香り。</p>
+    <p class="product-desc">口に含むと、南国系のトロピカルビターホップがフレッシュに舌の上を踊ります。軽やかなボディは、ほのかな麦芽の甘みとエキゾチックフルーツのような安心感に包まれて……ゴクゴク、止めどもなく飲めちゃう。</p>
+    <p class="product-desc">「ぜひ腰に手をあててノドを鳴らしながら飲んでください」って説明文に笑いましたが、マジでそんな感じ。アルコール度数が低いから、つい飲み過ぎちゃう危険なペールエールです。</p>
+  </div>
+
+  <!-- INDIE -->
+  <div class="product-item">
+    <div class="product-heading">INDIE</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-07.jpg" alt="INDIE" class="product-img medium">
+    </div>
+    <p class="product-desc">「いつでも、どこでも、誰でも楽しめるように」というコンセプトで造られた、ペールエール。アルコール度数は4.2%。</p>
+    <p class="product-desc">最初は「飲みやすいペールエール」を想像していたんですが、実際に飲むと意外と複雑。少しローストしたような味が広がって、すぐにフルーツ……柑橘系の味が広がってくる。そして最後に、ホップの苦味がジワッと。</p>
+    <p class="product-desc">「誰でも楽しめる」と「複雑さ」の両立。よくできたビールだなぁ、と思わせる1本。</p>
+    <p class="product-desc">ビール初心者からビールマニアまで、みんなが納得できる。そういう意味で「インディペンデント（独立心溢れる）」なペールエールなんです。</p>
+  </div>
+
+  <!-- LOST LAGER -->
+  <div class="product-item">
+    <div class="product-heading">LOST LAGER</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-08.jpg" alt="LOST LAGER" class="product-img small">
+    </div>
+    <p class="product-desc">伝統的なドイツビールをベースに、ホップをふんだんに使ったラガー。ドイツ産のモルト、ホップ、酵母で造られたこと。そして、現代技術である「ドライホッピング」から発生する強いホップアロマが大きな特徴。</p>
+    <p class="product-desc">「伝統と革新が手を取り合った新鮮な味わい」というのが、ぴったりです。ドイツラガーの王道的な飲み心地と、ブリュードッグ流のホップ表現が融合している。</p>
+    <p class="product-desc">ラガーが好きな人にも、IPAばっかり飲んでた人にも刺さる。「ラガーってこんなに旨いんかい」って思わされる1本です。</p>
+  </div>
+
+  <!-- SESSION IPA -->
+  <div class="product-item">
+    <div class="product-heading">SESSION IPA</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-09.jpg" alt="SESSION IPA" class="product-img">
+    </div>
+    <p class="product-desc">軽快な飲み口が特徴のセッション IPA。</p>
+    <p class="product-desc">セッション・ビールは、昔イギリスの労働者たちが、長時間パブで飲み続けるために造られたビール。つまり「何杯飲んでも大丈夫」っていうアルコール度数の低さが必須。</p>
+    <p class="product-desc">ブリュードッグのセッション IPA は、その概念を守りながらも、しっかりホップを活かしてる。軽やかなのに、ちゃんとIPAの個性がある。飲み会で何杯飲んでも、最後までホップの香りが心地よく続く。</p>
+    <p class="product-desc">「今日は飲んだくれたいわけじゃないけど、何杯か飲みたいな」という時のベストパートナーです。</p>
+  </div>
+
+  <!-- QUENCH QUAKE -->
+  <div class="product-item">
+    <div class="product-heading">QUENCH QUAKE</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-10.jpg" alt="QUENCH QUAKE" class="product-img">
+    </div>
+    <p class="product-desc">柑橘系の味わいが楽しめるサワーエール。</p>
+    <p class="product-desc">サワーエールは、乳酸菌や野生酵母を使うことで、爽やかな酸味を引き出すスタイル。QUENCH QUAKE は、そこに柑橘の爽やかさをプラス。夏に飲みたくなるような、爽快感。</p>
+    <p class="product-desc">IPAばっかり飲んでると「あ、こういう方向もあるんや」って思わされます。酸味とホップのコラボレーション。新しい世界です。</p>
+  </div>
+
+  <!-- ZOMBIE CAKE -->
+  <div class="product-item">
+    <div class="product-heading">ZOMBIE CAKE</div>
+    <div class="bottle-wrap">
+      <img src="images/brewdog-11.jpg" alt="ZOMBIE CAKE" class="product-img small">
+    </div>
+    <p class="product-desc">お菓子のような甘さと香ばしさを感じるポーター。チョコやコーヒー、ナッツ、バニラなどの香りと甘味が複雑に絡まり合う、濃厚な黒ビール。</p>
+    <p class="product-desc">ブリュードッグのラインナップは、IPA系が目立ちがちですが、こういう黒ビールも造ってるんです。ホップの魔術師だけじゃなくて、モルトの可能性も引き出してる。</p>
+    <p class="product-desc">「黒いビール=ビター」って固定概念を壊してくれる1本。甘くて、香ばしくて、複雑。夜遅くに、ゆっくり飲みたい逸品です。</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="article-body" style="margin-top: 44px;">
+    <h2 style="font-size: 18px; font-weight: bold; color: var(--dark); margin-bottom: 16px; font-family: 'Hiragino Mincho ProN', serif;">日本限定の新星 ── GOOD BUDDY</h2>
+    <div class="bottle-wrap" style="margin-bottom: 24px;">
+      <img src="images/brewdog-12.jpg" alt="GOOD BUDDY" class="product-img large">
+    </div>
+    <p>2026年3月、日本限定で新発売になったブリュードッグの新しいフラッグシップ。</p>
+    <p>「GOOD BUDDY」とは「良き相棒」という意味。ポジティブなバイブスをまとった犬のアイコン、セッションIPAの構えず楽しめる味わい、そして親しみやすいネーミング。</p>
+    <p>柑橘を思わせる爽やかなホップアロマと、軽やかな飲み口が特徴。苦味は穏やかで、香りは華やか。後味はすっきり。「クラフトビールの世界への新たな入口」であると同時に「日常に寄り添う"次の定番"を目指した」というコンセプトが素敵。</p>
+    <p>そして、GOOD BUDDY の売上の一部は、犬と人が共に暮らす社会を応援する活動へ活用される。ブリュードッグらしい、パンクで優しい1本です。</p>
+  </div>
+
+  <div class="article-body" style="margin-top: 44px;">
+    <h2 style="font-size: 18px; font-weight: bold; color: var(--dark); margin-bottom: 16px; font-family: 'Hiragino Mincho ProN', serif;">究極の1本 ── BORN TO DIE</h2>
+    <div class="bottle-wrap" style="margin-bottom: 24px;">
+      <img src="images/brewdog-13.jpg" alt="BORN TO DIE" class="product-img large">
+    </div>
+    <p>最後に、究極のビールを紹介させてほしい。</p>
+    <p>ブリュードッグの「<strong>BORN TO DIE</strong>」。</p>
+    <p>入手がとても難しい。でも、正直に言わせてほしい。ここまで紹介したすべての銘柄を超える、僕にとって<strong>人生最高の1本</strong>がこいつなんです。</p>
+    <p>もしも飲める機会があるなら、必ず飲んでほしい。</p>
+
+    <h3>フレッシュホップへの執着</h3>
+    <p>BORN TO DIE は、インペリアルIPAで、アルコール度数は8.5%。</p>
+    <p>その最大の特徴は、ホップの鮮度にこだわり抜いたという点。アマリロ、シムコー、モザイク、シトラというホップを惜しげもなく使い、IBU は 100 という高さ。</p>
+    <p>でも、ここからが重要。</p>
+    <p>このビールには、印字された「飲むべき日付」があります。製造日から35日間というカウントダウン。その期限を過ぎたら、このビールは「死ぬ」。</p>
+    <p>だから「BORN TO DIE」。生まれて死ぬ運命のビール。</p>
+    <p>つまり、ブリュードッグが言いたいことは、こういうことです。</p>
+    <p>「ホップの香りは、時間とともに劣化する。だから、このビールは『新鮮さ』の時間爆弾。飲むなら、今、今すぐ、できれば製造直後に飲んでくれ」</p>
+    <p>それは、クラフトビール界への一つの問いかけでもあります。</p>
+    <p>「黒いビールはボトルで何年も寝かせるけど、ホップが主役のビールってそれでいいの？」</p>
+    <p>答えは、no。</p>
+    <p>ホップの香りを最高の状態で飲み手に届けるために、ブリュードッグは航空便で輸入を申し込んだ。定温管理にこだわった。</p>
+    <p>全力で「新鮮さ」を守った。それが BORN TO DIE です。</p>
+
+    <h3>樽生で飲んだ、あの日の感動</h3>
+    <p>2018年頃の話。行きつけのバーで、樽生のBORN TO DIEに出会った。</p>
+    <p>たった一杯、2,000円。ビール一杯にしては、とても高い。でも、その一杯が、僕のビール人生を変えた。</p>
+    <p>グラスに注がれた、黄金色のビール。</p>
+    <p>第一口──</p>
+    <p>「ッッ……」</p>
+    <p>語彙を失った。</p>
+    <p>ホップのアロマが、こんなに豊かなのか。グレープフルーツ、ライム、松の香り、そして青臭さまで。それらが、複雑に絡み合って、鼻孔を通して脳に直結する。</p>
+    <p>樽生だから、炭酸が適度で、ホップの香りの拡散がハンパない。冷えた状態で飲むと、ホップの苦味と甘さのバランスが……最高。</p>
+    <p>飲み進めるたびに、新しいフレーバーが顔を出す。シトラスの爽やかさ、モザイクホップのフルーティさ、シムコーの深い苦味。それがダイナミックに変わっていく。</p>
+    <p>後半、温度が上がり始めると、さらにホップが開いて……あ、もう終わりか。</p>
+    <p>でも、それでいいんだ。このビールは「その瞬間の最高」を目指してるから。</p>
+    <p>飲み終わった後、グラスの香りだけで、もう一杯飲んだ気分。</p>
+    <p>その時、僕は思った。</p>
+    <p>「ビールって、こんなに表現力豊かなものなのか」</p>
+    <p>「これが、ホップという植物の本当の可能性なのか」</p>
+    <p>「ブリュードッグは、本気で『クラフトビール革命』をしてるんだな」</p>
+    <p>正直、それ以来、他のビールで同じくらいの感動を味わったことがない。</p>
+
+    <h3>パンクスピリット、その極致</h3>
+    <p>BORN TO DIE は、ブリュードッグのパンクスピリットの極致だと思う。</p>
+    <p>「常識的には、ビールは寝かせておくもん」という固定観念を、真っ向からぶち壊す。</p>
+    <p>「新鮮さを最優先にする」という概念を、ビール業界に叩き込む。</p>
+    <p>「ホップという素材の可能性を、これでもかってくらい表現する」という執着。</p>
+    <p>そこには、金儲けなんかない。あるのは「人々を、俺たちと同じくらいホップに夢中にさせたい」という、ただの想い。</p>
+    <p>採算度外視。わがままとこだわりのかたまり。</p>
+    <p>それが、ブリュードッグです。</p>
+
+    <h3>もう一度、あの感動を</h3>
+    <p>正直に白状すると、僕はあれ以来、BORN TO DIE を瓶で飲みました。でも、樽生ほどの感動はなかった。</p>
+    <p>それは、ボトリング後に時間が経ってるから。ホップが劣化し始めてるから。</p>
+    <p>だからこそ、このビールの狂気が分かる。</p>
+    <p>BORN TO DIE は「樽生で、製造直後に、即座に飲む」ことで、初めて本当の価値を発揮するビール。</p>
+    <p>バーで見かけたら、迷わずオーダーしてください。</p>
+    <p>ブリュードッグの「全力」を、飲んでみてください。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">最後に</h2>
+    <p>ブリュードッグは、僕たちに教えてくれました。</p>
+    <p>ビールは、常識を超えることができる。</p>
+    <p>お金儲けなんか度外視で、本気で造ったものは、人の心を動かす。</p>
+    <p>パンクスピリットは、死なない。むしろ、ビール業界をぶっ壊す。</p>
+    <p>あなたが次にビール売り場に行った時、ブリュードッグを手に取ってみてください。</p>
+    <p>そして一杯飲んでみてください。</p>
+    <p>「常識に逆らう喜び」を、味わってみてください。</p>
+    <p>ブリュードッグは、待ってます。</p>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="article-body" style="margin-top: 44px;">
+    <p>ブリュードッグのビールは、ただの飲み物ではない。それは「反逆」であり「表現」であり「哲学」そのもの。</p>
+    <p>ここで紹介した13本は、すべてブリュードッグの信念を体現したビールたち。常識に逆らい、新鮮さを貫き、ホップという素材の可能性を追求する——その覚悟が、1本1本に詰まっている。</p>
+    <p>あなたが PUNK IPA の苦みに身を委ねるなら、2人の創業者の想いも一緒に飲んでるんです。BORN TO DIE の香りに心奪われるなら、「採算度外視で最高を目指す」というパンクスピリットも一緒に味わってるんです。</p>
+    <p>ブリュードッグは、常識の外で、常識を超える。ぜひ、その世界に飛び込んでみてください。</p>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">EDITOR-IN-CHIEF</div>
+      <div class="author-bio">酒販業界で働く傍ら、お酒の魅力を伝えるための記事を執筆。ウイスキー、日本酒、ワイン、ビール……あらゆるお酒の沼にハマっている。特に好きなのは、常識を超えるものたち。</div>
+    </div>
+  </div>
+
+  <!-- BACK NAV -->
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-disclosure">
+      このサイトはAmazonアソシエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+    </div>
+    <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "クロフク編集長のお酒マガジン",
+  "url": "https://kurofuku-magazine.com",
+  "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+}
+</script>
+
+</body>
+</html>
