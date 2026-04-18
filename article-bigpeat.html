@@ -56,13 +56,6 @@
       position: relative;
       overflow: hidden;
     }
-    .article-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      background: #0d0d0d;
-    }
     .article-hero::before {
       content: '';
       position: absolute;
@@ -271,9 +264,9 @@
 </header>
 
 <!-- ARTICLE HERO -->
-<section class="article-hero">
-  <img src="images/header-bigpeat.jpg" alt="最高のピートを感じられるビッグピート特集" />
-</section>
+<div class="article-hero">
+  <img src="images/header-bigpeat.jpg" alt="最高のピートを感じられるビッグピート特集" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+</div>
 
 <!-- ARTICLE BODY -->
 <div class="article-wrap">
