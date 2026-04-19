@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>季の美 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="京都の四季と文化を宿したジャパニーズクラフトジン「季の美」。京都蒸溜所が生む個性豊かなラインナップを、クロフク編集長が丁寧に紹介します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+
+  <!-- OGP -->
+  <meta property="og:title" content="季の美 「日本に生まれて良かった。」 そう思える一杯">
+  <meta property="og:description" content="京都の四季と文化を宿したジャパニーズクラフトジン「季の美」。京都蒸溜所が生む個性豊かなラインナップを、クロフク編集長が丁寧に紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-kinobi.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-kinobi.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="季の美 「日本に生まれて良かった。」 そう思える一杯">
+  <meta name="twitter:description" content="京都の四季と文化を宿したジャパニーズクラフトジン「季の美」。京都蒸溜所が生む個性豊かなラインナップを、クロフク編集長が丁寧に紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-kinobi.jpg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* HEADER */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ARTICLE BODY */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* PRODUCT ITEM */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 360px;
+      max-height: 540px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* SPECIAL SECTIONS */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+
+    /* AUTHOR BLOCK */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      padding: 10px 24px;
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 44px 20px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .footer-logo-en {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-disclosure {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+        <span class="logo-en">Kurofuku's Sake Magazine</span>
+        <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+      </a>
+      <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <img src="images/header-kinobi.jpg" alt="季の美 京都ドライジン ラインナップ" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-cat">ジン — EDITOR'S PICK</span>
+      <span class="meta-date">2026年4月</span>
+      <span class="meta-author">クロフク編集長</span>
+    </div>
+
+    <h1 class="article-title">季の美<br>「日本に生まれて良かった。」<br>そう思える一杯</h1>
+
+    <div class="article-body">
+      <p>こんにちは、クロフク編集長です。</p>
+      <p>今回は、京都生まれのジャパニーズクラフトジン「季の美」を紹介します。初めてグラスを傾けたとき、思わず目を閉じました。檜の清涼感、玉露のしっとりした旨み、山椒のじんわりした余韻——<strong>グラスの中に、京都の四季がそのまま宿っている</strong>と感じた瞬間、このジンのとりこになりました。以来、季の美は僕にとって特別な一本であり続けています。</p>
+      <p>季の美を手がけるのは、2016年に京都で創業した京都蒸溜所。日本で初めてクラフトジン専門の蒸溜所として設立され、「米のスピリッツ」をベースに、ジュニパーベリーをはじめとした11種類のボタニカルを使用しています。ジュニパー、檜、玉露、柚子、山椒、木の芽、笹の葉など、京都産を中心とした素材が揃います。特徴的なのはその製法で、11種のボタニカルを6つのグループに分け、それぞれ別々に蒸溜してからブレンドするという手の込んだアプローチ。各素材の個性を最大限に引き出しながら調和させる、このプロセスがあのやわらかい複雑さを生んでいるんです。仕込み水には、伏見の名水が使われています。</p>
+    </div>
+
+    <!-- 商品① -->
+    <div class="product-item">
+      <div class="product-heading">① 季の美 京都ドライジン 700ml</div>
+      <img src="https://m.media-amazon.com/images/I/61Kk+AVWmmL._SY500_.jpg" alt="季の美 京都ドライジン" class="product-img">
+      <p class="product-desc">
+        京都蒸溜所が手がける、すべての起点となる定番ジンです。米スピリッツをベースに、ジュニパーベリー、檜、玉露、柚子、山椒、木の芽など11種のボタニカルを丁寧に蒸溜・ブレンドして仕上げています。ラベルには江戸時代から続く唐紙の名門「雲母唐長」の文様が用いられており、ボトルを手にした瞬間から京都の空気が漂ってくるようです。
+      </p>
+      <p class="product-desc">
+        口に含むと、まず檜の清涼感がすっと鼻腔を抜け、続いて柚子のやわらかい酸味とジュニパーの松脂感が重なります。玉露由来のしっとりした旨みがそこに溶け込み、山椒のしびれるような余韻がじんわりと残る。<strong>一杯に四季が詰まっている</strong>、そんな感覚を覚えるジンです。
+      </p>
+      <p class="product-desc">
+        まずはジントニックで飲んでみてほしいと思います。余計な飾りは要らない——氷とトニックウォーターだけで、このジンの素直な美しさが際立ちます。もちろんマティーニにも最高の相性です。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B01LY0P2Q1/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品② -->
+    <div class="product-item">
+      <div class="product-heading">② 季のTEA 京都ドライジン 700ml</div>
+      <img src="https://m.media-amazon.com/images/I/51VqUd3if6L._SY500_.jpg" alt="季のTEA 京都ドライジン" class="product-img">
+      <p class="product-desc">
+        室町時代に足利将軍が指定した「宇治七茗園」——その中で唯一現存し続ける茶園を所有する老舗茶舗、堀井七茗園とのコラボレーションから生まれたジンです。この銘柄のためだけに特別にブレンドされた玉露と碾茶（てん茶）を使い、お茶の深い香りと旨みをじっくりと蒸溜に閉じ込めています。ボトルに施された唐紙の文様もこの一本のために彫られたもので、細部まで妥協がありません。
+      </p>
+      <p class="product-desc">
+        グラスに注いだ瞬間、茶室に漂う覆い香のような、しっとりとした緑の香りが広がります。ひと口含むと、ホワイトチョコレートのような甘みとシトラスの明るさが交差し、じんわりとジュニパーが顔を出す。そして、飲み下した後にあたたかい緑茶の余韻が長く続く。<strong>お茶とジンがこんなにも自然に溶け合う</strong>とは、初めて飲んだとき正直驚きました。
+      </p>
+      <p class="product-desc">
+        お茶好きの方はもちろん、ジンに苦手意識がある方にもぜひ知ってほしい一本です。この季のTEAを使った、僕がシリーズ通して一番好きな飲み方については「最後に」でご紹介しています。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B07D56P86W/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin-tea%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品③ -->
+    <div class="product-item">
+      <div class="product-heading">③ 勢 京都ドライジン 700ml</div>
+      <img src="https://m.media-amazon.com/images/I/71O7T1GiwsL._SY500_.jpg" alt="勢 京都ドライジン" class="product-img">
+      <p class="product-desc">
+        定番の季の美と同じ11種のボタニカルを使いながら、アルコール度数を54度まで高めた高度数版です。度数が上がることでボタニカルの抽出が深まり、香りも味わいも格段に濃密になっています。墨色のフロストガラスに施された雲母唐長の文様が印象的なパッケージも、この一本の力強さを体現しているようです。
+      </p>
+      <p class="product-desc">
+        グラスに近づけた瞬間から、ジュニパーと山椒が存在感を主張してきます。口に含むと、<strong>骨太な迫力と繊細な重なり</strong>が同時に押し寄せる。ボタニカルのひとつひとつの輪郭がくっきりと浮かび上がり、長い余韻の中で玉露の旨みがやっと穏やかに顔を出す——そんな順序があります。
+      </p>
+      <p class="product-desc">
+        バーで本格的なカクテルを一杯飲みたいときや、少量をストレートでじっくり味わいたいときに最適です。ネグロー二など、力強い素材と組み合わせるカクテルにも本領を発揮します。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B07BHD6TSC/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin-sei%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品④ -->
+    <div class="product-item">
+      <div class="product-heading">④ 季のTOU 京都オールドトムジン 700ml</div>
+      <img src="https://m.media-amazon.com/images/I/8198kKMEgcL._SX522_.jpg" alt="季のTOU 京都オールドトムジン" class="product-img medium">
+      <p class="product-desc">
+        定番ジンの11種のボタニカルに、与那国島産の黒糖を加えて仕上げたオールドトムジンです。アルコール度数47度。白糖と比べてビタミンやミネラルを豊富に含む黒糖を使うことで、単なる甘みにとどまらない、複雑でミネラル感のある深みが生まれています。「東京インターナショナルバーショー」を記念して発売されたこの一本は、その後も熱心なファンに愛され続けています。
+      </p>
+      <p class="product-desc">
+        最初にデーツのような深い甘みとジュニパーの松の香りが重なり、やがてキャラメリゼした生姜のような温かみのある辛みが現れます。<strong>甘みと複雑さが見事に共存している</strong>のが印象的で、最後に柚子ジャムのような余韻がゆったりと続きます。
+      </p>
+      <p class="product-desc">
+        ジンのすっきりした辛口感が苦手という方に、まず飲んでいただきたい一本です。甘みがあるのでオールドトム特有の飲みやすさがあり、マティーニやトム・コリンズにもよく合います。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B07GN6KD29/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin-tou%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品⑤ -->
+    <div class="product-item">
+      <div class="product-heading">⑤ 季の美 京都ドライジン 毛利 700ml</div>
+      <img src="https://m.media-amazon.com/images/I/71rRk3oJggL._SX522_.jpg" alt="季の美 京都ドライジン 毛利" class="product-img medium">
+      <p class="product-desc">
+        銀座の名バーテンダーとして世界に知られる毛利隆雄氏が、バーテンダー歴50周年を記念して京都蒸溜所とともに生み出したコラボレーションジンです。毛利氏がジンに求めた言葉は明快でした——「コク、深み、甘味があり、100回のステアに耐えられること」。その一言がそのままこのジンの設計思想になっています。
+      </p>
+      <p class="product-desc">
+        飲み進めるほどに層が現れる一本で、最初は定番の季の美に似たやわらかい入り口がありながら、すぐにより丸みのある甘みとコクが広がってきます。<strong>ステアを重ねるたびに表情が変わる</strong>ような、生き生きとした奥行きがあります。マティーニにしたとき、その真骨頂を感じました。
+      </p>
+      <p class="product-desc">
+        マティーニを愛する方にはぜひ試してほしい一本です。毛利氏がジンに込めた哲学が、一口でそのまま伝わってくる。そういう密度を持った一本で、特別な夜にそっと開けたくなる佇まいがあります。
+      </p>
+      <a href="https://www.amazon.co.jp/dp/B0D4YK699Z/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+    </div>
+
+    <div class="article-body">
+      <h2 class="section-heading">最後に</h2>
+      <p>少し余談を聞いてください。</p>
+      <p>⑤の「季の美 毛利」を紹介していて、どうしても思い出してしまうことがあります。以前、銀座のMORI BARに足を運んだとき、毛利さんご本人にマティーニを作っていただいたんです。流れるような手の動き、静かに積み重なるステア、そしてグラスに満ちていく澄んだ液体。口に含んだ瞬間、<strong>これ以上の完成形はないと思った</strong>。言葉が出なかったのを今でも覚えています。あの感動を家でも近づけたくて、それ以来「季の美 毛利」を手元に置いています。</p>
+      <p>そして、せっかくだから飲み方の話もさせてください。季の美シリーズを通して、僕が今いちばん好きな飲み方があります。②の「季のTEA」を使った抹茶ジントニックです。季のTEAだけでジントニックを作っても、碾茶由来の香りがしっかり感じられてとても美味しいんです。ただ、そこに堀井七茗園の抹茶を加えると、香りの奥行きと旨みがさらに一段深まって、<strong>口の中に茶畑が広がるような</strong>一杯になるんです。「お酒は飲むけれど、あまりキツイのは好きじゃない」「抹茶が好き」という方に、本当にぜひ試してほしいと思っています。ジンのアルコール感が苦手な方でも、抹茶の風味がやわらかくその角を包んでくれるので、驚くほど飲みやすく感じるはずです。</p>
+      <p>季の美というブランドは、ラインナップが増えるほどに奥行きが見えてくる蒸溜所だと思います。<strong>日本に生まれて、本当に良かった</strong>——そう思いながら、今日もグラスを傾けています。定番からはじめて、自分に合う一本を探していく旅——その過程を、ぜひ楽しんでみてください。</p>
+    </div>
+
+    <!-- AUTHOR BLOCK（変更禁止） -->
+    <div class="author-block">
+      <div class="author-avatar"></div>
+      <div>
+        <div class="author-name">クロフク編集長</div>
+        <div class="author-role">EDITOR-IN-CHIEF</div>
+        <div class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</div>
+      </div>
+    </div>
+
+    <!-- BACK NAV -->
+    <div class="back-nav">
+      <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+      <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+      <div class="footer-links">
+        <a href="kurofuku-sake-magazine.html">トップ</a>
+        <a href="profile.html">プロフィール</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="footer-disclosure">
+        このサイトはAmazonアソシエイトプログラムおよび楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+      </div>
+      <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
