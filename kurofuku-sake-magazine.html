@@ -213,6 +213,27 @@
     }
     .amz-btn:hover { background: #e08800; }
 
+    .raku-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 9px 16px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .raku-btn:hover { background: #990000; }
+
+    .cta-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .read-link {
       display: inline-flex;
       align-items: center;
@@ -349,7 +370,10 @@
         <div class="amz-cta-text">
           <div class="prod">季の美 京都ドライジン</div>
         </div>
-        <a href="https://www.amazon.co.jp/dp/B01LY0P2Q1/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+        <div class="cta-btns">
+          <a href="https://www.amazon.co.jp/dp/B01LY0P2Q1/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+        </div>
       </div>
       <a href="article-kinobi.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
     </div>
