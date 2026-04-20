@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kilchoman | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="アイラ島最西端の農場蒸留所、キルホーマン。自ら大麦を育て、ピートで薫らせ、海風に晒して育てたウイスキーの世界を厳選してご紹介します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+
+  <!-- OGP -->
+  <meta property="og:title" content="KILCHOMAN アイラの農場から生まれた 煙と塩の物語">
+  <meta property="og:description" content="アイラ島最西端の農場蒸留所、キルホーマン。自ら大麦を育て、ピートで薫らせ、海風に晒して育てたウイスキーの世界を厳選してご紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-kilchoman.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-kilchoman.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KILCHOMAN アイラの農場から生まれた 煙と塩の物語">
+  <meta name="twitter:description" content="アイラ島最西端の農場蒸留所、キルホーマン。自ら大麦を育て、ピートで薫らせ、海風に晒して育てたウイスキーの世界を厳選してご紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-kilchoman.jpg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* HEADER */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ARTICLE BODY */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* PRODUCT ITEM */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+    .product-img.sanaig {
+      max-width: 280px;
+      max-height: 460px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* SPECIAL SECTIONS */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+
+    /* AUTHOR BLOCK */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      padding: 10px 24px;
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 44px 20px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .footer-logo-en {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-disclosure {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+      .product-img, .product-img.medium, .product-img.large, .product-img.sanaig { max-width: 100%; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+        <span class="logo-en">Kurofuku's Sake Magazine</span>
+        <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+      </a>
+      <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <img src="images/header-kilchoman.jpg" alt="キルホーマン蒸留所のウイスキーたち" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-cat">WHISKY — EDITOR'S PICK</span>
+      <span class="meta-date">2026年4月</span>
+      <span class="meta-author">クロフク編集長</span>
+    </div>
+
+    <h1 class="article-title">KILCHOMAN<br>アイラの農場から生まれた<br>煙と塩の物語</h1>
+
+    <div class="article-body">
+      <p>こんにちは、クロフク編集長です。</p>
+      <p>2005年、スコットランドのアイラ島に一つの小さな蒸留所が生まれました。キルホーマン蒸留所です。それまで124年間、アイラ島に新しい蒸留所は一つも建てられていませんでした。創業者のアンソニー・ウィリスが選んだ場所は、島の西端に広がるロックサイドファーム。スコットランド全土を見渡しても最も西に位置する蒸留所が、ここに誕生しました。</p>
+      <p>キルホーマンが特別なのは、単に若い蒸留所であるということだけではありません。<strong>大麦の栽培から製麦、蒸留、熟成、瓶詰めまで——すべてをアイラ島の農場で行う「ファームディスティラリー」</strong>を標榜していることです。島の土から育てた大麦を、島のピートで薫らせ、島の空気の中で熟成させる。そのウイスキーには、アイラ島そのものが宿っています。</p>
+      <p>フェノール値50ppmというヘビーピートの麦芽を主に使用しています。アイラ島のピートには海藻など海洋性の成分が含まれており、それを燃やして麦芽を乾燥させることで、スモークの奥にかすかな磯の塩気が宿ります。煙と塩——これがキルホーマンの素顔です。今回はそんなキルホーマンを代表する銘柄を、僕なりの視点でご紹介していきます。</p>
+    </div>
+
+    <!-- 商品① -->
+    <div class="product-item">
+      <div class="product-heading">① Kilchoman Machir Bay</div>
+      <img src="https://m.media-amazon.com/images/I/71spRodNL3S._AC_SX679_.jpg" alt="Kilchoman Machir Bay" class="product-img">
+      <p class="product-desc">
+        キルホーマンの「顔」とも呼べる定番商品です。アイラ島の美しい砂浜の湾「マキーアベイ」の名を冠したこのボトルは、バーボンバレルで熟成した原酒を中心に、ごく少量のシェリーカスク熟成原酒をブレンドして仕上げられています。アルコール度数は46%、ノンチルフィルター仕様です。
+      </p>
+      <p class="product-desc">
+        グラスに注ぐと、まず心地よいバニラとシトラスの甘い香りが広がります。口に含めば、ピートの煙がゆっくりと押し寄せ、背後には海塩の清潔なしょっぱさ。若い蒸留所の活力そのままに、<strong>フレッシュで躍動感のある煙と甘みのコントラスト</strong>が楽しめます。フィニッシュはドライで、ほのかなバニラが長く続きます。
+      </p>
+      <p class="product-desc">
+        「アイラウイスキーを初めて飲む」という方にも、「キルホーマンをまず知りたい」という方にも、迷わず最初に勧めたい一本です。日常のひとときに、気軽に開けられるウイスキーでもあります。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B00DTD7YDQ/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-kilchoman-mb%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品② -->
+    <div class="product-item">
+      <div class="product-heading">② Kilchoman Sanaig</div>
+      <img src="https://m.media-amazon.com/images/I/71aTpsaAq9L._SX522_.jpg" alt="Kilchoman Sanaig" class="product-img sanaig">
+      <p class="product-desc">
+        サナイグは、アイラ島の北西に突き出た荒々しい岬の名前です。マキヤーベイが明るい砂浜を想起させるとすれば、サナイグはもっと暗く、深く、力強い。このボトルも同様で、オロロソシェリーカスク熟成を主体に、一部バーボンカスクをブレンドして仕上げられています。度数は同じく46%ですが、その表情はまったく異なります。
+      </p>
+      <p class="product-desc">
+        口に含んだ瞬間、<strong>熟したプラム、レーズン、ダークチョコレートの濃厚な甘みが一気に押し寄せ</strong>、その奥からスモーキーなピートが顔を出します。シェリーカスクの豊かさとキルホーマンのピートが絡み合い、オレンジピールのような柑橘のアクセントも感じます。2020年のアルティメット・スピリッツ・チャレンジでは「ベスト アイラウイスキー」を受賞した実力派です。
+      </p>
+      <p class="product-desc">
+        シェリー系ウイスキーが好きな方、少し重厚で複雑な味わいを楽しみたい方に特にお勧めします。寒い夜に、暖かい部屋でゆっくりと向き合いたい一本です。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B00YPJM7HG/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-kilchoman-snig-p%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品③ -->
+    <div class="product-item">
+      <div class="product-heading">③ Kilchoman 100%アイラ 14thリリース</div>
+      <img src="https://m.media-amazon.com/images/I/71-5sNgK64L._AC_SX679_.jpg" alt="Kilchoman 100%アイラ 14thリリース" class="product-img">
+      <p class="product-desc">
+        キルホーマンが農場蒸留所であることの真価を、もっとも純粋なかたちで体現したボトルです。大麦の栽培、フロアモルティング、ピートによる乾燥、蒸留、バーボンバレルでの熟成、瓶詰めまで——すべての工程をアイラ島内で完結させた「シングルファーム シングルモルト」です。年に一度だけリリースされる限定品で、今回紹介するのは14回目の年次リリース、9年熟成、50%のノンチルフィルター仕様です。
+      </p>
+      <p class="product-desc">
+        香りはフレッシュかつ土っぽく、青リンゴとハチミツ、アイラのピートが一体になって漂います。口当たりは50%の度数とは思えないほど滑らかで、<strong>島の土と雨と風を凝縮したような、純粋で力強いキャラクター</strong>が印象的です。フィニッシュは長く、ライトなスパイスとバニラが余韻として残ります。
+      </p>
+      <p class="product-desc">
+        キルホーマンのファームディスティラリーとしての哲学を、グラスを通して実感したい方にとって、この一本は特別な体験をもたらしてくれるはずです。毎年リリース内容が更新されるため、出会ったときに手に取ることをお勧めします。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B0DSBKBZB9/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fenokisyouten%2F5j-eqa8-5pb1%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品④ -->
+    <div class="product-item">
+      <div class="product-heading">④ Kilchoman Loch Gorm 2025 Edition</div>
+      <img src="https://m.media-amazon.com/images/I/61Tx3jT3VoL._AC_SX569_.jpg" alt="Kilchoman Loch Gorm 2025 Edition" class="product-img">
+      <p class="product-desc">
+        ロッホゴルムとは、アイラ島に佇む静かな湖の名前です。毎年一度だけリリースされるこのボトルは、100%オロロソシェリーバット熟成という贅沢な仕様で造られています。2025年エディションは、キルホーマン史上初めて10年熟成に到達したロッホゴルムとなり、世界で18,000本という限定本数でのリリースです。
+      </p>
+      <p class="product-desc">
+        10年という時間がシェリーカスクの中で何を育んだのか——グラスに注ぐと、ダークチェリー、レーズン、濃厚なスパイスが一体となって立ち上がります。そこにキルホーマンらしいピートの煙がまとわりつき、<strong>濃密でありながら決して重くない、品格のある複雑さ</strong>が広がります。長い熟成が加わったことで、これまでのロッホゴルムよりもさらに深く、落ち着いた印象です。
+      </p>
+      <p class="product-desc">
+        特別な夜のために取っておきたい一本です。熟成年数とシェリーカスクの贅沢さを、腰を落ち着けてじっくり楽しんでほしいと思います。限定品のため、見かけたときは迷わず手に取ることをお勧めします。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B0FLTRZ1V1/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      </div>
+    </div>
+
+    <!-- 商品⑤ -->
+    <div class="product-item">
+      <div class="product-heading">⑤ Kilchoman Casado</div>
+      <img src="https://m.media-amazon.com/images/I/71Vl9SIHHHL._AC_SX342_SY445_QL70_ML2_.jpg" alt="Kilchoman Casado" class="product-img">
+      <p class="product-desc">
+        カサドとはポルトガル語で「結婚した」を意味します。バーボンバレルで熟成した原酒と、ポルトガル産ワインカスク（LBVポートワイン）で熟成した原酒を「結婚」させた、ユニークな仕上がりのボトルです。6年熟成、46%のノンチルフィルター仕様で、キルホーマンの実験的な側面を示す一本といえます。
+      </p>
+      <p class="product-desc">
+        バーボンカスク由来のバニラとキャラメルの甘みに、ポートワインカスクからくる赤い果実の香りが重なります。そこにキルホーマンのスモーキーなピートが加わることで、<strong>甘さと果実とスモークが交差する、個性的で楽しい味わい</strong>が生まれています。ワインのような親しみやすさと、ウイスキーの力強さが共存しています。
+      </p>
+      <p class="product-desc">
+        ウイスキーに慣れ親しんだ方が「次の一本」として選ぶのに最適です。また、ワインを愛する方がウイスキーの世界へ踏み出す橋渡しとしても、この一本はうまく機能してくれるはずです。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B0BK1GTW7T/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkaneioka%2Fcompass1718679091%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2 class="section-heading">最後に</h2>
+      <p>2005年に生まれたキルホーマンは、今やアイラウイスキーを語る上で欠かせない存在になりました。農場で大麦を育てるところから始まり、ピートで薫らせ、アイラの空気の中で熟成させる——<strong>その一滴一滴に、蒸留所が歩んできた物語が詰まっています。</strong></p>
+      <p>マキヤーベイの砂浜に打ち寄せる波、サナイグの岬に吹きつける風、ロッホゴルムの湖面に映る空——キルホーマンのボトルを開けるたび、そんなアイラ島の情景が浮かんでくるような気がします。グラスの向こうに、島の時間が流れているのです。</p>
+      <p>どの一本から始めるかは、あなた自身の「今日の気分」に委ねます。ただ、<strong>どれを選んでもそこにはキルホーマンの誠実な仕事</strong>が宿っていることを、僕は保証できます。</p>
+    </div>
+
+    <!-- AUTHOR BLOCK（変更禁止） -->
+    <div class="author-block">
+      <div class="author-avatar"></div>
+      <div>
+        <div class="author-name">クロフク編集長</div>
+        <div class="author-role">EDITOR-IN-CHIEF</div>
+        <div class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</div>
+      </div>
+    </div>
+
+    <!-- BACK NAV -->
+    <div class="back-nav">
+      <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+      <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+      <div class="footer-links">
+        <a href="kurofuku-sake-magazine.html">トップ</a>
+        <a href="profile.html">プロフィール</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="footer-disclosure">
+        このサイトはAmazonアソシエイトプログラムおよび楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+      </div>
+      <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

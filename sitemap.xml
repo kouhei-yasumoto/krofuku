@@ -13,6 +13,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://kurofuku-magazine.com/article-kilchoman.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kurofuku-magazine.com/article-kinobi.html</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
