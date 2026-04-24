@@ -171,45 +171,7 @@
   <div class="contact-card">
     <p class="contact-intro">下記フォームにご入力の上、送信してください。内容を確認次第、メールにてご返信いたします。<br>なお、お問い合わせの内容によってはお時間をいただく場合がございます。あらかじめご了承ください。</p>
 
-    <form id="contactForm">
-      <div class="form-group">
-        <label class="form-label" for="name">お名前<span class="required">必須</span></label>
-        <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="email">メールアドレス<span class="required">必須</span></label>
-        <input class="form-input" type="email" id="email" name="email" placeholder="example@email.com" required />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="subject">お問い合わせの種類<span class="required">必須</span></label>
-        <select class="form-select" id="subject" name="subject" required>
-          <option value="" disabled selected>選択してください</option>
-          <option value="記事へのご感想">記事へのご感想</option>
-          <option value="掲載商品について">掲載商品について</option>
-          <option value="コラボ・ご提案">コラボ・ご提案</option>
-          <option value="誤字・誤情報のご連絡">誤字・誤情報のご連絡</option>
-          <option value="その他">その他</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="message">お問い合わせ内容<span class="required">必須</span></label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="お気軽にご記入ください…" required></textarea>
-      </div>
-
-      <div class="form-submit-wrap">
-        <button type="button" id="btnGmail" class="submit-btn" style="background:#D44638;">✉ Gmailで送る</button>
-        <button type="button" id="btnMailto" class="submit-btn" style="background:var(--dark);margin-top:10px;font-size:12px;padding:11px 28px;letter-spacing:0.04em;">他のメールアプリで送る</button>
-        <p class="note">Gmailをお使いの方は上のボタンからどうぞ。<br>その他のメールアプリをお使いの方は下のボタンをお試しください（メールアプリが未設定の場合は動作しないことがあります）。</p>
-      </div>
-    </form>
-
-    <div class="success-msg" id="successMsg">
-      <div class="icon">✉️</div>
-      <p id="successText">Gmailの作成画面が開きました。<br>内容をご確認の上、送信してください。</p>
-    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecV8FbiowYcHjx3hUQGY9vM86Pjo2ItIhQxU7WFzNEkg3pGQ/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0" style="border:none;">読み込んでいます…</iframe>
 
     <a href="kurofuku-sake-magazine.html" class="back-link">← トップページへ戻る</a>
   </div>
@@ -230,62 +192,6 @@
   </div>
 </footer>
 
-<script>
-  function getFormValues() {
-    return {
-      name:    document.getElementById('name').value,
-      email:   document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value
-    };
-  }
-
-  function validateForm() {
-    var v = getFormValues();
-    if (!v.name || !v.email || !v.subject || !v.message) {
-      alert('すべての項目を入力してください。');
-      return false;
-    }
-    return true;
-  }
-
-  // Gmailボタン：スマホはmailto、PCはGmailウェブ
-  document.getElementById('btnGmail').addEventListener('click', function() {
-    if (!validateForm()) return;
-    var v = getFormValues();
-    var subject = encodeURIComponent('[お酒マガジン] ' + v.subject);
-    var body = encodeURIComponent(
-      'お名前：' + v.name + '\n' +
-      'メールアドレス：' + v.email + '\n' +
-      '種別：' + v.subject + '\n\n' +
-      '【お問い合わせ内容】\n' + v.message
-    );
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = 'mailto:kurofuku.osake@gmail.com?subject=' + subject + '&body=' + body;
-    } else {
-      window.location.href = 'https://mail.google.com/mail/?view=cm&to=kurofuku.osake%40gmail.com&su=' + subject + '&body=' + body;
-    }
-    document.getElementById('successText').textContent = 'Gmailの作成画面が開きました。内容をご確認の上、送信してください。';
-    document.getElementById('successMsg').style.display = 'block';
-  });
-
-  // 他のメールアプリボタン：OSのデフォルトメールアプリを開く
-  document.getElementById('btnMailto').addEventListener('click', function() {
-    if (!validateForm()) return;
-    var v = getFormValues();
-    var subject = encodeURIComponent('[お酒マガジン] ' + v.subject);
-    var body = encodeURIComponent(
-      'お名前：' + v.name + '\n' +
-      'メールアドレス：' + v.email + '\n' +
-      '種別：' + v.subject + '\n\n' +
-      '【お問い合わせ内容】\n' + v.message
-    );
-    window.location.href = 'mailto:kurofuku.osake@gmail.com?subject=' + subject + '&body=' + body;
-    document.getElementById('successText').textContent = 'メールアプリが開きました。内容をご確認の上、送信してください。';
-    document.getElementById('successMsg').style.display = 'block';
-  });
-</script>
 
 </body>
 </html>
