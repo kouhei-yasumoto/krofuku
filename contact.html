@@ -202,7 +202,7 @@
       <div class="form-submit-wrap">
         <button type="button" id="btnGmail" class="submit-btn" style="background:#D44638;">✉ Gmailで送る</button>
         <button type="button" id="btnMailto" class="submit-btn" style="background:var(--dark);margin-top:10px;font-size:12px;padding:11px 28px;letter-spacing:0.04em;">他のメールアプリで送る</button>
-        <p class="note">Gmailをお使いの場合は上のボタンを押してください。<br>ブラウザでGmailの作成画面が開きます。</p>
+        <p class="note">Gmailをお使いの方は上のボタンからどうぞ。<br>その他のメールアプリをお使いの方は下のボタンをお試しください（メールアプリが未設定の場合は動作しないことがあります）。</p>
       </div>
     </form>
 
@@ -261,7 +261,7 @@
       '【お問い合わせ内容】\n' + v.message
     );
     var gmailUrl = 'https://mail.google.com/mail/?view=cm&to=kurofuku.osake%40gmail.com&su=' + subject + '&body=' + body;
-    window.open(gmailUrl, '_blank');
+    window.location.href = gmailUrl;
     document.getElementById('successText').textContent = 'Gmailの作成画面が開きました。内容をご確認の上、送信してください。';
     document.getElementById('successMsg').style.display = 'block';
   });

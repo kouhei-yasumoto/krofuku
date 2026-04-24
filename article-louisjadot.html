@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Jadot | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="フランス・ブルゴーニュの名門ネゴシアン、ルイ・ジャド。1859年創業の哲学が宿る赤・白ワインを厳選してご紹介します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+
+  <!-- OGP -->
+  <meta property="og:title" content="Louis Jadot ブルゴーニュを語るなら まず、この名前から">
+  <meta property="og:description" content="フランス・ブルゴーニュの名門ネゴシアン、ルイ・ジャド。1859年創業の哲学が宿る赤・白ワインを厳選してご紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-louisjadot.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-louisjadot.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Louis Jadot ブルゴーニュを語るなら まず、この名前から">
+  <meta name="twitter:description" content="フランス・ブルゴーニュの名門ネゴシアン、ルイ・ジャド。1859年創業の哲学が宿る赤・白ワインを厳選してご紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-louisjadot.jpg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* HEADER */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ARTICLE BODY */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* PRODUCT ITEM */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* SPECIAL SECTIONS */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+
+    /* AUTHOR BLOCK */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      padding: 10px 24px;
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 44px 20px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .footer-logo-en {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-disclosure {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+      .product-img, .product-img.medium, .product-img.large { max-width: 100%; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+        <span class="logo-en">Kurofuku's Sake Magazine</span>
+        <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+      </a>
+      <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <img src="images/header-louisjadot.jpg" alt="Louis Jadot ルイジャド ブルゴーニュワイン ラインナップ" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-cat">Wine — EDITOR'S PICK</span>
+      <span class="meta-date">2026年4月24日</span>
+      <span class="meta-author">クロフク編集長</span>
+    </div>
+
+    <h1 class="article-title">Louis Jadot<br>ブルゴーニュを語るなら<br>まず、この名前から</h1>
+
+    <div class="article-body">
+      <p>こんにちは、クロフク編集長です。</p>
+      <p>ワインの世界には、名前を聞いただけで背筋が伸びる生産者がいます。ルイ・ジャドは、僕にとってまさにそんな存在です。フランス・ブルゴーニュのボーヌに本拠を置くこのメゾンは、1859年に創設された歴史あるネゴシアンでありながら、同時に広大な自社畑を所有する大ドメーヌでもあります。グラン・クリュからブルゴーニュ地方全域にわたる、約240ヘクタールの畑からワインを醸しています。</p>
+      <p>創設者ルイ・アンリ・ドゥニ・ジャドが礎を築いてから、一世紀半以上。ルイ・ジャドが変わらず守り続けているのは、<strong>ひとつのシンプルな哲学</strong>です。それは、ブルゴーニュのテロワールをそのままグラスに注ぎ込むこと。現在は醸造責任者のフレデリック・バルニエ氏が、その哲学を忠実に体現し続けています。</p>
+      <p>二十年以上前から化学肥料や農薬を排除し、オーガニックな農業に取り組んできた姿勢も、<strong>大地への深い敬意</strong>の表れです。今回はそんなルイ・ジャドが誇る赤・白ワインを厳選してご紹介します。</p>
+    </div>
+
+    <!-- 商品① -->
+    <div class="product-item">
+      <div class="product-heading">① ルイ・ジャド ブルゴーニュ ピノ・ノワール</div>
+      <div class="product-sub">タイプ：赤ワイン</div>
+      <hr class="product-divider">
+      <img src="https://m.media-amazon.com/images/I/61BRhtCmYqL._SY500_.jpg" alt="ルイ・ジャド ブルゴーニュ ピノ・ノワール" class="product-img">
+      <p class="product-desc">
+        ルイ・ジャドを語る上で外せない一本が、このブルゴーニュ ピノ・ノワールです。ブルゴーニュ全域から厳選されたピノ・ノワールを使い、同メゾンの哲学が最も純粋な形で表現されています。Amazonでの豊富なレビューが示すように、長年にわたって多くのワイン愛好家に支持されてきた、まさに定番中の定番です。
+      </p>
+      <p class="product-desc">
+        グラスに注ぐと、チェリーやラズベリーの軽やかな果実香が広がります。ほんのりと漂うスパイスと土のニュアンスが、ブルゴーニュの大地を思わせます。口当たりは柔らかく、タンニンは穏やかで、<strong>すっと体に馴染んでいくような飲みやすさ</strong>が魅力です。
+      </p>
+      <p class="product-desc">
+        ブルゴーニュの赤ワインを初めて試す方にも、毎日の食卓に寄り添う一本をお探しの方にも、自信を持っておすすめできます。鴨料理やキノコのソテー、和食のだし系との相性も抜群です。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B002JN2US6/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fukigoods%2F0102091010590%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品② -->
+    <div class="product-item">
+      <div class="product-heading">② ルイ・ジャド ブルゴーニュ シャルドネ</div>
+      <div class="product-sub">タイプ：白ワイン</div>
+      <hr class="product-divider">
+      <img src="https://m.media-amazon.com/images/I/511n2cgAqQL._SX522_.jpg" alt="ルイ・ジャド ブルゴーニュ シャルドネ" class="product-img">
+      <p class="product-desc">
+        赤と並ぶルイ・ジャドの代表作が、このブルゴーニュ シャルドネです。ブルゴーニュ全域から選ばれたシャルドネ種を使い、同メゾンの白ワイン哲学が凝縮されています。こちらも多くのレビューに支えられた、信頼の一本です。
+      </p>
+      <p class="product-desc">
+        香りはリンゴや洋梨の爽やかな果実感に、ほのかな樽のニュアンスが寄り添います。口に含むと、クリーミーな膨らみと引き締まった酸味が見事なバランスを描き、<strong>白ワインの手本のような端正さ</strong>を感じさせます。後味には上品なミネラル感が残ります。
+      </p>
+      <p class="product-desc">
+        魚料理やクリームソースを使った鶏料理との相性が抜群で、食中酒として非常に優秀です。デイリーワインとして常備しておきたい一本です。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B002JN6LGI/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftamaki-web%2F15071625%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品③ -->
+    <div class="product-item">
+      <div class="product-heading">③ ルイ・ジャド ソンジュ・ド・バッカス ブルゴーニュ・ピノ・ノワール</div>
+      <div class="product-sub">タイプ：赤ワイン</div>
+      <hr class="product-divider">
+      <img src="https://m.media-amazon.com/images/I/51PuuNGfs-L._SX522_.jpg" alt="ルイ・ジャド ソンジュ・ド・バッカス ブルゴーニュ・ピノ・ノワール" class="product-img">
+      <p class="product-desc">
+        「ソンジュ・ド・バッカス」とはフランス語で「バッカスの夢」を意味します。日本市場のために生み出されたこの特別なピノ・ノワールは、ルイ・ジャドが日本のワイン愛好家へ贈る、<strong>職人の夢が詰まった一本</strong>です。
+      </p>
+      <p class="product-desc">
+        ストロベリーやチェリーの甘い果実香が優しく広がり、タンニンは標準ラインより一段と柔らかく仕上げられています。全体的にまろやかでシルキーな印象で、ひと口飲むたびに、その名前の通り夢見るような心地よさに包まれます。
+      </p>
+      <p class="product-desc">
+        赤ワインが苦手という方や、エレガントで飲みやすいブルゴーニュを探している方に特におすすめです。冷やし気味に軽く飲むスタイルでも楽しめます。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B00B1ZXPSM/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineschool%2Fsonges-pn-2180%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品④ -->
+    <div class="product-item">
+      <div class="product-heading">④ ルイ・ジャド ムルソー</div>
+      <div class="product-sub">タイプ：白ワイン</div>
+      <hr class="product-divider">
+      <img src="https://m.media-amazon.com/images/I/71wIjb6JNSL._SY500_.jpg" alt="ルイ・ジャド ムルソー" class="product-img">
+      <p class="product-desc">
+        ブルゴーニュを代表する白ワインの産地として名高いムルソー。その村で育ったシャルドネを、ルイ・ジャドが丁寧に醸しました。同産地に対するメゾンの深い理解と敬意が、一本のワインとなって結晶しています。
+      </p>
+      <p class="product-desc">
+        熟したリンゴやバター、そしてローストしたナッツのリッチな香りが複雑に絡み合います。口に含むと、とろみのある濃密な口当たりが広がり、長く続く余韻の中に<strong>ムルソーの土地の記憶</strong>が刻まれているようです。
+      </p>
+      <p class="product-desc">
+        特別な夜の食卓に、あるいはワインをじっくりと向き合って楽しみたい方に。ロブスターや帆立のソテー、濃厚なソースの魚料理と合わせると、至福の時間が生まれます。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B00M1KVV6E/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      </div>
+    </div>
+
+    <!-- 商品⑤ -->
+    <div class="product-item">
+      <div class="product-heading">⑤ ルイ・ジャド ジュヴレ・シャンベルタン</div>
+      <div class="product-sub">タイプ：赤ワイン</div>
+      <hr class="product-divider">
+      <img src="https://m.media-amazon.com/images/I/519BWS+RTMS._SY500_.jpg" alt="ルイ・ジャド ジュヴレ・シャンベルタン" class="product-img">
+      <p class="product-desc">
+        コート・ド・ニュイの村々の中でも、特別な輝きを放つジュヴレ・シャンベルタン。「ワインの王」とも称されるこの産地のピノ・ノワールを、ルイ・ジャドは長年にわたり丁重に育て続けています。同メゾンとこの地との縁は深く、その結実がこの一本に込められています。
+      </p>
+      <p class="product-desc">
+        ブルーベリーやダークチェリーの深みのある果実香に、バラの花びらのような気品と、森の下草を思わせるアーシーなニュアンスが重なります。タンニンは豊かでありながら<strong>なめらかでシルキー</strong>、複雑な余韻が長く続き、飲み終えた後もグラスの前に座り続けたくなるような一本です。
+      </p>
+      <p class="product-desc">
+        ブルゴーニュを本気で愛したい方、特別な記念日の一本として、あるいは大切な人へのギフトとして。このワインが食卓に並ぶだけで、その夜が特別な夜になります。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B00JG1P9HI/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2 class="section-heading">最後に</h2>
+      <p>ルイ・ジャドのワインを飲むたびに、僕は醸造責任者のフレデリック・バルニエ氏が語ったという言葉を思い出します。「すべてのワインにおいて、テロワールの個性を最大限引き出すことが目標だ」と。</p>
+      <p>デイリーラインのブルゴーニュ ピノ・ノワールであっても、格上のジュヴレ・シャンベルタンであっても、その哲学は揺るぎません。化学肥料も農薬も使わず、大地と向き合い、ブドウが育つ環境そのものを守り続ける姿勢。それは、<strong>一世紀半以上、変わらず続く職人の誠実さ</strong>です。</p>
+      <p>グラスを傾けながら、その誠実さをグラスの向こうに感じながら、ゆっくりと味わってほしいです。ルイ・ジャドは、そんな時間をあなたに届けてくれる一本です。</p>
+    </div>
+
+    <!-- AUTHOR BLOCK（変更禁止） -->
+    <div class="author-block">
+      <div class="author-avatar"></div>
+      <div>
+        <div class="author-name">クロフク編集長</div>
+        <div class="author-role">EDITOR-IN-CHIEF</div>
+        <div class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</div>
+      </div>
+    </div>
+
+    <!-- BACK NAV -->
+    <div class="back-nav">
+      <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+      <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+      <div class="footer-links">
+        <a href="kurofuku-sake-magazine.html">トップ</a>
+        <a href="profile.html">プロフィール</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="footer-disclosure">
+        このサイトはAmazonアソシエイトプログラムおよび楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+      </div>
+      <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
