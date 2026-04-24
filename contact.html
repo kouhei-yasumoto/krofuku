@@ -249,7 +249,7 @@
     return true;
   }
 
-  // Gmailボタン：ブラウザでGmailの作成画面を開く
+  // Gmailボタン：スマホはmailto、PCはGmailウェブ
   document.getElementById('btnGmail').addEventListener('click', function() {
     if (!validateForm()) return;
     var v = getFormValues();
@@ -260,8 +260,12 @@
       '種別：' + v.subject + '\n\n' +
       '【お問い合わせ内容】\n' + v.message
     );
-    var gmailUrl = 'https://mail.google.com/mail/?view=cm&to=kurofuku.osake%40gmail.com&su=' + subject + '&body=' + body;
-    window.location.href = gmailUrl;
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = 'mailto:kurofuku.osake@gmail.com?subject=' + subject + '&body=' + body;
+    } else {
+      window.location.href = 'https://mail.google.com/mail/?view=cm&to=kurofuku.osake%40gmail.com&su=' + subject + '&body=' + body;
+    }
     document.getElementById('successText').textContent = 'Gmailの作成画面が開きました。内容をご確認の上、送信してください。';
     document.getElementById('successMsg').style.display = 'block';
   });
