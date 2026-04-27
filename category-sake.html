@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本酒記事一覧 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="全国各地の日本酒のレビュー記事まとめ。酒販業界の中の人が本音で選ぶ日本酒特集。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: #f7f5f2; color: #1a1a1a; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    :root { --gold: #b8922a; --dark: #1a1210; --muted: #6b6560; --border: #e5e0d8; --tag-bg: #f0ebe3; }
+
+    header { background: var(--dark); }
+    .header-inner { max-width: 800px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; height: 58px; }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+
+    /* CATEGORY CARDS */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+
+    /* CATEGORY HERO IMAGE */
+    .cat-hero { width: 100%; max-height: 360px; aspect-ratio: 128/67; overflow: hidden; position: relative; }
+    .cat-hero-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; pointer-events: none; }
+    .cat-hero-label::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+    .cat-hero-name { position: relative; font-size: clamp(22px, 4vw, 32px); font-weight: bold; color: #fff; letter-spacing: 0.15em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-hero-en { position: relative; font-size: 11px; color: var(--gold); letter-spacing: 0.35em; text-transform: uppercase; }
+    .cat-hero img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+
+    .main-wrap { max-width: 800px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    .sec-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .sec-label h2 { font-size: 13px; font-weight: bold; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
+    .sec-label .line { flex: 1; height: 1px; background: var(--border); }
+
+    .article-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; cursor: pointer; margin-top: 20px; }
+    .article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .card-thumb { width: 100%; aspect-ratio: 16/7; overflow: hidden; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .card-body { padding: 24px 28px 28px; }
+    .card-cat { font-size: 10px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .card-body h3 { font-size: 20px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 14px; font-weight: bold; }
+    .card-excerpt { font-size: 14px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
+    .card-meta { font-size: 11px; color: #bbb; margin-bottom: 20px; }
+    .read-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gold); letter-spacing: 0.08em; border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+    .read-link:hover { opacity: 0.7; }
+
+    .back-to-top { margin-top: 48px; text-align: center; }
+    .back-to-top a { display: inline-block; border: 1px solid var(--dark); padding: 10px 24px; color: var(--dark); font-size: 12px; font-weight: bold; letter-spacing: 0.05em; transition: all 0.2s; }
+    .back-to-top a:hover { background: var(--dark); color: #fff; }
+
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; }
+    .footer-logo { font-size: 15px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 4px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 16px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .card-body { padding: 18px 18px 22px; }
+      .card-body h3 { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+  </div>
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+    <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+    <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+  </div>
+</header>
+
+<!-- CATEGORY HERO -->
+<div class="cat-hero">
+  <img src="images/category-sake.jpg" alt="日本酒">
+  <div class="cat-hero-label"><span class="cat-hero-name">日本酒</span><span class="cat-hero-en">Japanese Sake</span></div>
+</div>
+
+<div class="main-wrap">
+  <div class="sec-label">
+    <h2>Sake Articles</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-senkin.html'">
+    <div class="card-thumb"><img src="images/header-senkin.jpg" alt="仙禽 せんきん 栃木県 日本酒ラインナップ"></div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Japanese Sake — Editor's Pick</p>
+      <h3>栃木のドメーヌが生む<br>甘酸の美学<br>仙禽</h3>
+      <p class="card-excerpt">栃木県さくら市・株式会社せんきんが醸す仙禽。仕込み水と同じ水脈の田んぼで米を育てるドメーヌ化の哲学と、甘酸っぱくジューシーな味わいで日本酒界に唯一無二の存在感を放つ各シリーズをご紹介します。</p>
+      <p class="card-meta">2026.04.23 — クロフク編集長</p>
+      <a href="article-senkin.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-toyo-bijin.html'">
+    <div class="card-thumb"><img src="images/header-toyo-bijin.jpg" alt="美しさと旨さが同居する山口の秘宝 東洋美人"></div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Japanese Sake — Editor's Pick</p>
+      <h3>美しさと旨さが同居する山口の秘宝<br>東洋美人</h3>
+      <p class="card-excerpt">山口県萩市の澄川酒造場が醸す「東洋美人」。2013年の豪雨被害から見事に復活した蔵が届ける、醇道一途シリーズをはじめ個性豊かな各銘柄をご紹介します。</p>
+      <p class="card-meta">2026.04.16 — クロフク編集長</p>
+      <a href="article-toyo-bijin.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-sake-10.html'">
+    <div class="card-thumb"><img src="images/header-sake.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下の日本酒10選"></div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Sake — Editor's Pick</p>
+      <h3>酒販業界の中の人が本音で選ぶ、<br>3,000円以下の日本酒10選</h3>
+      <p class="card-excerpt">「日本酒を飲んでみたいけど、どれを選べばいいかわからない」そんな方へ。東北・北陸・関東東海を横断し、コスパ最強の10本をご紹介します。</p>
+      <p class="card-meta">2026.04.04 — クロフク編集長</p>
+      <a href="article-sake-10.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <div class="back-to-top">
+    <a href="kurofuku-sake-magazine.html">← 全記事一覧へ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムおよび楽天アフィリエイト・プログラムの参加者です。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

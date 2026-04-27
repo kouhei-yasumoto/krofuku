@@ -321,6 +321,60 @@
       .cta-btns a { flex: 1; }
       .profile-block { flex-direction: column; }
     }
+    /* CAT NAV */
+    .cat-nav { background: #231a14; border-bottom: 1px solid #3a2e25; }
+    .cat-nav-inner { max-width: 800px; margin: 0 auto; padding: 0 20px; display: flex; overflow-x: auto; }
+    .cat-link { font-size: 11px; color: #888; letter-spacing: 0.1em; padding: 8px 14px; transition: color 0.2s; white-space: nowrap; }
+    .cat-link:hover, .cat-link.active { color: var(--gold); }
+
+    /* CATEGORY CARDS */
+    .cat-cards-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .cat-card {
+      display: block;
+      position: relative;
+      aspect-ratio: 3/2;
+      overflow: hidden;
+    }
+    .cat-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      filter: brightness(0.55);
+    }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .cat-card-icon { font-size: 22px; line-height: 1; }
+    .cat-card-name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .cat-card-en {
+      font-size: 9px;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 480px) {
+      .cat-cards-inner { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .cat-cards { padding: 0 14px 24px; }
+    }
   </style>
 
   <!-- OGP -->
@@ -357,6 +411,43 @@
 
 <!-- MAIN -->
 <div class="main-wrap">
+
+  <div class="sec-label">
+    <h2>Category</h2>
+    <div class="line"></div>
+  </div>
+
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-whisky.html" class="cat-card">
+      <img src="images/category-whisky.jpg" alt="ウイスキー">
+      <div class="cat-card-label">
+        <span class="cat-card-name">ウイスキー</span>
+        <span class="cat-card-en">Whisky</span>
+      </div>
+    </a>
+    <a href="category-wine.html" class="cat-card">
+      <img src="images/category-wine.jpg" alt="ワイン">
+      <div class="cat-card-label">
+        <span class="cat-card-name">ワイン</span>
+        <span class="cat-card-en">Wine</span>
+      </div>
+    </a>
+    <a href="category-sake.html" class="cat-card">
+      <img src="images/category-sake.jpg" alt="日本酒">
+      <div class="cat-card-label">
+        <span class="cat-card-name">日本酒</span>
+        <span class="cat-card-en">Japanese Sake</span>
+      </div>
+    </a>
+    <a href="category-other.html" class="cat-card">
+      <img src="images/category-other.jpg" alt="その他">
+      <div class="cat-card-label">
+        <span class="cat-card-name">その他</span>
+        <span class="cat-card-en">Others</span>
+      </div>
+    </a>
+  </div>
 
   <div class="sec-label">
     <h2>Articles</h2>

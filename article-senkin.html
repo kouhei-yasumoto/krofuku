@@ -370,6 +370,28 @@
       .buy-links { width: 100%; }
       .buy-links a { width: 100%; }
     }
+    /* CAT NAV */
+    /* CATEGORY CARDS */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -382,6 +404,13 @@
         <span class="logo-ja">クロフク編集長のお酒マガジン</span>
       </a>
       <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+    </div>
+  <!-- CATEGORY CARDS -->
+    <div class="cat-cards-inner">
+      <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+      <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+      <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+      <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
     </div>
   </header>
 
@@ -508,6 +537,27 @@
       <p>今はもう祖父母も亡くなり、家も土地も手放してしまいました。<br>家族はお酒を飲まないので、一緒に仙禽を飲んだ思い出があるわけでもありません。もうあの場所を訪れる機会もなくなってしまいました。</p>
       <p>それでも、地元のなにかに触れることで、あの日々を感じていたいと思っています。<br>物がなくなっても、場所がなくなっても、<strong>記憶や想い出はずっと残り続ける。</strong>——そう信じたくて、テロワールを感じられるこのお酒を飲んでいるのかもしれません。</p>
     </div>
+
+  <!-- RELATED HTML -->
+  <div class="related-section">
+    <div class="related-label"><span>Other Sake Articles</span><div class="line"></div></div>
+    <div class="related-grid">
+      <a href="article-toyo-bijin.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-toyo-bijin.jpg" alt="東洋美人"></div>
+        <div class="related-body">
+          <p class="related-cat">Sake — Editor's Pick</p>
+          <p class="related-title">東洋美人 山口が生んだ美しき銘酒</p>
+        </div>
+      </a>
+      <a href="article-sake-10.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-sake.jpg" alt="日本酒10選"></div>
+        <div class="related-body">
+          <p class="related-cat">Sake — Editor's Pick</p>
+          <p class="related-title">クロフク編集長が選ぶ 日本酒10選</p>
+        </div>
+      </a>
+    </div>
+  </div>
 
     <!-- AUTHOR BLOCK（変更禁止） -->
     <div class="author-block">

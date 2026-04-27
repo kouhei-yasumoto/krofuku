@@ -275,6 +275,28 @@
       .amz-link, .raku-link { display: flex; width: 100%; justify-content: center; }
       .conclusion { padding: 22px 20px; }
     }
+    /* CAT NAV */
+    /* CATEGORY CARDS */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
   </style>
 
   <!-- OGP -->
@@ -301,6 +323,13 @@
     </a>
     <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
   </div>
+  <!-- CATEGORY CARDS -->
+    <div class="cat-cards-inner">
+      <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+      <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+      <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+      <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+    </div>
 </header>
 
 <!-- ARTICLE HERO -->
@@ -484,6 +513,27 @@
   <div class="conclusion">
     <p>3,000円という予算で、本当の「いい酒」に出会うことはできる。この10本は、その証明だ。どれを選んでも、その値段を大きく上回る価値を感じるはずだ。迷ったなら、まず1本選んでみてほしい。試しに飲んでみる。その時の「あ、これいいな」という瞬間――。その感動が、君の日本酒選びの指標になるはずだ。</p>
     <p>次の一本へ。その先の一本へ。こうやって自分の「好き」を積み重ねていく。そういう小さな冒険が、本当の楽しさだと思う。</p>
+  </div>
+
+  <!-- RELATED HTML -->
+  <div class="related-section">
+    <div class="related-label"><span>Other Sake Articles</span><div class="line"></div></div>
+    <div class="related-grid">
+      <a href="article-senkin.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-senkin.jpg" alt="仙禽"></div>
+        <div class="related-body">
+          <p class="related-cat">Sake — Editor's Pick</p>
+          <p class="related-title">仙禽 栃木が誇る革新系日本酒の旗手</p>
+        </div>
+      </a>
+      <a href="article-toyo-bijin.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-toyo-bijin.jpg" alt="東洋美人"></div>
+        <div class="related-body">
+          <p class="related-cat">Sake — Editor's Pick</p>
+          <p class="related-title">東洋美人 山口が生んだ美しき銘酒</p>
+        </div>
+      </a>
+    </div>
   </div>
 
   <!-- AUTHOR -->

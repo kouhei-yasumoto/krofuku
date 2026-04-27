@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ウイスキー記事一覧 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="スコッチ・アイリッシュ・ジャパニーズウイスキーのレビュー記事まとめ。酒販業界の中の人が本音で選ぶウイスキー特集。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: #f7f5f2; color: #1a1a1a; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    :root { --gold: #b8922a; --dark: #1a1210; --muted: #6b6560; --border: #e5e0d8; --tag-bg: #f0ebe3; }
+
+    header { background: var(--dark); }
+    .header-inner { max-width: 800px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; height: 58px; }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+
+    /* CATEGORY CARDS */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+
+    /* CATEGORY HERO IMAGE */
+    .cat-hero { width: 100%; max-height: 360px; aspect-ratio: 128/67; overflow: hidden; position: relative; }
+    .cat-hero-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; pointer-events: none; }
+    .cat-hero-label::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+    .cat-hero-name { position: relative; font-size: clamp(22px, 4vw, 32px); font-weight: bold; color: #fff; letter-spacing: 0.15em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-hero-en { position: relative; font-size: 11px; color: var(--gold); letter-spacing: 0.35em; text-transform: uppercase; }
+    .cat-hero img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+
+    .main-wrap { max-width: 800px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    .sec-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .sec-label h2 { font-size: 13px; font-weight: bold; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
+    .sec-label .line { flex: 1; height: 1px; background: var(--border); }
+
+    .article-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; cursor: pointer; margin-top: 20px; }
+    .article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .card-thumb { width: 100%; aspect-ratio: 16/7; overflow: hidden; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .card-body { padding: 24px 28px 28px; }
+    .card-cat { font-size: 10px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .card-body h3 { font-size: 20px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 14px; font-weight: bold; }
+    .card-excerpt { font-size: 14px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
+    .card-meta { font-size: 11px; color: #bbb; margin-bottom: 20px; }
+    .read-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gold); letter-spacing: 0.08em; border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+    .read-link:hover { opacity: 0.7; }
+
+    .back-to-top { margin-top: 48px; text-align: center; }
+    .back-to-top a { display: inline-block; border: 1px solid var(--dark); padding: 10px 24px; color: var(--dark); font-size: 12px; font-weight: bold; letter-spacing: 0.05em; transition: all 0.2s; }
+    .back-to-top a:hover { background: var(--dark); color: #fff; }
+
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; }
+    .footer-logo { font-size: 15px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 4px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 16px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .card-body { padding: 18px 18px 22px; }
+      .card-body h3 { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+  </div>
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+    <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+    <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+  </div>
+</header>
+
+<!-- CATEGORY HERO -->
+<div class="cat-hero">
+  <img src="images/category-whisky.jpg" alt="ウイスキー">
+  <div class="cat-hero-label"><span class="cat-hero-name">ウイスキー</span><span class="cat-hero-en">Whisky</span></div>
+</div>
+
+<div class="main-wrap">
+  <div class="sec-label">
+    <h2>Whisky Articles</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-kilchoman.html'">
+    <div class="card-thumb"><img src="images/header-kilchoman.jpg" alt="キルホーマン アイラシングルモルトウイスキーラインナップ"></div>
+    <div class="card-body">
+      <p class="card-cat">🥃 Whisky — Editor's Pick</p>
+      <h3>KILCHOMAN<br>アイラの農場から生まれた<br>煙と塩の物語</h3>
+      <p class="card-excerpt">2005年、アイラ島最西端に生まれた農場蒸留所キルホーマン。大麦の栽培から瓶詰めまでを島内で完結させる哲学と、重厚なピートスモークが宿る個性的なラインナップをご紹介します。</p>
+      <p class="card-meta">2026.04.20 — クロフク編集長</p>
+      <a href="article-kilchoman.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-bigpeat.html'">
+    <div class="card-thumb"><img src="images/header-bigpeat.jpg" alt="ピート好きは絶対ハマる！アイラの最強ブレンドウイスキー BIG PEAT"></div>
+    <div class="card-body">
+      <p class="card-cat">🥃 Whisky — Editor's Pick</p>
+      <h3>ピート好きは絶対ハマる！<br>アイラの最強ブレンドウイスキー<br>BIG PEAT</h3>
+      <p class="card-excerpt">ダグラスレイン社が誇るアイラ・ブレンデッドモルト『BIG PEAT』。薬品のような独特の香りが魅力。Ardbeg、Caol Ila、Bowmore、Port Ellenのアイラモルトが詰まった究極の一本。</p>
+      <p class="card-meta">2026.04.16 — クロフク編集長</p>
+      <a href="article-bigpeat.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-whisky-10.html'">
+    <div class="card-thumb"><img src="images/header.jpg" alt="酒販業界の中の人が本音で選ぶ、3,000円以下のウイスキー10選"></div>
+    <div class="card-body">
+      <p class="card-cat">🥃 Whisky — Editor's Pick</p>
+      <h3>酒販業界の中の人が本音で選ぶ、<br>3,000円以下のウイスキー10選</h3>
+      <p class="card-excerpt">スコッチ・アイリッシュ・ジャパニーズを横断し、酒販の現場で働くクロフク編集長が本音で厳選した、コスパ最強の10本をご紹介します。</p>
+      <p class="card-meta">2026.03.28 — クロフク編集長</p>
+      <a href="article-whisky-10.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
+  </div>
+
+  <div class="back-to-top">
+    <a href="kurofuku-sake-magazine.html">← 全記事一覧へ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-disclosure">※ 当サイトはAmazonアソシエイト・プログラムおよび楽天アフィリエイト・プログラムの参加者です。</p>
+    <p class="footer-copy">© 2026 クロフク編集長のお酒マガジン. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

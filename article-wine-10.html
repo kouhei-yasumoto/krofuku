@@ -271,6 +271,28 @@
       .amz-link, .raku-link { display: flex; width: 100%; justify-content: center; }
       .conclusion { padding: 22px 20px; }
     }
+    /* CAT NAV */
+    /* CATEGORY CARDS */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
   </style>
 
   <!-- OGP -->
@@ -297,6 +319,13 @@
     </a>
     <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
   </div>
+  <!-- CATEGORY CARDS -->
+    <div class="cat-cards-inner">
+      <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+      <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+      <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+      <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+    </div>
 </header>
 
 <!-- ARTICLE HERO -->
@@ -493,6 +522,34 @@
   <div class="conclusion">
     <p>この10本、どれもハズレなしだ。迷ったらまずアルベール・ビショーかベリーニあたりから試してみてほしい。</p>
     <p>自分へのちょっとしたご褒美に、大事な人との席に、ぜひ1本試してみてほしい。きっと自分だけのお気に入りの一本が見つかるはずだ。</p>
+  </div>
+
+  <!-- RELATED HTML -->
+  <div class="related-section">
+    <div class="related-label"><span>Other Wine Articles</span><div class="line"></div></div>
+    <div class="related-grid">
+      <a href="article-louisjadot.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-louisjadot.jpg" alt="ルイ・ジャド"></div>
+        <div class="related-body">
+          <p class="related-cat">Wine — Editor's Pick</p>
+          <p class="related-title">ルイ・ジャド ブルゴーニュを旅するならまずこの一本から</p>
+        </div>
+      </a>
+      <a href="article-conosur.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-conosur.jpg" alt="コノスル"></div>
+        <div class="related-body">
+          <p class="related-cat">Wine — Editor's Pick</p>
+          <p class="related-title">コノスル 自転車ラベルのチリワイン</p>
+        </div>
+      </a>
+      <a href="article-kaminoshizuku-wine-vol1.html" class="related-card">
+        <div class="related-thumb"><img src="images/header-kaminoshizuku-vol1.jpg" alt="神の雫"></div>
+        <div class="related-body">
+          <p class="related-cat">Wine — Editor's Pick</p>
+          <p class="related-title">神の雫ワインで飲む マンガの世界へようこそ</p>
+        </div>
+      </a>
+    </div>
   </div>
 
   <!-- AUTHOR -->
