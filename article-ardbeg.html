@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ardbeg | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="アイラ島を代表するシングルモルトウイスキー、アードベッグ。1815年創業の蒸留所が生み出す強烈なピートスモークと、唯一無二のラインナップを厳選してご紹介します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+
+  <!-- OGP -->
+  <meta property="og:title" content="魂を揺さぶる アイラの煙 Ardbeg">
+  <meta property="og:description" content="アイラ島を代表するシングルモルトウイスキー、アードベッグ。1815年創業の蒸留所が生み出す強烈なピートスモークと、唯一無二のラインナップを厳選してご紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-ardbeg.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-ardbeg.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="魂を揺さぶる アイラの煙 Ardbeg">
+  <meta name="twitter:description" content="アイラ島を代表するシングルモルトウイスキー、アードベッグ。1815年創業の蒸留所が生み出す強烈なピートスモークと、唯一無二のラインナップを厳選してご紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-ardbeg.jpg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* HEADER */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ARTICLE BODY */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* PRODUCT ITEM */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* SPECIAL SECTIONS */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+
+    /* AUTHOR BLOCK */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      padding: 10px 24px;
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 44px 20px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .footer-logo-en {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-disclosure {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+      .product-img, .product-img.medium, .product-img.large { max-width: 100%; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+        <span class="logo-en">Kurofuku's Sake Magazine</span>
+        <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+      </a>
+      <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+    </div>
+  <!-- CATEGORY CARDS -->
+    <div class="cat-cards-inner">
+      <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+      <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+      <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+      <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <img src="images/header-ardbeg.jpg" alt="アードベッグ アイラシングルモルトウイスキーラインナップ" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-cat">Whisky — EDITOR'S PICK</span>
+      <span class="meta-date">2026年4月27日</span>
+      <span class="meta-author">クロフク編集長</span>
+    </div>
+
+    <h1 class="article-title">魂を揺さぶる<br>アイラの煙<br>Ardbeg</h1>
+
+    <div class="article-body">
+      <p>こんにちは、クロフク編集長です。</p>
+      <p>またアイラです。ビッグピート、キルホーマンときて、今回もアイラ島のウイスキーです。「また？」と思った方、すみません。でもこれは止められないんです。それだけ、僕はアイラが好きで——<strong>好きだからこそ、自信を持っておすすめできる</strong>、そういう気持ちで毎回書いています。</p>
+      <p>今回ご紹介するのは、アードベッグ。スコットランド・アイラ島の南岸に立つ蒸留所で、1815年創業の歴史ある場所です。名前の由来はゲール語の「An Àird Bheag」、意味は「小さな岬」。でもその存在は、名前とは正反対に<strong>とてつもなくでかい</strong>んです。</p>
+      <p>アードベッグの最大の個性は、なんといってもピートの強さです。フェノール値は55〜65ppmと、アイラ島の蒸留所の中でもトップクラス。仕込み水にはウーガダール湖の水を使っており、このピート層を流れる水がアードベッグの独特なスモーク感に深く関わっています。さらに、ノンチルフィルタード（非冷却ろ過）製法を採用しているため、ウイスキー本来の風味がダイレクトに伝わってくるんです。</p>
+      <p>一度でもこのスモークを口にしたら、きっと忘れられない。そんな確信を持って、今回はアードベッグのラインナップをご紹介します。</p>
+    </div>
+
+    <!-- ① アードベッグ 10年 -->
+    <div class="product-item">
+      <div class="product-heading">① アードベッグ 10年</div>
+      <img src="https://m.media-amazon.com/images/I/61Ajtyw7rbL._SY500_.jpg" alt="アードベッグ 10年" class="product-img">
+      <p class="product-desc">
+        アードベッグの顔、そして<strong>ここから始まるべき一本</strong>です。46度ボトリング、ノンチルフィルタードという一切の妥協なしのスペックで、アイラモルトファンから初心者まで幅広く愛される定番中の定番。蒸留所のスタンダードにしてこのクオリティ——正直、最初に飲んだときは声が出ませんでした。
+      </p>
+      <p class="product-desc">
+        グラスに注ぐと、立ち上るスモークとヨードの香りが部屋中に広がります。口に含んだ瞬間、力強いピートスモークがどっと押し寄せ、続いてバニラやレモンの甘さがふわりと顔を出す。そのコントラストが<strong>信じられないくらい鮮やか</strong>で、飲むたびに新しい発見がある一本です。
+      </p>
+      <p class="product-desc">
+        アードベッグを初めて飲む方には、まずここから始めてほしいです。そしてすでに飲んだことがある方も、改めてこの10年の底力を確かめてみてください。何度飲んでも、毎回「やっぱりすごい」と思わされます。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B008U7SUDE/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-ardbeg-vt10%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- ② アードベッグ ウーガダール -->
+    <div class="product-item">
+      <div class="product-heading">② アードベッグ ウーガダール</div>
+      <img src="https://m.media-amazon.com/images/I/71cmRsRMU1L._SY500_.jpg" alt="アードベッグ ウーガダール" class="product-img medium">
+      <p class="product-desc">
+        アードベッグの仕込み水の源、ウーガダール湖の名を冠した傑作です。54.2度のカスクストレングスで、バーボン樽とオロロソシェリー樽を組み合わせて熟成。世界的なウイスキー評価誌でも最高得点を獲得しており、<strong>アードベッグの実力が凝縮された一本</strong>として世界中のファンから絶大な支持を集めています。
+      </p>
+      <p class="product-desc">
+        ノンチルフィルタードで瓶詰めされた液体は、深みのある琥珀色。スモークの奥からダークチョコレートやドライフルーツの甘い香りが漂い、口に含むとシェリーの豊かな甘さとピートの力強さが<strong>見事な調和</strong>を生んでいます。加水するたびに表情が変わるので、少しずつ楽しむのがおすすめです。
+      </p>
+      <p class="product-desc">
+        ピートウイスキーに慣れてきた方に、ぜひ体験してほしい一本です。10年を飲んで「もっと深く潜りたい」と思ったなら、次はウーガダールへ。その先には、予想を超える世界が待っています。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B008U7SUE8/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-ardbeg-uig%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- ③ アードベッグ コリーヴレッカン -->
+    <div class="product-item">
+      <div class="product-heading">③ アードベッグ コリーヴレッカン</div>
+      <img src="https://m.media-amazon.com/images/I/515vfwDzPEL._AC_.jpg" alt="アードベッグ コリーヴレッカン" class="product-img">
+      <p class="product-desc">
+        アイラ島沖に実在する世界最強クラスの渦潮「コリーヴレッカン」の名を持つ、アードベッグ最大の激流がこれです。57.1度というハイプルーフで、フレンチオーク（ヴィルジン）樽の影響を大きく受けた一本。<strong>嵐のような飲み口</strong>でありながら、その奥に隠れた構造の美しさに、飲むたびに圧倒されます。
+      </p>
+      <p class="product-desc">
+        グラスに近づけた瞬間、タールとスモークの強烈な波が来ます。口に含むと、黒胡椒やダークチョコ、タバコの葉のような複雑なフレーバーが爆発的に広がり、長い余韻の中にスモークと甘みが絡み合う。<strong>これはもはや体験</strong>——ウイスキーというより、一つの自然現象を飲んでいるような感覚です。
+      </p>
+      <p class="product-desc">
+        スモーキーなウイスキーが好きで、さらなる高みを求めている方へ。コリーヴレッカンは、あなたのウイスキー観を根底から揺さぶるかもしれません。少量の水を加えると、また別の顔を見せてくれます。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B0B7HPM9GM/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineuki%2F9903000005345%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- ④ アードベッグ アン・オー -->
+    <div class="product-item">
+      <div class="product-heading">④ アードベッグ アン・オー</div>
+      <img src="https://m.media-amazon.com/images/I/71YTuZBTTbL._SY500_.jpg" alt="アードベッグ アン・オー" class="product-img medium">
+      <p class="product-desc">
+        「An Oa（アン・オー）」とは、アイラ島の南端に突き出した岬の名前です。ファーストフィルバーボン樽、ニューチャー樽、オロロソシェリー樽の3種をブレンドし、独自の「ピーティング樽」と呼ばれる手法で仕上げた一本。46.6度でボトリングされ、<strong>アードベッグの中で最も丸くまとまった味わい</strong>が特徴です。
+      </p>
+      <p class="product-desc">
+        スモーキーさはしっかりとありながら、バニラやキャラメルの甘さが前面に出てくる。ピートと甘みのバランスが絶妙で、「アードベッグのスモークは好きだけど、少しとっつきやすいものが飲みたい」という方に<strong>ぴったりの選択肢</strong>です。余韻もなめらかで長く、食後の一杯にも最高に合います。
+      </p>
+      <p class="product-desc">
+        ウイスキー初心者の方にも、アードベッグ入門としておすすめできる一本です。柔らかくまとまった中に、確かにアードベッグのDNAが息づいている——その感覚を、ぜひ体感してみてください。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B075MNCHS5/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-ardbeg-anoa-p%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- ⑤ アードベッグ ウィービースティー 5年 -->
+    <div class="product-item">
+      <div class="product-heading">⑤ アードベッグ ウィービースティー 5年</div>
+      <img src="https://m.media-amazon.com/images/I/610e95yL9ZL._AC_SY445_SX342_QL70_ML2_.jpg" alt="アードベッグ ウィービースティー 5年" class="product-img">
+      <p class="product-desc">
+        「ウィービースティー（Wee Beastie）」——名前の意味は「小さな怪物」。しかし飲んでみると、<strong>全然「小さく」ない</strong>んです。わずか5年熟成でありながら、アードベッグらしいスモークと力強さが凝縮された一本。バーボン樽とオロロソシェリー樽で熟成されており、手頃に楽しめるアードベッグとして人気を集めています。
+      </p>
+      <p class="product-desc">
+        若さゆえの荒々しさが正直あります。でも、その荒削りなエネルギーが<strong>たまらなく魅力的</strong>で、ロックやハイボールにすると驚くほど映えるんです。スモーク、クレオソート、塩キャラメルのようなフレーバーが次々と顔を出し、5年熟成とは思えない複雑さを見せてくれます。
+      </p>
+      <p class="product-desc">
+        気軽に楽しめる価格でアードベッグの世界に飛び込みたい方、ハイボールで豪快に飲みたい方に強くおすすめします。「小さな怪物」の本気を、ぜひ体験してみてください。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B086WYWV2C/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineuki%2F9903000021581%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 最後に -->
+    <div class="article-body">
+      <h2 class="section-heading">最後に</h2>
+      <p>アードベッグ、どうでしたか？とにかく一度飲んでみてください！スモーキーなウイスキーの世界って、こんなにも豊かで、こんなにも楽しいんです。10年で衝撃を受けて、ウーガダールで感動して、コリーヴレッカンで圧倒される——その流れを体験するだけで、<strong>ウイスキーの見える世界が変わります</strong>。</p>
+      <p>1815年から続くアイラ島の小さな岬の蒸留所が、これほどまでに世界を熱狂させているのは、理由があります。それはぜひ、グラスの中で確かめてほしいです。</p>
+    </div>
+
+    <!-- RELATED ARTICLES -->
+    <div class="related-section">
+      <div class="related-label"><span>Other Whisky Articles</span><div class="line"></div></div>
+      <div class="related-grid">
+        <a href="article-kilchoman.html" class="related-card"><div class="related-thumb"><img src="images/header-kilchoman.jpg" alt="KILCHOMAN"></div><div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">KILCHOMAN<br>アイラの農場から生まれた煙と塩</div></div></a>
+        <a href="article-bigpeat.html" class="related-card"><div class="related-thumb"><img src="images/header-bigpeat.jpg" alt="BIG PEAT"></div><div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">BIG PEAT<br>アイラの最強ブレンドウイスキー</div></div></a>
+        <a href="article-whisky-10.html" class="related-card"><div class="related-thumb"><img src="images/header.jpg" alt="ウイスキー10選"></div><div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">本音で選ぶ、<br>3,000円以下のウイスキー10選</div></div></a>
+      </div>
+    </div>
+
+    <!-- AUTHOR BLOCK（変更禁止） -->
+    <div class="author-block">
+      <div class="author-avatar"></div>
+      <div>
+        <div class="author-name">クロフク編集長</div>
+        <div class="author-role">EDITOR-IN-CHIEF</div>
+        <div class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</div>
+      </div>
+    </div>
+
+    <!-- BACK NAV -->
+    <div class="back-nav">
+      <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+      <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+      <div class="footer-links">
+        <a href="kurofuku-sake-magazine.html">トップ</a>
+        <a href="profile.html">プロフィール</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="footer-disclosure">
+        このサイトはAmazonアソシエイトプログラムおよび楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+      </div>
+      <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
