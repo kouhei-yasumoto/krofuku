@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -26,8 +26,8 @@
     .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
     .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
     .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
-    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
-    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; text-align: center; }
+    .cat-card-en { font-size: clamp(5.5px, 1.5vw, 8px); color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; text-align: center; }
 
     /* CATEGORY HERO IMAGE */
     .cat-hero { width: 100%; max-height: 360px; aspect-ratio: 128/67; overflow: hidden; position: relative; }
@@ -102,6 +102,17 @@
   <div class="sec-label">
     <h2>Whisky Articles</h2>
     <div class="line"></div>
+  </div>
+
+  <div class="article-card" onclick="window.location.href='article-ardbeg.html'">
+    <div class="card-thumb"><img src="images/header-ardbeg.jpg" alt="アードベッグ アイラシングルモルトウイスキーラインナップ"></div>
+    <div class="card-body">
+      <p class="card-cat">🥃 Whisky — Editor's Pick</p>
+      <h3>魂を揺さぶる<br>アイラの煙<br>Ardbeg</h3>
+      <p class="card-excerpt">アイラ島を代表するシングルモルトウイスキー、アードベッグ。1815年創業の蒸留所が生み出す強烈なピートスモークと、唯一無二のラインナップを厳選してご紹介します。</p>
+      <p class="card-meta">2026.04.27 — クロフク編集長</p>
+      <a href="article-ardbeg.html" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
   </div>
 
   <div class="article-card" onclick="window.location.href='article-kilchoman.html'">
