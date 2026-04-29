@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognac VSOP | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="フランス・コニャック地方が誇る5大ブランドVSOPをクロフク編集長が徹底比較。ヘネシー、レミーマルタン、カミュ、クルボアジェ、マーテルそれぞれの個性と魅力を解説します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+
+  <!-- OGP -->
+  <meta property="og:title" content="【大人のコニャック入門】フランスが誇る五つの琥珀">
+  <meta property="og:description" content="フランス・コニャック地方が誇る5大ブランドVSOPをクロフク編集長が紹介。ヘネシー、レミーマルタン、カミュ、クルボアジェ、マーテルそれぞれの個性と魅力を解説します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-cognac-vsop.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-cognac-vsop.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="【大人のコニャック入門】フランスが誇る五つの琥珀">
+  <meta name="twitter:description" content="フランス・コニャック地方が誇る5大ブランドVSOPをクロフク編集長が紹介。ヘネシー、レミーマルタン、カミュ、クルボアジェ、マーテルそれぞれの個性と魅力を解説します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-cognac-vsop.jpg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* HEADER */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ARTICLE BODY */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* PRODUCT ITEM */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* SPECIAL SECTIONS */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+
+    /* AUTHOR BLOCK */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      padding: 10px 24px;
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 44px 20px;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .footer-logo-en {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .footer-links a {
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-disclosure {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .footer-copy {
+      font-size: 10px;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+
+    /* CATEGORY CARDS IN HEADER */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; }
+    .cat-card-en { font-size: 8px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; }
+
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+      .product-img, .product-img.medium, .product-img.large { max-width: 100%; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+        <span class="logo-en">Kurofuku's Sake Magazine</span>
+        <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+      </a>
+      <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+    </div>
+  <!-- CATEGORY CARDS -->
+    <div class="cat-cards-inner">
+      <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+      <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+      <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+      <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <img src="images/header-cognac-vsop.jpg" alt="コニャック VSOP 5大銘柄 ヘネシー レミーマルタン カミュ クルボアジェ マーテル" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-cat">BRANDY — EDITOR'S PICK</span>
+      <span class="meta-date">2026年4月28日</span>
+      <span class="meta-author">クロフク編集長</span>
+    </div>
+
+    <h1 class="article-title">【大人のコニャック入門】<br>フランスが誇る五つの琥珀</h1>
+
+    <div class="article-body">
+      <p>こんにちは、クロフク編集長です。</p>
+      <p>今回取り上げるのは、コニャックのVSOPです。フランス南西部・シャラント地方のコニャック周辺でのみ生産が認められたブランデー——それがコニャックです。白ブドウを原料に、銅製のポットスチルで2回蒸留し、フランス産オーク樽で最低4年以上熟成させることで生まれる、あの深みのある琥珀色と芳醇な香り。VSOPとは「Very Special Old Pale」の略で、4年以上熟成させた原酒のみを使用することを意味します。</p>
+      <p>コニャックには5つの大手メゾンがあります。ヘネシー、レミーマルタン、カミュ、クルボアジェ、マーテル。どれも世界中で飲まれている銘柄ですが、<strong>同じVSOPというグレードでも、それぞれのメゾンが積み上げてきた歴史・哲学・産地によって、風味はまったく異なります。</strong>今回は、それぞれのメゾンの個性と特徴をひとつひとつご紹介します。</p>
+      <p>ところで、なぜ今回はVSOPに絞ったのか。ブランデーは、ウイスキーやワインと比べるとまだ「敷居が高い」と感じる方も多いお酒です。だからこそ、<strong>最初の一杯にはVSOPを選んでほしい。</strong>最低4年以上熟成された原酒だけが名乗ることを許されるVSOPは、バニラや蜂蜜を思わせる芳醇な甘さと、華やかな香りがしっかりと開いており、初めて口にする方でも「ブランデーとは、こういうものか」と自然に受け取ることができます。これがVSより下のグレードになると、アルコールの輪郭が前に出すぎて本来の魅力が伝わりきらず、かといってXO以上を選べば品質は申し分ないものの、今度は価格という壁が立ちはだかる。香りの開き、味わいの深み、そして手の届きやすさ——そのすべてのバランスが最も整っているのがVSOPです。<strong>コニャックを知りたいなら、まずここから。</strong></p>
+    </div>
+
+    <!-- 商品①：ヘネシー V.S.O.P -->
+    <div class="product-item">
+      <div class="product-heading">① ヘネシー V.S.O.P</div>
+      <img src="https://m.media-amazon.com/images/I/51vc7nVjioL._SX522_.jpg" alt="ヘネシー V.S.O.P" class="product-img medium">
+      <p class="product-desc">
+        コニャック界の最大手、ヘネシーが1817年にリリースしたのがこのV.S.O.Pです。世界で最も売れているコニャックのひとつであり、1765年にアイルランド人のリシャール・ヘネシーがコニャックに創業した歴史ある蒸留所が手がけています。現行のV.S.O.Pは「フィーヌ・シャンパーニュ」産の60種類以上のオー・ド・ヴィーをブレンドした複雑な設計が特徴です。グランド・シャンパーニュとプティット・シャンパーニュという2つの最上級産地の原酒のみを使用しています。
+      </p>
+      <p class="product-desc">
+        グラスに注ぐと、トースト感のある甘い香りが広がります。バニラ、わずかなスモーク、熟したフルーツが重なり合う複層的な印象です。口に含めば<strong>まろやかでリッチ</strong>、タンニン由来の心地よい苦みがボリュームを支え、余韻は長く続きます。世界のスタンダードとして、コニャックを比較するときの基準になる一本です。
+      </p>
+      <p class="product-desc">
+        「コニャックの基準を知りたい」という方に最初に手に取ってほしい一本です。ソーダ割りにしても豊かな香りは崩れず、ストレートやロックでじっくりと向き合っても十分に楽しめます。5大メゾンを飲み比べる出発点として、この一本は外せません。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B0045TV09M/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F4-hennessy-vsop%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品②：レミーマルタン VSOP -->
+    <div class="product-item">
+      <div class="product-heading">② レミーマルタン VSOP</div>
+      <img src="https://m.media-amazon.com/images/I/61siaGY9UcL._SX425_.jpg" alt="レミーマルタン VSOP" class="product-img large">
+      <p class="product-desc">
+        1724年創業のレミーマルタンは、コニャック5大メゾンの中で唯一、すべての製品にフィーヌ・シャンパーニュ（グランド・シャンパーニュとプティット・シャンパーニュのブレンド）の使用を公式にコミットしているメゾンです。この2地区のブドウは石灰質土壌で育ち、コニャックの中でも特に繊細でエレガントな原酒が得られると言われています。VSOPにおいても、その哲学は揺るぎません。
+      </p>
+      <p class="product-desc">
+        香りはフラワリーで、スミレやローズのような花の印象が前面に出ます。バニラとヘーゼルナッツのニュアンスが続き、<strong>きめ細かくシルキーな口当たり</strong>が印象的です。フィーヌ・シャンパーニュならではの細やかさと、しなやかな余韻が、このVSOPを他の銘柄と明確に区別しています。エレガンスという言葉が最もよく似合うコニャックです。
+      </p>
+      <p class="product-desc">
+        ストレートかロックで飲むと、フィーヌ・シャンパーニュの華やかさが際立ちます。食後のデザートとともに、あるいは一日の終わりにゆっくりと向き合いたい夜に。コニャックを飲み慣れてきた方が次のステップとして選ぶ一本として、強くおすすめできます。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B007DGI6FK/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F4-remymartin-01%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品③：カミュ VSOP -->
+    <div class="product-item">
+      <div class="product-heading">③ カミュ VSOP</div>
+      <img src="https://m.media-amazon.com/images/I/71phNAghKjL._SY500_.jpg" alt="カミュ VSOP" class="product-img">
+      <p class="product-desc">
+        1863年創業のカミュは、5大メゾンの中で唯一の独立した家族経営のメゾンです。大手グループ傘下に入らず、5代にわたって家族によって受け継がれてきたことは、コニャック業界では珍しいことです。コニャック地方の6つのアペラシオンのうち「ボルドリー」地区に強みを持つのがカミュの個性で、ボルドリー産の原酒は他の産地とは異なるヴィオレット（スミレ）のような独特の香りを持つと言われています。
+      </p>
+      <p class="product-desc">
+        香りはボタニカルで複雑、スミレやアイリスを思わせるフローラルなトーンに、ドライフルーツと蜂蜜が交差します。<strong>他の銘柄にはない個性的な奥行き</strong>があり、グラスの中でゆっくりと変化する表情が楽しめます。独立したメゾンならではの、妥協のない丁寧な造りが感じられる一本です。
+      </p>
+      <p class="product-desc">
+        ヘネシーやレミーマルタンとの飲み比べをすると、コニャックの産地ごとの違いが鮮明にわかります。「コニャックにこんな個性があったのか」と気づかせてくれる一本です。ストレートでゆっくりと向き合うと、ボルドリー産ならではの複雑さをより深く味わうことができます。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B07XYFBK52/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fricaoh%2F123178%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品④：クルボアジェ VSOP -->
+    <div class="product-item">
+      <div class="product-heading">④ クルボアジェ VSOP</div>
+      <img src="https://m.media-amazon.com/images/I/81Eje35HmxL._AC_SX425_.jpg" alt="クルボアジェ VSOP" class="product-img">
+      <p class="product-desc">
+        「ナポレオンのコニャック」として知られるクルボアジェは、フランス皇帝ナポレオン・ボナパルトが愛飲したという逸話を持つメゾンです。創業は1809年ごろとされ、コニャック市の中心部に位置します。5大メゾンの中でも比較的穏やかでバランスの取れたスタイルが特徴で、コニャック初心者から上級者まで幅広く受け入れられてきました。その親しみやすさこそが、このメゾンの最大の強みです。
+      </p>
+      <p class="product-desc">
+        スタイルは全体的にライトでスムースです。香りはカシスやプラムなどのダークフルーツが中心で、バニラとシナモンが温かみを加えます。<strong>するりとのどを通る流麗な飲み口</strong>が特徴で、飲み疲れのない穏やかさがあります。他のVSOPよりアルコールの主張が控えめで、デイリーユースにも適した設計です。
+      </p>
+      <p class="product-desc">
+        ハイボールでも、ロックでも、チョコレートやチーズと合わせても——どんな飲み方でも自然に馴染む。気負わずに手が伸びる、懐の深いVSOPです。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B00VQROQ3I/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F4-courvoisier-vsop%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      </div>
+    </div>
+
+    <!-- 商品⑤：マーテル V.S.O.P エイジド イン レッド バレル -->
+    <div class="product-item">
+      <div class="product-heading">⑤ マーテル V.S.O.P エイジド イン レッド バレル</div>
+      <img src="https://m.media-amazon.com/images/I/6196rqV-5dL._SY500_.jpg" alt="マーテル V.S.O.P エイジド イン レッド バレル" class="product-img">
+      <p class="product-desc">
+        1715年創業のマーテルは、5大メゾンの中で最も古い歴史を持ちます。ジャン・マーテルがジャージー島からコニャックに渡り創業してから300年以上。リムーザン産オーク樽ではなくトロンセ産オーク樽を使うこと、そして穀物感のある独自のスタイルが、他のメゾンとは異なるテイストを長年生み出してきました。このV.S.O.Pは、さらにレッドバレル（赤ワイン樽）でのフィニッシュを加えた、伝統と革新が交差する一本です。
+      </p>
+      <p class="product-desc">
+        香りはフルーティーかつフローラルで、イチゴやラズベリーのような赤系フルーツのニュアンスがコニャックとしては珍しい個性を与えています。<strong>赤ワイン樽由来のタンニンが余韻に独特の複雑さ</strong>を加え、口の中で長くフルーツの余韻が続きます。同じVSOPでも、ここまで異なる表情を見せるのかと驚かされます。
+      </p>
+      <p class="product-desc">
+        「いつものコニャックとは違う体験がしたい」という方に強くすすめたい一本です。赤ワインが好きな方にとっては特に親しみやすく、ワインとコニャックの橋渡しになってくれます。5大メゾンを巡る旅の最後を締めくくるにふさわしい、新鮮な一杯です。
+      </p>
+      <div class="buy-links">
+        <a href="https://www.amazon.co.jp/dp/B07P3KXH35/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      </div>
+    </div>
+
+    <!-- 結論 -->
+    <div class="article-body">
+      <h2 class="section-heading">最後に</h2>
+      <p>今回の5本、並べて飲めば「同じVSOPなのか」と思うほど表情が違います。<strong>同じフランスの、同じアペラシオン法に縛られながら、これだけ異なる表現を可能にする。</strong>それがコニャックという酒の面白さです。</p>
+      <p>バーでのオーダーも、プレゼント選びも、この5本を知っておくだけで選択肢がぐっと広がります。気になった一本から、ぜひ試してみてください。</p>
+    </div>
+
+    <!-- RELATED ARTICLES -->
+    <div class="related-section">
+      <div class="related-label"><span>Other Others Articles</span><div class="line"></div></div>
+      <div class="related-grid">
+        <a href="article-kinobi.html" class="related-card"><div class="related-thumb"><img src="images/header-kinobi.jpg" alt="季の美"></div><div class="related-body"><div class="related-cat">🍸 Gin</div><div class="related-title">季の美<br>「日本に生まれて良かった。」そう思える一杯</div></div></a>
+        <a href="article-brewdog.html" class="related-card"><div class="related-thumb"><img src="images/header-brewdog.jpg" alt="BrewDog"></div><div class="related-body"><div class="related-cat">🍺 Beer</div><div class="related-title">スコットランドのパンクブルワリー BREWDOGの世界へ</div></div></a>
+      </div>
+    </div>
+
+    <!-- AUTHOR BLOCK（変更禁止） -->
+    <div class="author-block">
+      <div class="author-avatar"></div>
+      <div>
+        <div class="author-name">クロフク編集長</div>
+        <div class="author-role">EDITOR-IN-CHIEF</div>
+        <div class="author-bio">酒販業界で長年にわたり現場を経験。スコッチ・アイリッシュ・ジャパニーズウイスキーを中心に、年間数百本を試飲してきたプロの目線で、本当においしいお酒だけをご紹介します。</div>
+      </div>
+    </div>
+
+    <!-- BACK NAV -->
+    <div class="back-nav">
+      <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+      <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+      <div class="footer-links">
+        <a href="kurofuku-sake-magazine.html">トップ</a>
+        <a href="profile.html">プロフィール</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="footer-disclosure">
+        このサイトはAmazonアソシエイトプログラムおよび楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+      </div>
+      <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
