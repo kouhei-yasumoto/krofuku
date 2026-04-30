@@ -538,26 +538,19 @@
       <p>季の美というブランドは、ラインナップが増えるほどに奥行きが見えてくる蒸溜所だと思います。<strong>日本に生まれて、本当に良かった</strong>——そう思いながら、今日もグラスを傾けています。定番からはじめて、自分に合う一本を探していく旅——その過程を、ぜひ楽しんでみてください。</p>
     </div>
 
-  <!-- RELATED HTML -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-brewdog.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-brewdog.jpg" alt="BrewDog"></div>
-        <div class="related-body">
-          <p class="related-cat">Beer — Editor's Pick</p>
-          <p class="related-title">スコットランドのパンクブルワリー BREWDOGの世界へようこそ！</p>
-        </div>
-      </a>
-      <a href="article-cognac-vsop.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-cognac-vsop.jpg" alt="コニャック VSOP"></div>
-        <div class="related-body">
-          <p class="related-cat">Brandy — Editor's Pick</p>
-          <p class="related-title">【大人のコニャック入門】フランスが誇る五つの琥珀</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-other.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-kinobi.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
     <!-- AUTHOR BLOCK（変更禁止） -->
     <div class="author-block">

@@ -515,26 +515,19 @@
     <p>次の一本へ。その先の一本へ。こうやって自分の「好き」を積み重ねていく。そういう小さな冒険が、本当の楽しさだと思う。</p>
   </div>
 
-  <!-- RELATED HTML -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Sake Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-senkin.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-senkin.jpg" alt="仙禽"></div>
-        <div class="related-body">
-          <p class="related-cat">Sake — Editor's Pick</p>
-          <p class="related-title">仙禽 栃木が誇る革新系日本酒の旗手</p>
-        </div>
-      </a>
-      <a href="article-toyo-bijin.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-toyo-bijin.jpg" alt="東洋美人"></div>
-        <div class="related-body">
-          <p class="related-cat">Sake — Editor's Pick</p>
-          <p class="related-title">東洋美人 山口が生んだ美しき銘酒</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-sake.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-sake-10.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
   <!-- AUTHOR -->
   <div class="author-block">

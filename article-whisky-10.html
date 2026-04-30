@@ -553,26 +553,19 @@
     <p>自分へのちょっとしたご褒美に、仲間との楽しい席に、ぜひ1本試してみてほしい。きっと自分だけのお気に入りの一本が見つかるはずだ。</p>
   </div>
 
-  <!-- RELATED HTML -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Whisky Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-kilchoman.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-kilchoman.jpg" alt="キルホーマン"></div>
-        <div class="related-body">
-          <p class="related-cat">Whisky — Editor's Pick</p>
-          <p class="related-title">キルホーマン アイラ最西端の農場蒸溜所が生む極上の一滴</p>
-        </div>
-      </a>
-      <a href="article-bigpeat.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-bigpeat.jpg" alt="ビッグピート"></div>
-        <div class="related-body">
-          <p class="related-cat">Whisky — Editor's Pick</p>
-          <p class="related-title">ビッグピート スモーキーな個性で選ぶ ダグラスレインの傑作ブレンド</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-whisky.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-whisky-10.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
   <!-- AUTHOR -->
   <div class="author-block">

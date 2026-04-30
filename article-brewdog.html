@@ -642,26 +642,19 @@
     <p>ブリュードッグは、常識の外で、常識を超える。ぜひ、その世界に飛び込んでみてください。</p>
   </div>
 
-  <!-- RELATED HTML -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-kinobi.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-kinobi.jpg" alt="季の美"></div>
-        <div class="related-body">
-          <p class="related-cat">Gin — Editor's Pick</p>
-          <p class="related-title">季の美 「日本に生まれて良かった。」そう思える一杯</p>
-        </div>
-      </a>
-      <a href="article-cognac-vsop.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-cognac-vsop.jpg" alt="コニャック VSOP"></div>
-        <div class="related-body">
-          <p class="related-cat">Brandy — Editor's Pick</p>
-          <p class="related-title">【大人のコニャック入門】フランスが誇る五つの琥珀</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-other.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-brewdog.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
   <!-- AUTHOR -->
   <div class="author-block">

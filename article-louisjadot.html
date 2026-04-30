@@ -574,35 +574,18 @@
     </div>
 
     <!-- RELATED ARTICLES -->
-    <div class="related-section">
-      <div class="related-label">
-        <span>Other Wine Articles</span>
-        <div class="line"></div>
-      </div>
-      <div class="related-grid">
-        <a href="article-conosur.html" class="related-card">
-          <div class="related-thumb"><img src="images/header-conosur.jpg" alt="Cono Sur コノスル"></div>
-          <div class="related-body">
-            <div class="related-cat">🍷 Wine</div>
-            <div class="related-title">Cono Sur<br>この値段でこのクオリティはおかしい</div>
-          </div>
-        </a>
-        <a href="article-kaminoshizuku-wine-vol1.html" class="related-card">
-          <div class="related-thumb"><img src="images/header-kaminoshizuku-vol1.jpg" alt="神の雫ワインガイド"></div>
-          <div class="related-body">
-            <div class="related-cat">🍷 Wine</div>
-            <div class="related-title">【神の雫 アニメ放送記念】<br>飲んでみたくなるワインガイド</div>
-          </div>
-        </a>
-        <a href="article-wine-10.html" class="related-card">
-          <div class="related-thumb"><img src="images/header-wine.jpg" alt="3,000円以下の赤ワイン10選"></div>
-          <div class="related-body">
-            <div class="related-cat">🍷 Wine</div>
-            <div class="related-title">本音で選ぶ、<br>3,000円以下の赤ワイン10選</div>
-          </div>
-        </a>
-      </div>
-    </div>
+    <div id="other-articles"></div>
+    <script>
+      fetch('partials/other-articles-wine.html')
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          var el = document.getElementById('other-articles');
+          el.innerHTML = html;
+          el.querySelectorAll('.related-card').forEach(function(card) {
+            if (card.getAttribute('href') === 'article-louisjadot.html') card.style.display = 'none';
+          });
+        });
+    </script>
 
     <!-- AUTHOR BLOCK（変更禁止） -->
     <div class="author-block">

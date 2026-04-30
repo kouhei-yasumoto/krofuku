@@ -374,19 +374,18 @@
   <p>この5本、どれもハズレはありません。迷ったらまずスタンダードのビッグピートから試してみてください。きっと皆さんも、このアイラの魔力に取り憑かれるはずです。</p>
 
   <!-- RELATED ARTICLES -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Whisky Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-kilchoman.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-kilchoman.jpg" alt="キルホーマン"></div>
-        <div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">KILCHOMAN<br>煙と塩の物語</div></div>
-      </a>
-      <a href="article-whisky-10.html" class="related-card">
-        <div class="related-thumb"><img src="images/header.jpg" alt="ウイスキー10選"></div>
-        <div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">本音で選ぶ、<br>3,000円以下のウイスキー10選</div></div>
-      </a>
-    </div>
-  </div>
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-whisky.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-bigpeat.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
   <!-- AUTHOR -->
   <div class="author-block">

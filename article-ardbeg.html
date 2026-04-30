@@ -540,14 +540,18 @@
     </div>
 
     <!-- RELATED ARTICLES -->
-    <div class="related-section">
-      <div class="related-label"><span>Other Whisky Articles</span><div class="line"></div></div>
-      <div class="related-grid">
-        <a href="article-kilchoman.html" class="related-card"><div class="related-thumb"><img src="images/header-kilchoman.jpg" alt="KILCHOMAN"></div><div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">KILCHOMAN<br>アイラの農場から生まれた煙と塩</div></div></a>
-        <a href="article-bigpeat.html" class="related-card"><div class="related-thumb"><img src="images/header-bigpeat.jpg" alt="BIG PEAT"></div><div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">BIG PEAT<br>アイラの最強ブレンドウイスキー</div></div></a>
-        <a href="article-whisky-10.html" class="related-card"><div class="related-thumb"><img src="images/header.jpg" alt="ウイスキー10選"></div><div class="related-body"><div class="related-cat">🥃 Whisky</div><div class="related-title">本音で選ぶ、<br>3,000円以下のウイスキー10選</div></div></a>
-      </div>
-    </div>
+    <div id="other-articles"></div>
+    <script>
+      fetch('partials/other-articles-whisky.html')
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          var el = document.getElementById('other-articles');
+          el.innerHTML = html;
+          el.querySelectorAll('.related-card').forEach(function(card) {
+            if (card.getAttribute('href') === 'article-ardbeg.html') card.style.display = 'none';
+          });
+        });
+    </script>
 
     <!-- AUTHOR BLOCK（変更禁止） -->
     <div class="author-block">

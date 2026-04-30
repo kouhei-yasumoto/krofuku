@@ -639,33 +639,19 @@
     <p>乾杯！🍷</p>
   </div>
 
-  <!-- RELATED HTML -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Wine Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-louisjadot.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-louisjadot.jpg" alt="ルイ・ジャド"></div>
-        <div class="related-body">
-          <p class="related-cat">Wine — Editor's Pick</p>
-          <p class="related-title">ルイ・ジャド ブルゴーニュを旅するならまずこの一本から</p>
-        </div>
-      </a>
-      <a href="article-conosur.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-conosur.jpg" alt="コノスル"></div>
-        <div class="related-body">
-          <p class="related-cat">Wine — Editor's Pick</p>
-          <p class="related-title">コノスル 自転車ラベルのチリワイン</p>
-        </div>
-      </a>
-      <a href="article-wine-10.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-wine.jpg" alt="ワイン10選"></div>
-        <div class="related-body">
-          <p class="related-cat">Wine — Editor's Pick</p>
-          <p class="related-title">クロフク編集長が選ぶ ワイン10選</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-wine.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-kaminoshizuku-wine-vol1.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
   <!-- AUTHOR -->
   <div class="author-block">

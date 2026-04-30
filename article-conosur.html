@@ -503,33 +503,19 @@
       <p>赤ワイン、白ワイン、スパークリング——どれから飲み始めても、きっとコノスルの世界に引き込まれるはずです。自転車のラベルを見かけたら、ぜひ手に取ってみてください。あなたの日常に、チリの風を。</p>
     </div>
 
-  <!-- RELATED HTML -->
-  <div class="related-section">
-    <div class="related-label"><span>Other Wine Articles</span><div class="line"></div></div>
-    <div class="related-grid">
-      <a href="article-louisjadot.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-louisjadot.jpg" alt="ルイ・ジャド"></div>
-        <div class="related-body">
-          <p class="related-cat">Wine — Editor's Pick</p>
-          <p class="related-title">ルイ・ジャド ブルゴーニュを旅するならまずこの一本から</p>
-        </div>
-      </a>
-      <a href="article-kaminoshizuku-wine-vol1.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-kaminoshizuku-vol1.jpg" alt="神の雫"></div>
-        <div class="related-body">
-          <p class="related-cat">Wine — Editor's Pick</p>
-          <p class="related-title">神の雫ワインで飲む マンガの世界へようこそ</p>
-        </div>
-      </a>
-      <a href="article-wine-10.html" class="related-card">
-        <div class="related-thumb"><img src="images/header-wine.jpg" alt="ワイン10選"></div>
-        <div class="related-body">
-          <p class="related-cat">Wine — Editor's Pick</p>
-          <p class="related-title">クロフク編集長が選ぶ ワイン10選</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-wine.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-conosur.html') card.style.display = 'none';
+        });
+      });
+  </script>
 
     <!-- AUTHOR BLOCK（変更禁止） -->
     <div class="author-block">
