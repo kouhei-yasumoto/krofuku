@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robert Mondavi その夢は、続いている｜クロフク編集長オススメワイン</title>
+  <meta name="description" content="カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      overflow: hidden;
+    }
+    .article-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #0d0d0d;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    /* CAT NAV */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; text-align: center; }
+    .cat-card-en { font-size: clamp(5.5px, 1.5vw, 8px); color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; text-align: center; }
+
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+      .product-img, .product-img.medium, .product-img.large { max-width: 100%; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <!-- OGP -->
+  <meta property="og:title" content="Robert Mondavi その夢は、続いている｜クロフク編集長オススメワイン">
+  <meta property="og:description" content="カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-robert-mondavi.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-robert-mondavi.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robert Mondavi その夢は、続いている｜クロフク編集長オススメワイン">
+  <meta name="twitter:description" content="カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-robert-mondavi.jpg">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← 記事一覧へ</a>
+  </div>
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+    <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+    <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+    <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-robert-mondavi.jpg" alt="Robert Mondavi ロバートモンダヴィ ワインラインナップ">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🍷 Wine — Editor's Pick</span>
+    <span class="meta-date">2026.05.01</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">ROBERT MONDAVI<br>その夢は、続いている。</h1>
+
+  <div class="article-body">
+    <p>こんにちは、クロフク編集長です。</p>
+    <p>今回は、カリフォルニアワインの歴史を語るうえで絶対に外せない名前、ロバート・モンダヴィ（Robert Mondavi）をご紹介します。</p>
+    <p>「ワインは、人々の生活をより豊かにする文化そのものだ」——ロバート・モンダヴィが残したこの言葉は、彼が生涯かけて追い求めた夢を、そのまま表しています。</p>
+    <p>彼がいなければ、今のカリフォルニアワインはなかった。そう言っても過言ではありません。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">一人の男が、カリフォルニアワインを変えた</h2>
+    <p>1966年、ロバート・モンダヴィは当時まだ「テーブルワインの産地」に過ぎなかったナパ・ヴァレーに、自らの名を冠したワイナリーを設立しました。54歳のことです。</p>
+    <p>当時のカリフォルニアワインは、ヨーロッパの名醸地に比べて格下と見られていた。質より量、安売り競争が当たり前の世界。モンダヴィはその常識に真っ向から反発した。</p>
+    <p>「カリフォルニアの土壌と太陽は、世界最高のワインを生む可能性を秘めている。なぜ、誰もそれを本気で証明しようとしないのか」</p>
+    <p>彼は醸造技術の革新に投資し、フランスの名門と対等に渡り合うためにナパの可能性を世界に発信し続けた。その執念が、1976年の「パリの審判」という歴史的事件につながっていく。ブラインドテイスティングで、カリフォルニアワインがフランスの格付けワインを次々と上回ったあの衝撃の日——モンダヴィの夢が、世界に認められた瞬間でした。</p>
+    <p>2008年、94歳でその生涯を閉じたロバート・モンダヴィ。しかし彼が作り上げたブランドは、今もカリフォルニアワインの象徴として世界中で愛飲されています。</p>
+    <p>その夢は、続いている。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">編集長が選ぶ、ロバートモンダヴィ厳選5本</h2>
+    <p>ロバートモンダヴィのワインラインナップは大きく2つ。ナパ・ヴァレーを中心とした高品質な「プライベートセレクション」シリーズと、日常飲みに最適な「ウッドブリッジ」シリーズです。今回は赤白交互に、編集長セレクションの5本をご紹介します。</p>
+  </div>
+
+  <!-- ① PS カベルネ・ソーヴィニヨン -->
+  <div class="product-item">
+    <div class="product-heading">① ロバートモンダヴィ プライベートセレクション カベルネ・ソーヴィニヨン 750ml</div>
+    <div class="product-sub">タイプ：赤ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41X2hTFbpnL._AC_SX679_.jpg" alt="Robert Mondavi Private Selection Cabernet Sauvignon" class="product-img">
+    <p class="product-desc">プライベートセレクションシリーズの代名詞とも言える赤ワイン。カリフォルニアの豊かな陽光と肥沃な大地が育てたカベルネ・ソーヴィニヨンを100%使用しています。</p>
+    <p class="product-desc">グラスに注ぐと深いルビーレッド。香りはブラックチェリーやカシス、プラムなどの黒系果実が豊かに広がり、オーク由来のバニラや甘いスパイスが優しく追いかけてくる。口に含むと、しっかりとしたボディとなめらかなタンニンが出迎えてくれます。</p>
+    <p class="product-desc">後味は長くウォーム。ステーキやラム肉、熟成チーズとの相性は抜群ですが、ハンバーグや肉じゃがのような和洋折衷の料理にも違和感なく寄り添ってくれる懐の深さがあります。</p>
+    <p class="product-desc">「カリフォルニアの赤といえばこれ」と言い切れるほどの完成度。初めてロバートモンダヴィを飲む方は、ここからスタートしてください。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B003DU6PUI/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcellar%2F414154%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <!-- ② PS シャルドネ -->
+  <div class="product-item">
+    <div class="product-heading">② ロバートモンダヴィ プライベートセレクション シャルドネ 750ml</div>
+    <div class="product-sub">タイプ：白ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41UQ+E8DO6L._SX522_.jpg" alt="Robert Mondavi Private Selection Chardonnay" class="product-img medium">
+    <p class="product-desc">プライベートセレクションの白ワインを代表する一本。カリフォルニアらしいふくよかさと、程よい爽やかさを兼ね備えたシャルドネです。</p>
+    <p class="product-desc">色合いはきれいなゴールデンイエロー。グラスを傾けると、桃やマンゴーといったトロピカルフルーツの甘やかな香りがやってきて、その後ろからバニラやバタースコッチのようなオーク由来の温かみが続く。</p>
+    <p class="product-desc">口当たりはリッチでまろやか。でも、きちんと酸がある。だからしつこくなくて、グラスが空になるのが早い。このバランスこそが、カリフォルニアシャルドネの真骨頂。</p>
+    <p class="product-desc">シーフードや鶏のクリームソース、パスタとの相性が良く、アペリティフとしてもすっきり楽しめます。「白ワインが得意じゃない」という方にこそ飲んでほしい。きっと、印象が変わります。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B002N0KOXI/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fse-sake%2F17761a01%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <!-- ③ ウッドブリッジ ピノノワール -->
+  <div class="product-item">
+    <div class="product-heading">③ ロバートモンダヴィ ウッドブリッジ ピノ・ノワール 750ml</div>
+    <div class="product-sub">タイプ：赤ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/51OFU1S-rLL._SX522_.jpg" alt="Robert Mondavi Woodbridge Pinot Noir" class="product-img medium">
+    <p class="product-desc">「日常にワインを」というコンセプトで生まれたウッドブリッジシリーズから、赤ワインの王様・ピノ・ノワールをご紹介します。</p>
+    <p class="product-desc">ウッドブリッジのピノノワールは、難しいことを考えずに飲める赤ワイン。色は明るいルビー、香りはチェリーやラズベリー、イチゴといった赤系果実が中心。タンニンは柔らかく、口当たりはシルキー。酸味も穏やかで、とにかく飲みやすい。</p>
+    <p class="product-desc">「赤ワインって渋いから……」という方が、これを飲んで「あ、こういう赤ワインならいける」となるケースをよく見ます。ピノノワールならではの繊細なフルーティさが、敷居を低くしてくれる。</p>
+    <p class="product-desc">サーモンのソテー、鴨肉のロースト、きのこ系の料理との相性が特に良い。食事の途中でも、食後にゆっくり飲むのも、どちらにも向いている万能選手です。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B003DUAUN6/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F1-r-mon-wb-pn-zz%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <!-- ④ ウッドブリッジ シャルドネ -->
+  <div class="product-item">
+    <div class="product-heading">④ ロバートモンダヴィ ウッドブリッジ シャルドネ 750ml</div>
+    <div class="product-sub">タイプ：白ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/616xIooMlSL._AC_SY741_.jpg" alt="Robert Mondavi Woodbridge Chardonnay" class="product-img">
+    <p class="product-desc">ウッドブリッジシリーズの白ワイン代表格。「毎日飲みたい白ワインを、手の届く価格で」——そのコンセプトが、この1本に凝縮されています。</p>
+    <p class="product-desc">グラスに注ぐと、淡いゴールドの色合い。青リンゴや洋梨のような爽やかな果実香と、柑橘系のさっぱりした香りが広がる。プライベートセレクションに比べてオークのニュアンスは控えめで、よりクリーンでフレッシュな印象です。</p>
+    <p class="product-desc">飲み口は軽やかで、キリリとした酸がある。暑い季節に冷やして飲むと格別に気持ちいい。食前酒としてはもちろん、魚介の天ぷら、冷奴、白身魚の塩焼きなど、和食にも自然と合わせられる懐の広さが魅力です。</p>
+    <p class="product-desc">「とにかく毎日飲めるコスパの良い白を探している」という方に、自信を持っておすすめできる1本。冷蔵庫に常備しておきたいワインです。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B001M2FIQQ/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineuki%2F1600001006934%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <!-- ⑤ PS バーボン・バレルエイジド CS -->
+  <div class="product-item">
+    <div class="product-heading" style="font-size: 13px;"><span style="font-size: 16px;">⑤</span> ロバートモンダヴィ プライベートセレクション バーボンバレルエイジド カベルネ・ソーヴィニヨン 750ml</div>
+    <div class="product-sub">タイプ：赤ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41xPpZd-47L._AC_SX679_.jpg" alt="Robert Mondavi Private Selection Bourbon Barrel-Aged Cabernet Sauvignon" class="product-img">
+    <p class="product-desc">ここで一本、異端の赤ワインを紹介させてください。</p>
+    <p class="product-desc">「バーボン・バレルエイジド」——その名の通り、ケンタッキー州の蒸留所で使われた本物のバーボン樽で熟成させたカベルネ・ソーヴィニヨンです。ワインの世界とウイスキーの世界が、1本のボトルの中で交差する。</p>
+    <p class="product-desc">バーボン樽には、かつてバーボンウイスキーが宿っていたフレーバーが染み込んでいる。バニラ、キャラメル、トーストしたオーク、そかすかなスモーキーさ。それらがカベルネ・ソーヴィニヨンの黒系果実の風味と混ざり合うことで、ほかのワインにはない複雑な味わいが生まれます。</p>
+    <p class="product-desc">飲んでみると、最初は「あ、これはカベルネだ」とわかる。でもしばらくすると、バーボン由来の甘くスモーキーなニュアンスが鼻の奥でじんわりと広がってくる。「ワインを飲んでいるのに、ウイスキーの記憶がよみがえる」——そんな不思議な体験をさせてくれる1本です。</p>
+    <p class="product-desc">ウイスキー好きな方が「ワインも飲んでみようかな」と思ったとき、最初の1本として最高。逆に、ワイン好きな方がウイスキーへの扉を開くきっかけにもなる。両方の世界を繋ぐ、革新的なワインです。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B07NDJS1CM/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineuki%2F1600001005234%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CONCLUSION -->
+  <div class="article-body">
+    <h2 class="section-heading">最後に</h2>
+    <p>ロバート・モンダヴィが1966年にナパ・ヴァレーへ植えた夢は、彼が世を去った後も、静かに実り続けています。</p>
+    <p>グラスを傾けるたびに、その時間がそっと流れ込んでくる気がします。カリフォルニアの陽光、土の匂い、1本のワインにかけた男の執念——そういうものが、液体の中に溶けている。</p>
+    <p>その夢の続きが、あなたのグラスの中にあります。</p>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-wine.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-robert-mondavi.html') card.style.display = 'none';
+        });
+      });
+  </script>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">EDITOR-IN-CHIEF</div>
+      <div class="author-bio">酒販業界で働く傍ら、お酒の魅力を伝えるための記事を執筆。ウイスキー、日本酒、ワイン、ビール……あらゆるお酒の沼にハマっている。特に好きなのは、常識を超えるものたち。</div>
+    </div>
+  </div>
+
+  <!-- BACK NAV -->
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-disclosure">
+      このサイトはAmazonアソシエイトプログラム及び楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+    </div>
+    <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "クロフク編集長のお酒マガジン",
+  "url": "https://kurofuku-magazine.com",
+  "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+}
+</script>
+
+</body>
+</html>
