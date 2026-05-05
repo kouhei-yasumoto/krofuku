@@ -272,7 +272,9 @@
       z-index: 100;
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
       will-change: transform;
+      overflow-anchor: none;
     }
+    body, .main-wrap, .article-wrap { overflow-anchor: none; }
     header.is-hidden { transform: translateY(-100%); }
     header.is-scrolled {
       background: rgba(26, 18, 16, 0.88);
@@ -280,13 +282,15 @@
       -webkit-backdrop-filter: blur(12px);
     }
     .cat-cards-inner {
-      transform-origin: top;
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
-      will-change: transform, opacity;
+      transition: max-height 0.15s ease, opacity 0.15s ease, padding-bottom 0.15s ease;
+      overflow: hidden;
+      max-height: 280px;
+      overflow-anchor: none;
     }
     header.is-scrolled .cat-cards-inner {
-      transform: scaleY(0);
+      max-height: 0 !important;
       opacity: 0;
+      padding-bottom: 0 !important;
       pointer-events: none;
     }
     #scroll-progress {
@@ -527,7 +531,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <a href="kurofuku-sake-magazine.html" class="footer-logo" style="cursor:pointer;display:block;">クロフク編集長のお酒マガジン</a>
     <div class="footer-logo-en">Kurofuku's Sake Magazine</div>
     <div class="footer-links">
       <a href="kurofuku-sake-magazine.html">トップへ戻る</a>
@@ -601,8 +605,13 @@
       if (header) {
         if (y > 80) header.classList.add('is-scrolled');
         else header.classList.remove('is-scrolled');
+        // ページ最下部に到達したら表示
+        var atBottom = (y + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
+        if (atBottom) {
+          header.classList.remove('is-hidden');
+        }
         // 上スクロールなら即座に表示
-        if (diff < -1) {
+        else if (diff < -1) {
           header.classList.remove('is-hidden');
           lastDirChangeY = y;
         }
