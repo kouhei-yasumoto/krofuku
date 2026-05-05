@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -136,6 +136,11 @@
       .profile-card { padding: 24px 20px 32px; }
       .profile-top { flex-direction: column; align-items: flex-start; gap: 16px; }
     }
+  
+    /* ===== PAGE TRANSITION ===== */
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageFadeIn 0.4s ease-out; }
+    body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
   </style>
 
   <!-- OGP -->
@@ -190,7 +195,7 @@
     <div class="profile-body">
       <div class="profile-section-label">About</div>
 
-      <p>酒販業界の現場で長年働きながら、年間数百本のお酒を試飲してきました。<br>流通・販売の最前線で働いてきたからこそ見えてくる、本物の「いい一本」とは何かを、常に問い続けています。<br>このマガジンは、その経験と目利きから得た「本当においしいお酒」を、心からお届けするために立ち上げました。</p>
+      <p>酒販業界に5年。営業・EC運営を通じて1000本以上のお酒と向き合ってきた経験から、本物の「いい一本」とは何かを、常に問い続けています。<br>このマガジンは、その経験と目利きから得た「本当においしいお酒」を、心からお届けするために立ち上げました。</p>
 
       <p>市場にあふれる情報に惑わされず、実際に確かめた本音の評価がポリシーです。<br>「このお酒、どれを選べばいいの？」という方に、業界経験から得た正直な視点でお答えしていきます。<br>華やかな晩餐から気軽な晩酌まで、どんなシーンにも合う一本を一緒に探していく──そんなお酒との出会いのお手伝いができたら幸いです。</p>
 
@@ -226,5 +231,48 @@
   </div>
 </footer>
 
+
+<!-- ページ遷移フェード -->
+<script>
+  (function() {
+    function navigateWithFade(href) {
+      document.body.classList.add('page-leaving');
+      setTimeout(function() { window.location.href = href; }, 300);
+    }
+    function isExternal(href) {
+      return !href || href.startsWith('http') || href.startsWith('//') ||
+             href.startsWith('#') || href.startsWith('mailto:') ||
+             href.startsWith('tel:') || href.startsWith('javascript:');
+    }
+    // <a> タグの遷移を捕捉
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (isExternal(href)) return;
+      if (link.target === '_blank') return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      navigateWithFade(href);
+    });
+    // onclick="window.location.href='...'" 形式の要素を捕捉
+    document.querySelectorAll('[onclick*="window.location"]').forEach(function(el) {
+      var orig = el.getAttribute('onclick');
+      var match = orig && orig.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
+      if (!match) return;
+      var href = match[1];
+      el.removeAttribute('onclick');
+      el.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        navigateWithFade(href);
+      });
+    });
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
 </body>
 </html>

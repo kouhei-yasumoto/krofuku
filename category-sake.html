@@ -73,6 +73,11 @@
       .card-body { padding: 18px 18px 22px; }
       .card-body h3 { font-size: 17px; }
     }
+  
+    /* ===== PAGE TRANSITION ===== */
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageFadeIn 0.4s ease-out; }
+    body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
   </style>
 </head>
 <body>
@@ -168,5 +173,48 @@
   </div>
 </footer>
 
+
+<!-- ページ遷移フェード -->
+<script>
+  (function() {
+    function navigateWithFade(href) {
+      document.body.classList.add('page-leaving');
+      setTimeout(function() { window.location.href = href; }, 300);
+    }
+    function isExternal(href) {
+      return !href || href.startsWith('http') || href.startsWith('//') ||
+             href.startsWith('#') || href.startsWith('mailto:') ||
+             href.startsWith('tel:') || href.startsWith('javascript:');
+    }
+    // <a> タグの遷移を捕捉
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (isExternal(href)) return;
+      if (link.target === '_blank') return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      navigateWithFade(href);
+    });
+    // onclick="window.location.href='...'" 形式の要素を捕捉
+    document.querySelectorAll('[onclick*="window.location"]').forEach(function(el) {
+      var orig = el.getAttribute('onclick');
+      var match = orig && orig.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
+      if (!match) return;
+      var href = match[1];
+      el.removeAttribute('onclick');
+      el.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        navigateWithFade(href);
+      });
+    });
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
 </body>
 </html>

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>クロフク編集長のお酒マガジン｜ウイスキー・日本酒・ワイン3000円以下のおすすめ</title>
-  <meta name="description" content="酒販業界での経験から本当におすすめするウイスキー・日本酒・ワイン。年間数百本を試飲した目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン" />
+  <meta name="description" content="酒販業界5年・1000本以上のお酒と向き合ってきた目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン" />
   <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
   <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
   <script type="application/ld+json">
@@ -375,11 +375,34 @@
       .cat-cards-inner { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .cat-cards { padding: 0 14px 24px; }
     }
+
+    /* ===== SCROLL FADE-IN ANIMATION ===== */
+    .article-card {
+      opacity: 0;
+      transform: translateX(-80px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      will-change: opacity, transform;
+    }
+    .article-card.from-right {
+      transform: translateX(80px);
+    }
+    .article-card.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .article-card { opacity: 1; transform: none; transition: none; }
+    }
+  
+    /* ===== PAGE TRANSITION ===== */
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageFadeIn 0.4s ease-out; }
+    body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
   </style>
 
   <!-- OGP -->
   <meta property="og:title" content="クロフク編集長のお酒マガジン｜ウイスキー・日本酒・ワイン3000円以下のおすすめ">
-  <meta property="og:description" content="酒販業界での経験から本当におすすめするウイスキー・日本酒・ワイン。年間数百本を試飲した目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン">
+  <meta property="og:description" content="酒販業界5年・1000本以上のお酒と向き合ってきた目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン">
   <meta property="og:image" content="https://kurofuku-magazine.com/images/ogp.jpg">
   <meta property="og:url" content="https://kurofuku-magazine.com/kurofuku-sake-magazine.html">
   <meta property="og:type" content="website">
@@ -387,7 +410,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="クロフク編集長のお酒マガジン｜ウイスキー・日本酒・ワイン3000円以下のおすすめ">
-  <meta name="twitter:description" content="酒販業界での経験から本当におすすめするウイスキー・日本酒・ワイン。年間数百本を試飲した目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン">
+  <meta name="twitter:description" content="酒販業界5年・1000本以上のお酒と向き合ってきた目利きが厳選した3000円以下の旨い酒だけをレビュー。クロフク編集長のお酒マガジン">
   <meta name="twitter:image" content="https://kurofuku-magazine.com/images/ogp.jpg">
 </head>
 <body>
@@ -463,7 +486,7 @@
       <p class="card-cat">🍷 Wine — Editor's Pick</p>
       <h3>ROBERT MONDAVI<br>その夢は、続いている。</h3>
       <p class="card-excerpt">カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。</p>
-      <p class="card-meta">2026.05.02 — クロフク編集長</p>
+      <p class="card-meta">2026.05.01 — クロフク編集長</p>
       <div class="amz-cta">
         <div class="amz-cta-text">
           <div class="prod">ロバートモンダヴィ PS カベルネ・ソーヴィニヨン</div>
@@ -810,7 +833,7 @@
     <div class="profile-body">
       <div class="profile-name">クロフク編集長</div>
       <div class="profile-role">Sake Magazine Editor</div>
-      <p class="profile-bio">ウイスキー、ワイン、日本酒を中心に、ありとあらゆるお酒を年間数百本試飲してきた酒販業界の現場の人間。実際に飲んで確かめた本音の評価をお届けします。</p>
+      <p class="profile-bio">酒販業界に5年。営業・EC運営を通じて1000本以上のお酒と向き合ってきた経験から、本当においしい一本を届けます。</p>
     </div>
   </a>
 
@@ -831,5 +854,72 @@
   </div>
 </footer>
 
+<!-- スクロール時の左右交互フェードイン -->
+<script>
+  (function() {
+    var cards = document.querySelectorAll('.article-card');
+    cards.forEach(function(card, i) {
+      if (i % 2 === 1) card.classList.add('from-right');
+    });
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach(function(c) { c.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, { threshold: 0.22, rootMargin: '0px 0px -50px 0px' });
+    cards.forEach(function(c) { io.observe(c); });
+  })();
+</script>
+
+
+<!-- ページ遷移フェード -->
+<script>
+  (function() {
+    function navigateWithFade(href) {
+      document.body.classList.add('page-leaving');
+      setTimeout(function() { window.location.href = href; }, 300);
+    }
+    function isExternal(href) {
+      return !href || href.startsWith('http') || href.startsWith('//') ||
+             href.startsWith('#') || href.startsWith('mailto:') ||
+             href.startsWith('tel:') || href.startsWith('javascript:');
+    }
+    // <a> タグの遷移を捕捉
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (isExternal(href)) return;
+      if (link.target === '_blank') return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      navigateWithFade(href);
+    });
+    // onclick="window.location.href='...'" 形式の要素を捕捉
+    document.querySelectorAll('[onclick*="window.location"]').forEach(function(el) {
+      var orig = el.getAttribute('onclick');
+      var match = orig && orig.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
+      if (!match) return;
+      var href = match[1];
+      el.removeAttribute('onclick');
+      el.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        navigateWithFade(href);
+      });
+    });
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
 </body>
 </html>
