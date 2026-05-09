@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>井川蒸溜所 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="静岡・南アルプスの標高1,200mに佇む、日本最高地点の蒸溜所「井川蒸溜所」。製紙業から転身した十山株式会社が、南アルプスの水と木で造るジャパニーズシングルモルトを、蒸溜所の物語とともに深く掘り下げます。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item {
+    margin-bottom: 32px;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+  }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    /* ===== BUY LINKS ===== */
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+      align-items: flex-start;
+    }
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      min-width: 160px;
+      justify-content: center;
+    }
+    .amz-link:hover { background: #e08800; }
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      min-width: 160px;
+      justify-content: center;
+    }
+    .raku-link:hover { background: #a00000; }
+    @media (max-width: 600px) {
+      .buy-links { align-items: stretch; }
+      .buy-links .amz-link,
+      .buy-links .raku-link { display: flex; }
+    }
+
+    /* ===== SPECIAL SECTIONS ===== */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+    .special-section h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 16px;
+      margin-top: 24px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .special-section h3:first-child { margin-top: 0; }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .conclusion p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .author-block { flex-direction: column; }
+      .conclusion { padding: 22px 20px; }
+      .special-section { padding: 22px 20px; }
+      .product-img.small { max-width: 130px; max-height: 240px; }
+      .product-img.medium { max-width: 240px; max-height: 380px; }
+      .product-img.large { max-width: 300px; max-height: 450px; }
+    }
+
+    /* CATEGORY CARDS */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; text-align: center; }
+    .cat-card-en { font-size: clamp(5.5px, 1.5vw, 8px); color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; text-align: center; }
+
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
+
+    /* ===== PAGE TRANSITION ===== */
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageFadeIn 0.4s ease-out; }
+    body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
+
+    /* ===== PHASE 1: SCROLL EFFECTS ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
+      will-change: transform;
+      overflow-anchor: none;
+    }
+    body, .main-wrap, .article-wrap { overflow-anchor: none; }
+    header.is-hidden { transform: translateY(-100%); }
+    header.is-scrolled {
+      background: rgba(26, 18, 16, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .cat-cards-inner {
+      transition: max-height 0.15s ease, opacity 0.15s ease, padding-bottom 0.15s ease;
+      overflow: hidden;
+      max-height: 280px;
+      overflow-anchor: none;
+    }
+    header.is-scrolled .cat-cards-inner {
+      max-height: 0 !important;
+      opacity: 0;
+      padding-bottom: 0 !important;
+      pointer-events: none;
+    }
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--gold);
+      z-index: 200;
+      width: 0;
+      transition: width 0.08s ease-out;
+      pointer-events: none;
+    }
+    .article-hero { overflow: hidden; }
+    .article-hero img { will-change: transform; }
+
+    /* ===== PHASE 1 FIXES ===== */
+    html, body { overflow-x: clip; }
+    * { -webkit-tap-highlight-color: transparent; }
+    .article-card, [onclick] { -webkit-user-select: none; user-select: none; }
+    .article-body, .product-desc, p, h1, h2, h3 { -webkit-user-select: text; user-select: text; }
+
+    /* ===== PHASE 2: HOVER & MAGNETIC ===== */
+    .article-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid transparent;
+      pointer-events: none;
+      transition: border-color 0.4s ease;
+      z-index: 2;
+    }
+    .article-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18) !important;
+    }
+    .article-card:hover::after {
+      border-color: var(--gold);
+    }
+    .card-thumb { overflow: hidden; }
+    .card-thumb img {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .article-card:hover .card-thumb img {
+      transform: scale(1.05);
+    }
+    .amz-btn, .raku-btn, .amz-link, .raku-link, .back-nav a {
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s ease, color 0.2s ease;
+    }
+
+    /* ===== PHASE 3: TITLE FADE & IMAGE REVEAL ===== */
+    .char-fade {
+      display: inline-block;
+      opacity: 0;
+      animation: charFadeIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      will-change: opacity, transform;
+    }
+    @keyframes charFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .article-hero { position: relative; }
+    .article-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      z-index: 3;
+      transform-origin: left;
+      pointer-events: none;
+      animation: maskSweep 1.3s cubic-bezier(0.7, 0, 0.3, 1) 0.2s forwards;
+    }
+    @keyframes maskSweep {
+      0% { transform: scaleX(0); transform-origin: left; }
+      50% { transform: scaleX(1); transform-origin: left; }
+      50.01% { transform-origin: right; }
+      100% { transform: scaleX(0); transform-origin: right; }
+    }
+    .article-hero img {
+      opacity: 0;
+      animation: heroImgReveal 0.4s ease-out 0.55s forwards;
+    }
+    @keyframes heroImgReveal {
+      to { opacity: 1; }
+    }
+  </style>
+
+  <!-- OGP -->
+  <meta property="og:title" content="日本で一番高い場所で、ウイスキーは生まれる。井川蒸溜所">
+  <meta property="og:description" content="静岡・南アルプスの標高1,200mに佇む、日本最高地点の蒸溜所「井川蒸溜所」。製紙業から転身した十山株式会社が、南アルプスの水と木で造るジャパニーズシングルモルトを、蒸溜所の物語とともに深く掘り下げます。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-Ikawa-Distillery.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-Ikawa-Distillery.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="日本で一番高い場所で、ウイスキーは生まれる。井川蒸溜所">
+  <meta name="twitter:description" content="静岡・南アルプスの標高1,200mに佇む、日本最高地点の蒸溜所「井川蒸溜所」。製紙業から転身した十山株式会社が、南アルプスの水と木で造るジャパニーズシングルモルトを、蒸溜所の物語とともに深く掘り下げます。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-Ikawa-Distillery.jpg">
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-whisky.html" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+    <a href="category-wine.html" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+    <a href="category-sake.html" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+    <a href="category-other.html" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-Ikawa-Distillery.jpg" alt="南アルプスの秘境に佇む井川蒸溜所" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🥃 Whisky</span>
+    <span class="meta-date">2026.05.09</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">日本で一番高い場所で、<br>ウイスキーは生まれる。<br>井川蒸溜所</h1>
+
+  <div class="article-body">
+    <p>こんにちは、クロフク編集長です。</p>
+    <p>「静岡」と聞けば、多くの人は富士山や温暖な海沿いの風景を思い浮かべるでしょう。でも今日ご紹介する場所は、そのイメージとはまるで違う。静岡市の最北端、南アルプスの山々が重なり合う深い峡谷の奥——標高1,200メートルの地に、一つの蒸溜所が静かに立っています。</p>
+    <p>名前は、井川蒸溜所。</p>
+    <p>冬はマイナス15度まで冷え込み、夏でも山の霧がたちこめるこの場所で、ウイスキーが生まれています。今回は、この蒸溜所そのものの物語を丁寧に辿っていきたいと思います。なぜなら、ここで造られているウイスキーを理解するには、まずこの場所と、この場所を選んだ人たちの選択を知る必要があるからです。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">林業の終わりから、ウイスキーが始まった</h2>
+    <p>井川蒸溜所を運営するのは、十山（じゅうざん）株式会社。東証プライム市場上場の製紙メーカー・特種東海製紙のグループ会社として2020年に設立されました。</p>
+    <p>特種東海製紙は、かつて徳川幕府の直轄地だったこの南アルプスの山林と、約120年前から深く関わってきた会社です。広大な森をパルプ原料として活用し、製紙業を長く支えてきた。その所有山林の面積は2万4,430ヘクタール——日本最大規模の民有水源涵養林と呼ばれるほどの広さです。</p>
+    <p>しかし、時代が変わるにつれ、林業としての活用には限界が訪れます。この土地をどう守り、どう次の世代に引き継いでいくか。それが十山設立の問いでした。</p>
+    <p>検討の末に辿り着いたのが、ウイスキーの蒸溜所でした。南アルプスの澄んだ水。豊かな森が生み出す木材資源。冷涼で霧の多い熟成環境。気づいてみれば、<strong>ウイスキー造りに必要なものが、この土地にはすべて揃っていた</strong>のです。</p>
+    <p>2020年11月、井川蒸溜所は開所。製紙業という別の産業から生まれた、異色のウイスキー蒸溜所の歴史が動き始めました。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">水の話——木賊湧水という名の奇跡</h2>
+    <p>ウイスキー造りにおいて、水の個性は原酒の味わいを根本から左右します。</p>
+    <p>井川蒸溜所が仕込みと加水に使うのは「木賊湧水（とくさゆうすい）」と呼ばれる、南アルプスの森が長い年月をかけてろ過した湧き水。硬度はわずか40mg/Lで、日本でも有数の軟水に分類される、きわめてクリアな水です。1分間に200リットルが湧き出し続けるその豊かさは、山そのものが持つ生命力の表れでもあります。</p>
+    <p>「井川」という地名も、「井（いど）」と「川」を組み合わせた、水の豊かさに由来する言葉です。古来からこの地が水に恵まれてきたことは、地名の中にも刻まれている。その清澄な水の個性は、デッサンシリーズの一本目・フローラに、そのままグラスの中に宿っています。</p>
+  </div>
+
+  <div class="product-item">
+    <div class="product-heading">デッサンシリーズ フローラ 2025</div>
+    <hr class="section-divider" style="margin:14px 0 20px;">
+    <img src="https://m.media-amazon.com/images/I/61KOzyeOCtL._AC_SY741_.jpg" alt="デッサンシリーズ フローラ 2025" class="product-img small">
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B0G4CTH9Y7/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftaka-sake%2Fikawa-flora-2025-700ml%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>バーボンバレルで熟成したノンピート原酒に、新たにシェリーカスク原酒をブレンドしたのが2025年版。ラベルには亜高山帯に自生する高山植物・大桜草が描かれています。グラスに注ぐと、バーボン由来の木質感ある香りにシェリー由来の花の香りが重なり、口に含むとバナナチョコを思わせる甘みとよく熟した果実感が広がります。木賊湧水の透明感が、そのまま清潔な甘さとして現れているような味わいです。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">標高1,200m——環境が樽の中に入り込む</h2>
+    <p>日本の蒸溜所の中で、これほど高い場所に位置するところは他にありません。井川蒸溜所は、日本最高標高の蒸溜所です。</p>
+    <p>標高が高いということは、大気圧が低いということでもあります。気圧880ヘクトパスカルという環境では、蒸留の際の沸点が変わり、蒸気の動きも変わります。こうした物理的な条件が、ここで生まれる原酒の風味キャラクターに静かに影響を与えているのです。</p>
+    <p>熟成環境もまた特別です。夏は霧が立ちこめ湿度が高く、冬はマイナス15度まで冷え込む。この激しい温度変化が、樽の木材を呼吸させ、ウイスキーの熟成を促します。スコットランドのハイランドを思わせる気候の中で、原酒は静かに時間を刻んでいます。</p>
+    <p>この峻厳な自然の陰影を体現するのが、二本目のファウナです。ラベルには南アルプスに生息する特別天然記念物のライチョウ——その荒々しい山の気配が、ミディアムピートという形でグラスの中に落とし込まれています。</p>
+  </div>
+
+  <div class="product-item">
+    <div class="product-heading">デッサンシリーズ ファウナ 2025</div>
+    <hr class="section-divider" style="margin:14px 0 20px;">
+    <img src="https://m.media-amazon.com/images/I/51iGZAbi7HL._AC_SY741_.jpg" alt="デッサンシリーズ ファウナ 2025" class="product-img small">
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B0F9YHB255/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-claude%2F2025520%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>フェノール値50ppmと30ppmのピーテッド原酒を、バーボンバレルのノンピート原酒にブレンドしたミディアムピートタイプ。スモーキーさはありながらも主張しすぎない。ピートの煙が原酒の甘さと交差するところに、このウイスキーの面白さがあります。フローラの清澄さとは対照的な、立体的で陰影のある味わい——南アルプスの冬を思わせる、静かで力強い一本です。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">設備と哲学——小さく、深く</h2>
+    <p>蒸留設備は、決して大規模ではありません。マッシュタン1基、発酵タンク4基、ポットスチル2基（三宅製作所製のストレート型、シェル&チューブコンデンサー使用）。年間生産量は約7万リットル。スコットランドの大手蒸溜所と比較すれば、ひっそりと慎ましいスケールです。</p>
+    <p>でも、その慎ましさには明確な意志があります。</p>
+    <p>蒸留長の室伏大司氏が語る熟成のピークは「12年」。急いで量を作ることよりも、南アルプスの環境の中でじっくり時間をかけ、場所の個性を引き出したウイスキーを世に送り出したい——それが、この蒸溜所の根本的な哲学です。</p>
+    <p>使う樽も普通ではありません。バーボンバレルやシェリーカスクに加えて、社有林から伐り出したミズナラ材で自社樽を作ることも手がけています。南アルプスの水で仕込み、南アルプスの木で作った樽に入れ、南アルプスの冷気の中で眠らせる。<strong>日本中を探しても、これほど一貫して「場所」にこだわった蒸溜所はほとんど存在しないでしょう</strong>。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">デッサンシリーズ——約束の手前にある、今</h2>
+    <p>2024年11月、井川蒸溜所のファーストリリースとして送り出されたデッサンシリーズ。シリーズ名はフランス語で「素描」——絵画の下絵のことです。まだ12年という熟成の頂点には届いていない。でも、今この瞬間にも確かな価値がある。完成に向かう途中の、素直な姿を届けたい。その思いが、この名前には込められています。</p>
+    <p>2023年にはWWA（ワールド・ウイスキー・アワード）でシルバーを受賞するなど、海外の評価も着実に積み重なっています。そして2026年もまもなく新しいラインナップのリリースが予定されており、今年はどんな味わいと、どんな南アルプスの生き物がラベルに現れるのか、楽しみにしています。年を重ねるごとに少しずつ変化していく原酒の個性を、毎年の一本として追いかけていく——そんな楽しみ方もこの蒸溜所ならではです。</p>
+    <p>最新の製品情報や全国の取扱店については、ぜひ<a href="https://juzan.co.jp/contents/ikawadistillery/" target="_blank" style="color:var(--gold);text-decoration:underline;">井川蒸溜所の公式サイト</a>でご確認ください。この秘境の蒸溜所が紡ぐ物語は、まだ始まったばかりです。</p>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-whisky.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-Ikawa-Distillery.html') card.style.display = 'none';
+        });
+      });
+  </script>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">EDITOR-IN-CHIEF</div>
+      <div class="author-bio">酒販業界に5年。営業・EC運営を通じて1000本以上のお酒と向き合ってきた経験から、本当においしい一本だけをご紹介します。</div>
+    </div>
+  </div>
+
+  <!-- BACK NAV -->
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="kurofuku-sake-magazine.html" class="footer-logo" style="cursor:pointer;display:block;">クロフク編集長のお酒マガジン</a>
+    <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-disclosure">
+      このサイトはAmazonアソシエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+    </div>
+    <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "クロフク編集長のお酒マガジン",
+  "url": "https://kurofuku-magazine.com",
+  "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+}
+</script>
+
+<!-- ページ遷移フェード -->
+<script>
+  (function() {
+    function navigateWithFade(href) {
+      document.body.classList.add('page-leaving');
+      setTimeout(function() { window.location.href = href; }, 300);
+    }
+    function isExternal(href) {
+      return !href || href.startsWith('http') || href.startsWith('//') ||
+             href.startsWith('#') || href.startsWith('mailto:') ||
+             href.startsWith('tel:') || href.startsWith('javascript:');
+    }
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (isExternal(href)) return;
+      if (link.target === '_blank') return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      navigateWithFade(href);
+    });
+    document.querySelectorAll('[onclick*="window.location"]').forEach(function(el) {
+      var orig = el.getAttribute('onclick');
+      var match = orig && orig.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
+      if (!match) return;
+      var href = match[1];
+      el.removeAttribute('onclick');
+      el.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        navigateWithFade(href);
+      });
+    });
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
+
+<!-- Phase 1 スクロールエフェクト -->
+<script>
+  (function() {
+    var header = document.querySelector('header');
+    var progress = document.getElementById('scroll-progress');
+    var heroImg = document.querySelector('.article-hero img');
+    var lastScroll = window.scrollY;
+    var lastDirChangeY = lastScroll;
+    var ticking = false;
+    var DELTA = 15;
+
+    function update() {
+      var y = window.scrollY;
+      var diff = y - lastScroll;
+      if (header) {
+        if (y > 80) header.classList.add('is-scrolled');
+        else header.classList.remove('is-scrolled');
+        var atBottom = (y + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
+        if (atBottom) {
+          header.classList.remove('is-hidden');
+        } else if (diff < -1) {
+          header.classList.remove('is-hidden');
+          lastDirChangeY = y;
+        } else if (diff > 0 && y > 200 && (y - lastDirChangeY) > DELTA) {
+          header.classList.add('is-hidden');
+          lastDirChangeY = y;
+        }
+      }
+      if (progress) {
+        var dh = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (dh > 0 ? (y / dh * 100) : 0) + '%';
+      }
+      if (heroImg) {
+        heroImg.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+      }
+      lastScroll = y;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+<!-- Phase 2 マグネットボタン -->
+<script>
+  (function() {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var btns = document.querySelectorAll('.amz-btn, .raku-btn, .amz-link, .raku-link, .back-nav a');
+    btns.forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.4) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = '';
+      });
+    });
+  })();
+</script>
+
+<!-- Phase 3 タイトル文字フェード -->
+<script>
+  (function() {
+    function splitText(el) {
+      var idx = 0;
+      function walk(node) {
+        Array.from(node.childNodes).forEach(function(child) {
+          if (child.nodeType === 3) {
+            var text = child.textContent;
+            var frag = document.createDocumentFragment();
+            for (var i = 0; i < text.length; i++) {
+              var ch = text[i];
+              if (ch === ' ' || ch === '　' || ch === '\n') {
+                frag.appendChild(document.createTextNode(ch));
+              } else {
+                var span = document.createElement('span');
+                span.textContent = ch;
+                span.className = 'char-fade';
+                span.style.animationDelay = (idx * 0.05) + 's';
+                idx++;
+                frag.appendChild(span);
+              }
+            }
+            node.replaceChild(frag, child);
+          } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+            walk(child);
+          }
+        });
+      }
+      walk(el);
+    }
+    document.querySelectorAll('.hero h1, .article-title').forEach(splitText);
+  })();
+</script>
+</body>
+</html>
