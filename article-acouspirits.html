@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>御神木が宿る黒糖ラムの物語。ACOU SPIRITS | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="鹿児島・指宿の宮ヶ浜蒸溜所が手がけるACOU SPIRITS。樹齢数百年の御神木「アコウの木」に着想を得た国産クラフトラム。1875年創業の蔵が生む黒糖ラムの物語をお届けします。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <!-- OGP / Twitter Card -->
+  <meta property="og:title" content="御神木が宿る黒糖ラムの物語。ACOU SPIRITS">
+  <meta property="og:description" content="鹿児島・指宿の宮ヶ浜蒸溜所が手がけるACOU SPIRITS。樹齢数百年の御神木「アコウの木」に着想を得た国産クラフトラム。1875年創業の蔵が生む黒糖ラムの物語をお届けします。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-acouspirits.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-acouspirits">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="御神木が宿る黒糖ラムの物語。ACOU SPIRITS">
+  <meta name="twitter:description" content="鹿児島・指宿の宮ヶ浜蒸溜所が手がけるACOU SPIRITS。樹齢数百年の御神木「アコウの木」に着想を得た国産クラフトラム。1875年創業の蔵が生む黒糖ラムの物語をお届けします。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-acouspirits.jpg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== PAGE TRANSITION ===== */
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageFadeIn 0.4s ease-out; }
+    body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
+
+    /* ===== PHASE 1: SCROLL EFFECTS ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
+      will-change: transform;
+      overflow-anchor: none;
+    }
+    body, .main-wrap, .article-wrap { overflow-anchor: none; }
+    header.is-hidden { transform: translateY(-100%); }
+    header.is-scrolled {
+      background: rgba(26, 18, 16, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .cat-cards-inner {
+      transition: max-height 0.15s ease, opacity 0.15s ease, padding-bottom 0.15s ease;
+      overflow: hidden;
+      max-height: 280px;
+      overflow-anchor: none;
+    }
+    header.is-scrolled .cat-cards-inner {
+      max-height: 0 !important;
+      opacity: 0;
+      padding-bottom: 0 !important;
+      pointer-events: none;
+    }
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--gold);
+      z-index: 200;
+      width: 0;
+      transition: width 0.08s ease-out;
+      pointer-events: none;
+    }
+    html, body { overflow-x: clip; }
+    * { -webkit-tap-highlight-color: transparent; }
+    .article-card, [onclick] { -webkit-user-select: none; user-select: none; }
+    .article-body, .product-desc, p, h1, h2, h3 { -webkit-user-select: text; user-select: text; }
+
+    /* ===== PHASE 3: IMAGE REVEAL ===== */
+    .article-hero { position: relative; overflow: hidden; }
+    .article-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      z-index: 3;
+      transform-origin: left;
+      pointer-events: none;
+      animation: maskSweep 1.3s cubic-bezier(0.7, 0, 0.3, 1) 0.2s forwards;
+    }
+    @keyframes maskSweep {
+      0% { transform: scaleX(0); transform-origin: left; }
+      50% { transform: scaleX(1); transform-origin: left; }
+      50.01% { transform-origin: right; }
+      100% { transform: scaleX(0); transform-origin: right; }
+    }
+    .article-hero img {
+      opacity: 0;
+      will-change: transform;
+      animation: heroImgReveal 0.4s ease-out 0.55s forwards;
+    }
+    @keyframes heroImgReveal { to { opacity: 1; } }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== CAT CARDS ===== */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; text-align: center; }
+    .cat-card-en { font-size: clamp(5.5px, 1.5vw, 8px); color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; text-align: center; }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+      align-items: flex-start;
+    }
+    @media (max-width: 600px) {
+      .buy-links { align-items: stretch; }
+      .buy-links .amz-link,
+      .buy-links .raku-link { display: flex; }
+    }
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      min-width: 160px;
+      justify-content: center;
+    }
+    .amz-link:hover { background: #e08800; }
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      min-width: 160px;
+      justify-content: center;
+    }
+    .raku-link:hover { background: #a00000; }
+
+    /* ===== RELATED ARTICLES ===== */
+    .related-section {
+      margin-top: 60px;
+      margin-bottom: 48px;
+    }
+    .related-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .related-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+    .related-card:hover { opacity: 0.7; }
+    .related-thumb {
+      width: 80px;
+      min-width: 80px;
+      height: 50px;
+      background: var(--dark);
+      overflow: hidden;
+    }
+    .related-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .related-title { font-size: 13px; color: var(--dark); line-height: 1.6; font-weight: bold; }
+    .related-cat { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 4px; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    @media (max-width: 600px) {
+      .author-block { flex-direction: column; }
+      .product-img.small {
+        max-width: 130px;
+        max-height: 240px;
+      }
+      .product-img.medium {
+        max-width: 240px;
+        max-height: 380px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine.html" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine.html" class="back-link">← トップへ戻る</a>
+  </div>
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-whisky" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+    <a href="category-wine" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+    <a href="category-sake" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+    <a href="category-other" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-acouspirits.jpg" alt="指宿・宮ヶ浜の御神木アコウの木に着想を得た国産クラフトラム ACOU SPIRITS" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🥃 Spirits</span>
+    <span class="meta-date">2026.05.10</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">ACOU SPIRITS<br>御神木が宿る<br>黒糖ラムの物語。</h1>
+
+  <div class="article-body">
+    <p>こんにちは、クロフク編集長です。</p>
+    <p>鹿児島県の南端、薩摩半島の指宿市。「東洋のハワイ」と呼ばれるその土地に、<strong>樹齢数百年の御神木</strong>が立っています。その木の名は、アコウ。根を地に張り、激しい風雨にも倒れることなく、何百年も宮ヶ浜の地を見守り続けてきた木です。</p>
+    <p>その御神木の名を冠したクラフトスピリッツが、ACOU SPIRITSです。</p>
+    <p>指宿の黒糖と地下水で仕込む、まっすぐで力強いラム。今回はその蒸溜所の物語を辿ってみたいと思います。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">「東洋のハワイ」の蒸溜所</h2>
+    <p>指宿市の宮ヶ浜地区。温暖な気候と豊かな土壌、そして清らかな湧水に恵まれたその地は、遠くハワイを思わせる景観から「東洋のハワイ」とも称されてきた場所です。</p>
+    <p>大山甚七商店の宮ヶ浜蒸溜所は、そんな指宿の恵みを丸ごと受け取るような場所に建っています。蔵に湧く地下天然水、鹿児島で育てられたサトウキビから生まれるオーガニックの糖蜜と黒糖——この土地でしか生まれ得ない素材が、アコウのラムを支えています。</p>
+    <p>ACOU SPIRITSという名前には、「<strong>地の力を湛えた一滴を</strong>」という思いが込められています。厳しい自然の中で力強く生き続けるアコウの木のように、土地と共に生きるスピリッツを造りたい、という意志です。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">呉服店から始まった、150年の蔵</h2>
+    <p>1875年——明治8年。大山甚七商店の前身は、呉服商でした。布団や着物を商いながら、その傍ら「富久泉」という銘柄の芋焼酎を造っていたのが、この蔵の始まりです。</p>
+    <p>その後、焼酎の価格競争が激化した1993年頃には製造を一時休業し、コンビニのフランチャイズ経営で事業を継続した時期もあります。そして2003年の焼酎ブームに合わせて製造を再開し、蔵は再び動き出しました。</p>
+    <p>2023年1月、6代目となる大山陽平が代表の座を継ぎます。彼が掲げたのは、「<strong>効率より個性</strong>」。焼酎だけに留まらず、クラフトジンやクラフトラムといった新たな挑戦を積み重ね、2025年にはACOU SPIRITS株式会社を設立するに至りました。</p>
+    <p>150年近い歴史を持ちながら、常に前へ踏み出し続ける蔵。その足跡は、アコウの木が何百年も根を張りながら成長してきた姿に重なります。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">黒糖と湧水が生む、白いラム</h2>
+    <p>ACOU SPIRITSのラムは、鹿児島という土地と深く結びついた原料で仕込まれています。指宿市で製造されたオーガニックの糖蜜と、鹿児島県産の黒糖。そして蔵に湧く地下天然水。</p>
+    <p>蒸留には銅製カラム式蒸留器を使用します。その製法は、サトウキビ由来の瑞々しいアロマを引き出しながら、スムースでありながら芯のある味わいを実現するためのもの。</p>
+    <p>ACOU RUM WHITEは、そのアプローチを体現したスタンダードのホワイトラムです。ESSEふるさとグランプリ2023で金賞を獲得した実績が、その品質を裏づけています。</p>
+  </div>
+
+  <div class="product-item" style="background:#fff;border:1px solid var(--border);padding:24px 28px;margin-bottom:32px;">
+    <div class="product-heading">アコウ ラム ホワイト</div>
+    <hr class="section-divider" style="margin:14px 0 20px;">
+    <img src="https://m.media-amazon.com/images/I/61mITlXGXbL._AC_SY500_.jpg" alt="アコウ ラム ホワイト" class="product-img small">
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B09QXC634M/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhigohigo%2Faco52%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>ストレートで飲めば、サトウキビ由来の甘い香りとミネラル感が広がります。ソーダで割ればモヒートのベースとして申し分なく、一口ごとに指宿の土地を感じられる一本です。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">磨き上げた、銀のラム</h2>
+    <p>ACOU RUM SILVERは、ホワイトをベースにさらに丁寧にろ過・精製を重ねた、よりクリアな味わいのラムです。クセのない透明感が際立ち、カクテルベースとしても高い評価を受けています。</p>
+    <p>ソーダで割るだけで、サトウキビ由来のやわらかな甘さがすっと広がる。余計なものを削ぎ落としながら、ラムらしい骨格はきちんと残っている。クセのなさの中に、ちゃんと個性がある一本です。</p>
+  </div>
+
+  <div class="product-item" style="background:#fff;border:1px solid var(--border);padding:24px 28px;margin-bottom:32px;">
+    <div class="product-heading">アコウ ラム シルバー</div>
+    <hr class="section-divider" style="margin:14px 0 20px;">
+    <img src="https://makeshop-multi-images.akamaized.net/sakekatidoki/itemimages/000000023719_GRYJt1z.jpg" alt="アコウ ラム シルバー" class="product-img medium">
+    <div class="buy-links">
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeishu-honpo%2F14317%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">樽という名の時間</h2>
+    <p>ACOU SPIRITSは、熟成の世界にも踏み込んでいます。</p>
+    <p>2025年にリリースされた「ACOU RUM Aging α FIRST EDITION」は、バーボン樽で3年以上熟成させた複数の原酒をブレンドして仕上げた、初の熟成ラムです。アルコール度数は52%。指宿の温暖な気候がもたらす熟成環境が、短い年数のうちに深い複雑さを生み出しています。</p>
+    <p>バニラ、キャラメル、熟したピーチのアロマ。トロピカルフルーツの甘さとバーボン樽由来のウッディな奥行き。飲み口はスムースでありながら、後半にかけて力強い余韻が続きます。度数の高さを感じさせない、しなやかさを持った一本です。</p>
+    <p>「FIRST EDITION」という言葉には、<strong>これが始まりに過ぎない</strong>という宣言が込められている気がします。</p>
+  </div>
+
+  <div class="product-item" style="background:#fff;border:1px solid var(--border);padding:24px 28px;margin-bottom:32px;">
+    <div class="product-heading">アコウ ラム エイジング アルファ ファースト エディション 2025</div>
+    <hr class="section-divider" style="margin:14px 0 20px;">
+    <img src="https://image1.shopserve.jp/yamatoya-e.com/pic-labo/oyama31134.jpg" alt="アコウ ラム エイジング アルファ ファースト エディション 2025" class="product-img medium">
+    <div class="buy-links">
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeishu-honpo%2F14318%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>ラベルには指宿ゆかりのイラストレーターによるラインアートが描かれています。飲み終えた後は花瓶として使えるという設計も、この蔵らしい遊び心です。</p>
+    <p>最新の製品情報や取扱店については、ぜひ<a href="https://acouspirits.jp/" target="_blank" style="color:var(--gold);text-decoration:underline;">ACOU SPIRITSの公式サイト</a>でご確認ください。</p>
+  </div>
+
+  <!-- 関連記事 -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-other.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-acouspirits') card.style.display = 'none';
+        });
+      });
+  </script>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">EDITOR-IN-CHIEF</div>
+      <div class="author-bio">酒販業界に5年。営業・EC運営を通じて1000本以上のお酒と向き合ってきた経験から、本当においしい一本だけをご紹介します。</div>
+    </div>
+  </div>
+
+  <!-- BACK NAV -->
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine.html">← 記事一覧へ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">クロフク編集長のお酒マガジン</div>
+    <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine.html">トップ</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-disclosure">
+      このサイトはAmazonアソシエイトプログラムおよび楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+    </div>
+    <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "クロフク編集長のお酒マガジン",
+  "url": "https://kurofuku-magazine.com",
+  "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+}
+</script>
+
+<!-- ページ遷移 -->
+<script>
+  (function() {
+    function navigateWithFade(href) {
+      document.body.classList.add('page-leaving');
+      setTimeout(function() { window.location.href = href; }, 300);
+    }
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('http') || a.target === '_blank') return;
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        navigateWithFade(href);
+      });
+    });
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
+
+<!-- スクロールエフェクト -->
+<script>
+  (function() {
+    var header = document.querySelector('header');
+    var progress = document.getElementById('scroll-progress');
+    var lastScroll = window.scrollY;
+    var lastDirChangeY = lastScroll;
+    var ticking = false;
+    var DELTA = 15;
+
+    function update() {
+      var y = window.scrollY;
+      var diff = y - lastScroll;
+      if (header) {
+        if (y > 80) header.classList.add('is-scrolled');
+        else header.classList.remove('is-scrolled');
+        var atBottom = (y + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
+        if (atBottom) {
+          header.classList.remove('is-hidden');
+        } else if (diff < -1) {
+          header.classList.remove('is-hidden');
+          lastDirChangeY = y;
+        } else if (diff > 0 && y > 200 && (y - lastDirChangeY) > DELTA) {
+          header.classList.add('is-hidden');
+          lastDirChangeY = y;
+        }
+      }
+      if (progress) {
+        var dh = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (dh > 0 ? (y / dh * 100) : 0) + '%';
+      }
+      lastScroll = y;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>

@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://kurofuku-magazine.com/article-robert-mondavi</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -63,6 +63,12 @@
   <url>
     <loc>https://kurofuku-magazine.com/article-conosur</loc>
     <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kurofuku-magazine.com/article-acouspirits</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
