@@ -78,6 +78,7 @@
     }
     .hero h1 em { color: var(--gold); font-style: normal; }
     .hero-desc { font-size: 13px; color: #999; max-width: 480px; margin: 0 auto; }
+    .sp-only { display: none; }
 
     /* ===== MAIN ===== */
     .main-wrap {
@@ -910,12 +911,19 @@
         padding: 96px 18px 44px;
       }
       .hero h1 {
-        font-size: clamp(31px, 10vw, 46px);
+        font-size: 32px;
+        line-height: 1.38;
+      }
+      .hero .char-fade {
+        animation-delay: 0s !important;
+        animation-duration: 0.25s;
       }
       .hero-desc {
         font-size: 13px;
         white-space: normal;
+        max-width: 340px;
       }
+      .sp-only { display: block; }
       .cat-card-label {
         padding: 16px;
       }
@@ -972,8 +980,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-tag">Editor's Review Magazine</div>
-  <h1>酒販業界の中の人が<em>本音で選ぶ</em>、<br>お酒レビューマガジン</h1>
-  <p class="hero-desc">酒販業界の現場経験と目利きから、本当にいいお酒との出会いにつながる確かな情報をお届けします。</p>
+  <h1>酒販業界の中の人が<br class="sp-only"><em>本音で選ぶ</em>、<br>お酒レビューマガジン</h1>
+  <p class="hero-desc">酒販業界の現場経験と目利きから、<br class="sp-only">本当にいいお酒との出会いにつながる<br class="sp-only">確かな情報をお届けします。</p>
 </section>
 
 <!-- MAIN -->
