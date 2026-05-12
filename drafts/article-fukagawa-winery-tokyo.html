@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="google-site-verification" content="yNHUMe9JNnzmblQHcycgte9CPVt_UbIg82FECZzPJc0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>東京下町から醸すブレンドの美学。深川ワイナリー東京｜クロフク編集長オススメワイン</title>
+  <meta name="description" content="2016年に東京・江東区に誕生した都市型ワイナリー、深川ワイナリー東京。約7割が無ろ過、ブレンドに宿る「東京らしさ」、屋上のぶどう畑と海中熟成プロジェクト。下町の小さな醸造所が紡ぐ物語をご紹介します。" />
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --gold: #b8922a;
+      --dark: #1a1210;
+      --muted: #6b6560;
+      --border: #e5e0d8;
+    }
+
+    /* ===== HEADER ===== */
+    header { background: var(--dark); }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-en { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .logo-ja { font-size: 15px; font-weight: bold; color: #fff; letter-spacing: 0.04em; font-family: 'Hiragino Mincho ProN', serif; }
+    .back-link { font-size: 12px; color: #888; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero {
+      width: 100%;
+      max-height: 360px;
+      aspect-ratio: 128/67;
+      overflow: hidden;
+    }
+    .article-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #0d0d0d;
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 2px 10px;
+    }
+    .meta-date { font-size: 12px; color: #bbb; }
+    .meta-author { font-size: 12px; color: #bbb; }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: bold;
+      line-height: 1.55;
+      color: var(--dark);
+      font-family: 'Hiragino Mincho ProN', serif;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--dark);
+      margin: 44px 0 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== PRODUCT ITEM ===== */
+    .product-item { margin-bottom: 56px; }
+
+    .product-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--dark);
+      line-height: 1.5;
+    }
+    .product-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    .product-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 10px 0 20px;
+    }
+
+    .product-img {
+      display: block;
+      max-width: 240px;
+      max-height: 400px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+    }
+    .product-img.small {
+      max-width: 180px;
+      max-height: 320px;
+    }
+    .product-img.medium {
+      max-width: 340px;
+      max-height: 520px;
+    }
+    .product-img.large {
+      max-width: 460px;
+      max-height: 680px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    .amz-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF9900;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .amz-link:hover { background: #e08800; }
+
+    .raku-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #bf0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .raku-link:hover { background: #990000; }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .buy-links a {
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    /* ===== STORE LIST ===== */
+    .store-list {
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+    .store-list li {
+      font-size: 14px;
+      color: #2a2a2a;
+      line-height: 1.9;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+    }
+    .store-list li:first-child { border-top: 1px solid var(--border); }
+    .store-name { font-weight: bold; min-width: 180px; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; }
+    .store-detail { color: var(--muted); font-size: 13px; }
+
+    /* ===== AUTHOR ===== */
+    .author-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      background-image: url('images/profile-avatar.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 2px solid var(--gold);
+    }
+    .author-name { font-size: 14px; font-weight: bold; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 2px; }
+    .author-role { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .author-bio { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .back-nav { margin-top: 48px; text-align: center; }
+    .back-nav a {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      padding: 12px 36px;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--dark); color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark); padding: 32px 20px; margin-top: 60px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-logo { font-size: 14px; font-weight: bold; color: #fff; font-family: 'Hiragino Mincho ProN', serif; margin-bottom: 3px; }
+    .footer-logo-en { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 12px; color: #666; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .footer-copy { font-size: 10px; color: #3a3a3a; }
+
+    /* CAT NAV */
+    .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.45); }
+    .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; text-align: center; }
+    .cat-card-en { font-size: clamp(5.5px, 1.5vw, 8px); color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; text-align: center; }
+
+    /* RELATED ARTICLES */
+    .related-section { margin-top: 48px; }
+    .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .related-label span { font-size: 11px; font-weight: bold; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    .related-label .line { flex: 1; height: 1px; background: var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .related-card { background: #fff; border: 1px solid var(--border); display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+    .related-body { padding: 12px 14px 14px; }
+    .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .article-wrap { padding: 24px 12px; }
+      .author-block { flex-direction: column; }
+      .product-img, .product-img.medium, .product-img.large { max-width: 100%; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .store-list li { flex-direction: column; gap: 4px; }
+      .store-name { min-width: unset; }
+    }
+
+    /* ===== PAGE TRANSITION ===== */
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageFadeIn 0.4s ease-out; }
+    body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
+
+    /* ===== PHASE 1: SCROLL EFFECTS ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
+      will-change: transform;
+      overflow-anchor: none;
+    }
+    body, .main-wrap, .article-wrap { overflow-anchor: none; }
+    header.is-hidden { transform: translateY(-100%); }
+    header.is-scrolled {
+      background: rgba(26, 18, 16, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .cat-cards-inner {
+      transition: max-height 0.15s ease, opacity 0.15s ease, padding-bottom 0.15s ease;
+      overflow: hidden;
+      max-height: 280px;
+      overflow-anchor: none;
+    }
+    header.is-scrolled .cat-cards-inner {
+      max-height: 0 !important;
+      opacity: 0;
+      padding-bottom: 0 !important;
+      pointer-events: none;
+    }
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--gold);
+      z-index: 200;
+      width: 0;
+      transition: width 0.08s ease-out;
+      pointer-events: none;
+    }
+    .article-hero { overflow: hidden; }
+    .article-hero img { will-change: transform; }
+
+    /* ===== PHASE 1 FIXES ===== */
+    html, body { overflow-x: clip; }
+    * { -webkit-tap-highlight-color: transparent; }
+    .article-card, [onclick] { -webkit-user-select: none; user-select: none; }
+    .article-body, .product-desc, p, h1, h2, h3 { -webkit-user-select: text; user-select: text; }
+
+    /* ===== PHASE 2: HOVER & MAGNETIC ===== */
+    .article-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid transparent;
+      pointer-events: none;
+      transition: border-color 0.4s ease;
+      z-index: 2;
+    }
+    .article-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18) !important;
+    }
+    .article-card:hover::after {
+      border-color: var(--gold);
+    }
+    .card-thumb { overflow: hidden; }
+    .card-thumb img {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .article-card:hover .card-thumb img {
+      transform: scale(1.05);
+    }
+    .amz-btn, .raku-btn, .amz-link, .raku-link, .back-nav a {
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s ease, color 0.2s ease;
+    }
+
+    /* ===== PHASE 3: TITLE FADE & IMAGE REVEAL ===== */
+    .char-fade {
+      display: inline-block;
+      opacity: 0;
+      animation: charFadeIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      will-change: opacity, transform;
+    }
+    @keyframes charFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .article-hero { position: relative; }
+    .article-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      z-index: 3;
+      transform-origin: left;
+      pointer-events: none;
+      animation: maskSweep 1.3s cubic-bezier(0.7, 0, 0.3, 1) 0.2s forwards;
+    }
+    @keyframes maskSweep {
+      0% { transform: scaleX(0); transform-origin: left; }
+      50% { transform: scaleX(1); transform-origin: left; }
+      50.01% { transform-origin: right; }
+      100% { transform: scaleX(0); transform-origin: right; }
+    }
+    .article-hero img {
+      opacity: 0;
+      animation: heroImgReveal 0.4s ease-out 0.55s forwards;
+    }
+    @keyframes heroImgReveal {
+      to { opacity: 1; }
+    }
+  </style>
+
+  <!-- OGP -->
+  <meta property="og:title" content="東京下町から醸すブレンドの美学。深川ワイナリー東京｜クロフク編集長オススメワイン">
+  <meta property="og:description" content="2016年に東京・江東区に誕生した都市型ワイナリー、深川ワイナリー東京。約7割が無ろ過、ブレンドに宿る「東京らしさ」、屋上のぶどう畑と海中熟成プロジェクト。下町の小さな醸造所が紡ぐ物語をご紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-fukagawine.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-fukagawa-winery-tokyo">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="東京下町から醸すブレンドの美学。深川ワイナリー東京｜クロフク編集長オススメワイン">
+  <meta name="twitter:description" content="2016年に東京・江東区に誕生した都市型ワイナリー、深川ワイナリー東京。約7割が無ろ過、ブレンドに宿る「東京らしさ」、屋上のぶどう畑と海中熟成プロジェクト。下町の小さな醸造所が紡ぐ物語をご紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-fukagawine.jpg">
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="kurofuku-sake-magazine" class="logo-wrap">
+      <span class="logo-en">Kurofuku's Sake Magazine</span>
+      <span class="logo-ja">クロフク編集長のお酒マガジン</span>
+    </a>
+    <a href="kurofuku-sake-magazine" class="back-link">← 記事一覧へ</a>
+  </div>
+  <!-- CATEGORY CARDS -->
+  <div class="cat-cards-inner">
+    <a href="category-whisky" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+    <a href="category-wine" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+    <a href="category-sake" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+    <a href="category-other" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <img src="images/header-fukagawine.jpg" alt="東京下町の都市型ワイナリー、深川ワイナリー東京">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-cat">🍷 Wine</span>
+    <span class="meta-date">2026.05.12</span>
+    <span class="meta-author">クロフク編集長</span>
+  </div>
+
+  <h1 class="article-title">東京下町から醸す<br>ブレンドの美学。<br>深川ワイナリー東京</h1>
+
+  <div class="article-body">
+    <p>こんにちは、クロフク編集長です。</p>
+    <p>今回ご紹介するのは、東京・江東区に実在する都市型ワイナリー——深川ワイナリー東京です。</p>
+    <p>「東京でワインを造る」と聞いて、ピンと来る人はまだ少ないかもしれません。しかし、このワイナリーは2016年の創業以来、山形・長野・山梨などの産地からぶどうを仕入れ、東京のど真ん中で発酵・熟成・瓶詰めまでを行っています。製造免許を取得した本物のワイナリーです。</p>
+    <p>場所は清澄白河と門前仲町の間、旧深川エリア。下町の空気が漂う路地の一角に、その醸造所はあります。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">深川ワイナリー東京とは</h2>
+    <p>深川ワイナリー東京が大切にしているのは、「ブレンドの美学」です。単一品種・単一産地のワインを造るのではなく、複数のぶどう品種、複数の産地を組み合わせることで、「東京らしい」複雑な味わいを生み出す。それがこのワイナリーのスタイルです。</p>
+    <p>造られるワインの約7割が無ろ過。フィルタリングを最小限に抑えることで、ぶどう本来の風味と個性を瓶の中に閉じ込めます。だから、ラベルをひっくり返すと「澱（おり）」が見えることもある。それは品質の証です。</p>
+    <p>また、ワイナリーの屋上にはぶどう畑があります。都市型ワイナリーとして、東京という土地でぶどうを育てるという実験的な試みも続けています。さらに、東京湾の海中でワインを熟成させる「海中熟成プロジェクト」も手がけており、その挑戦は常に型にとらわれていません。</p>
+    <p>東京という大都市の中で、小さなワイナリーが真剣に、ワインと向き合っている。それだけで、もう飲んでみたくなりませんか。</p>
+  </div>
+
+  <div class="article-body">
+    <h2 class="section-heading">編集長が選ぶ、深川ワイナリー東京の厳選ワイン</h2>
+    <p>深川ワイナリー東京のワインは、Amazonでも購入できます。今回は在庫を確認できた中から、個性の異なるラインナップをピックアップしました。</p>
+  </div>
+
+  <!-- ① 山形産シャルドネ 木樽熟成 -->
+  <div class="product-item">
+    <div class="product-heading">① 深川ワイナリー東京 山形産シャルドネ 木樽熟成 750ml</div>
+    <div class="product-sub">タイプ：白ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41Pu0CerXwL._AC_SY500_.jpg" alt="深川ワイナリー東京 山形産シャルドネ 木樽熟成" class="product-img small">
+    <p class="product-desc">山形産シャルドネを木樽で熟成させた白ワイン。深川ワイナリー東京の中でも、特に完成度の高い一本として知られています。</p>
+    <p class="product-desc">グラスに注ぐと、淡いゴールドに輝く液体。香りは黄桃や白い花、バニラ、そしてほんのりと焦がしたオークのニュアンス。ふくよかでありながら、シャープな酸がしっかりと骨格を支えています。</p>
+    <p class="product-desc">木樽熟成特有のリッチさと、山形のぶどうが持つ繊細さが同居している。口に含むと、まるで東京の景色と山形の風景が重なるような、不思議な奥行きを感じます。</p>
+    <p class="product-desc">魚介系のムニエルやクリームパスタ、白身魚の料理と合わせると、互いの良さを引き出し合います。「都市で造った白ワインとはこういうものか」と、一口目から考えさせられる一本です。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B07CM11TSG/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+    </div>
+  </div>
+
+  <!-- ② 山形産マスカット・ベーリーA -->
+  <div class="product-item">
+    <div class="product-heading">② 深川ワイナリー東京 山形産マスカット・ベーリーA 750ml</div>
+    <div class="product-sub">タイプ：赤ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41rBj5UQFyL._AC_SY500_.jpg" alt="深川ワイナリー東京 山形産マスカット・ベーリーA" class="product-img small">
+    <p class="product-desc">マスカット・ベーリーAは、日本固有のぶどう品種です。川上善兵衛が明治時代に交配して作り出した品種で、現在の日本ワインを語るうえで欠かせない存在。</p>
+    <p class="product-desc">深川ワイナリー東京がこの品種で造る赤ワインは、チェリーやイチゴを想わせるかわいらしい果実香が特徴的。タンニンは柔らかく、飲み口は軽やか。「赤ワインって難しそう」と思っている方にも、すんなりと受け入れてもらいやすい味わいです。</p>
+    <p class="product-desc">冷やして飲むのも良い。少し温度を下げることで、ぶどう本来のフレッシュさが際立ち、より一層軽やかな印象になります。焼き鳥やハンバーグ、鶏の照り焼きなど、和食との相性も抜群です。</p>
+    <p class="product-desc">日本ワインの入門として、そして「東京で造ったワイン」の代表として、ぜひ一度手に取ってほしい一本。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B0GQGB26D8/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+    </div>
+  </div>
+
+  <!-- ③ 山形産デラウェア -->
+  <div class="product-item">
+    <div class="product-heading">③ 深川ワイナリー東京 山形産デラウェア 750ml</div>
+    <div class="product-sub">タイプ：白ワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41QvfZ0EMqL._AC_SY500_.jpg" alt="深川ワイナリー東京 山形産デラウェア" class="product-img small">
+    <p class="product-desc">デラウェアといえば、スーパーで売られている小粒の食用ぶどうとして親しまれている品種。しかし、ワインにするとその印象は一変します。</p>
+    <p class="product-desc">深川ワイナリー東京のデラウェアは、マスカットや洋梨を思わせる華やかで甘やかな香りが特徴。口に含むと、ぶどうそのままの甘さがありながら、きちんと酸が締めてくれる。べたつかず、すっきりとした後味が続きます。</p>
+    <p class="product-desc">このワインの面白さは、「デラウェアってこういう味になるのか」という発見の喜びにあります。身近な食べ物が、東京の醸造所を経由することで、まったく別の顔を見せてくれる。</p>
+    <p class="product-desc">食前酒として、または軽いおつまみと一緒にゆっくり楽しむのに向いています。ワイン初心者でも楽しみやすい、親しみやすい一本です。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B0DZNMX3FC/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+    </div>
+  </div>
+
+  <!-- ④ 山形産ナイアガラ オレンジワイン -->
+  <div class="product-item">
+    <div class="product-heading">④ 深川ワイナリー東京 山形産ナイアガラ オレンジワイン 750ml</div>
+    <div class="product-sub">タイプ：オレンジワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41XRw0tp0hL._AC_SY500_.jpg" alt="深川ワイナリー東京 山形産ナイアガラ オレンジワイン" class="product-img small">
+    <p class="product-desc">オレンジワインとは、白ぶどうを果皮や種ごと漬け込んで醸造したワインのこと。色はオレンジ色で、白ワインと赤ワインの中間のような個性を持ちます。</p>
+    <p class="product-desc">深川ワイナリー東京がナイアガラで造るオレンジワインは、このジャンルの中でも特に個性的。ナイアガラ特有の麝香（ムスク）のような甘い香りと、果皮由来のタンニン感が複雑に絡み合い、ほかのワインでは味わえない独特の世界を作り出しています。</p>
+    <p class="product-desc">ナチュラルワインの世界では今、オレンジワインが注目されています。「ちょっと変わったワインが飲みたい」「白でも赤でもない何かを探している」——そんな好奇心旺盛なワイン好きに、ぜひ試してほしい一本です。</p>
+    <p class="product-desc">合わせる料理は、エスニック系・スパイス系との相性が面白い。タコスやインドカレー、醸造系の食材（チーズ・ハムなど）にも意外と寄り添ってくれます。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B0F83JLQ5Y/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+    </div>
+  </div>
+
+  <!-- ⑤ 山形県産メルロー 木樽仕立てロゼ -->
+  <div class="product-item">
+    <div class="product-heading">⑤ 深川ワイナリー東京 山形県産メルロー 木樽仕立てロゼ 750ml</div>
+    <div class="product-sub">タイプ：ロゼワイン</div>
+    <hr class="product-divider">
+    <img src="https://m.media-amazon.com/images/I/41UvClSp74L._AC_SY500_.jpg" alt="深川ワイナリー東京 山形県産メルロー 木樽仕立てロゼ" class="product-img small">
+    <p class="product-desc">メルローから造るロゼワイン、しかも木樽仕立て。このラインナップの中でも、もっとも意外性のある一本です。</p>
+    <p class="product-desc">ロゼワインというと、軽やかで可愛らしい印象を持つ方も多いかもしれません。しかし、この一本はちょっと違う。メルロー由来のプラムやチェリーの香りが豊かに広がり、木樽熟成によるバニラやトーストのニュアンスが加わることで、ロゼとは思えないほどの深みと複雑さを持ちます。</p>
+    <p class="product-desc">色はきれいなサーモンピンク。見た目は華やかですが、口に含むと思いのほかしっかりとした骨格がある。食事の途中で一杯、というより、ゆっくり向き合って飲みたいタイプのロゼです。</p>
+    <p class="product-desc">ポーク系の料理、サーモンのグリル、トマト系のパスタとの相性が特に良い。「ロゼワインで木樽熟成」という珍しさも含め、ワイン好きへのプレゼントとしてもおすすめです。</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.co.jp/dp/B07CMBQ2YH/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="article-body">
+    <h2 class="section-heading">深川ワイナリー東京を飲める・買えるお店</h2>
+    <p>深川ワイナリー東京のワインは、ワイナリー直営店のほか、周辺の飲食店・酒販店でも取り扱いがあります。公式サイトに掲載されている主要な取扱店をご紹介します。</p>
+  </div>
+
+  <ul class="store-list">
+    <li>
+      <span class="store-name">深川ワイナリー東京（直営）</span>
+      <span class="store-detail">東京都江東区白河3-4-1 / 醸造所に併設された直営ショップ。ワインの購入はもちろん、テイスティングも楽しめます。</span>
+    </li>
+    <li>
+      <span class="store-name">清澄白河 ARISE COFFEE ENTANGLE</span>
+      <span class="store-detail">東京都江東区白河1-1-11 / スペシャルティコーヒーの人気店。ワインとコーヒーという異色の組み合わせが楽しめます。</span>
+    </li>
+    <li>
+      <span class="store-name">くるみや（ベーカリー）</span>
+      <span class="store-detail">東京都江東区白河1-2-12 / 清澄白河の人気パン屋。焼きたてのパンと地元ワインを合わせるのは至福の体験。</span>
+    </li>
+    <li>
+      <span class="store-name">清澄白河 BLACK BIRD COFFEE</span>
+      <span class="store-detail">東京都江東区三好2-1-3 / 地元に根ざしたコーヒーショップ。深川ワイナリー東京のワインも取り扱い。</span>
+    </li>
+    <li>
+      <span class="store-name">しおさいの宿 みやじま（宿泊施設）</span>
+      <span class="store-detail">東京都江東区 / 宿泊施設内でのお食事とともに深川ワイナリー東京のワインが楽しめます。</span>
+    </li>
+    <li>
+      <span class="store-name">Amazon</span>
+      <span class="store-detail">オンラインでの購入も可能。上記で紹介した各商品はAmazonから購入できます（在庫状況は時期によって変動します）。</span>
+    </li>
+  </ul>
+
+  <div class="article-body">
+    <p>ワイナリーのある清澄白河エリアは、近年コーヒーカルチャーの発信地として注目を集めている街でもあります。深川ワイナリー東京に立ち寄りながら、周辺のカフェやベーカリーをめぐる——そんな下町散歩のルートもおすすめです。</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CONCLUSION -->
+  <div class="article-body">
+    <h2 class="section-heading">最後に</h2>
+    <p>「東京産のワイン」というと、まだ少し不思議な響きがあるかもしれません。でも、深川ワイナリー東京が証明しているのは、「土地の個性とは、ぶどうだけで決まるのではない」ということだと思います。</p>
+    <p>どの産地のぶどうを選ぶか。どうブレンドするか。ろ過するかしないか。どんな樽で熟成させるか。そして、東京というフィルターを通じて、何を表現したいのか。</p>
+    <p>下町の醸造所で生まれるワインには、造り手の意志が宿っています。グラスを傾けながら、そういうことを考えてみるのも、ワインの楽しみ方のひとつです。</p>
+    <p>東京から、世界へ。深川ワイナリー東京の挑戦は、まだ続いています。</p>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div id="other-articles"></div>
+  <script>
+    fetch('partials/other-articles-wine.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var el = document.getElementById('other-articles');
+        el.innerHTML = html;
+        el.querySelectorAll('.related-card').forEach(function(card) {
+          if (card.getAttribute('href') === 'article-fukagawa-winery-tokyo') card.style.display = 'none';
+        });
+      });
+  </script>
+
+  <!-- AUTHOR -->
+  <div class="author-block">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">クロフク編集長</div>
+      <div class="author-role">EDITOR-IN-CHIEF</div>
+      <div class="author-bio">酒販業界に5年。営業・EC運営を通じて1000本以上のお酒と向き合ってきた経験から、本当においしい一本だけをご紹介します。</div>
+    </div>
+  </div>
+
+  <!-- BACK NAV -->
+  <div class="back-nav">
+    <a href="kurofuku-sake-magazine">← 記事一覧へ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="kurofuku-sake-magazine" class="footer-logo" style="cursor:pointer;display:block;">クロフク編集長のお酒マガジン</a>
+    <div class="footer-logo-en">KUROFUKU'S SAKE MAGAZINE</div>
+    <div class="footer-links">
+      <a href="kurofuku-sake-magazine">トップ</a>
+      <a href="profile">プロフィール</a>
+      <a href="contact">お問い合わせ</a>
+      <a href="privacy">プライバシーポリシー</a>
+    </div>
+    <div class="footer-disclosure">
+      このサイトはAmazonアソシエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+    </div>
+    <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "クロフク編集長のお酒マガジン",
+  "url": "https://kurofuku-magazine.com",
+  "logo": "https://kurofuku-magazine.com/images/favicon-32.ico"
+}
+</script>
+
+<!-- ページ遷移フェード -->
+<script>
+  (function() {
+    function navigateWithFade(href) {
+      document.body.classList.add('page-leaving');
+      setTimeout(function() { window.location.href = href; }, 300);
+    }
+    function isExternal(href) {
+      return !href || href.startsWith('http') || href.startsWith('//') ||
+             href.startsWith('#') || href.startsWith('mailto:') ||
+             href.startsWith('tel:') || href.startsWith('javascript:');
+    }
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (isExternal(href)) return;
+      if (link.target === '_blank') return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      navigateWithFade(href);
+    });
+    document.querySelectorAll('[onclick*="window.location"]').forEach(function(el) {
+      var orig = el.getAttribute('onclick');
+      var match = orig && orig.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
+      if (!match) return;
+      var href = match[1];
+      el.removeAttribute('onclick');
+      el.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        navigateWithFade(href);
+      });
+    });
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
+
+<!-- Phase 1 スクロールエフェクト -->
+<script>
+  (function() {
+    var header = document.querySelector('header');
+    var progress = document.getElementById('scroll-progress');
+    var heroImg = document.querySelector('.article-hero img');
+    var lastScroll = window.scrollY;
+    var lastDirChangeY = lastScroll;
+    var ticking = false;
+    var DELTA = 15;
+
+    function update() {
+      var y = window.scrollY;
+      var diff = y - lastScroll;
+      if (header) {
+        if (y > 80) header.classList.add('is-scrolled');
+        else header.classList.remove('is-scrolled');
+        var atBottom = (y + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
+        if (atBottom) {
+          header.classList.remove('is-hidden');
+        } else if (diff < -1) {
+          header.classList.remove('is-hidden');
+          lastDirChangeY = y;
+        } else if (diff > 0 && y > 200 && (y - lastDirChangeY) > DELTA) {
+          header.classList.add('is-hidden');
+          lastDirChangeY = y;
+        }
+      }
+      if (progress) {
+        var dh = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (dh > 0 ? (y / dh * 100) : 0) + '%';
+      }
+      if (heroImg) {
+        heroImg.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+      }
+      lastScroll = y;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+<!-- Phase 2 マグネットボタン -->
+<script>
+  (function() {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var btns = document.querySelectorAll('.amz-btn, .raku-btn, .amz-link, .raku-link, .back-nav a');
+    btns.forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.4) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = '';
+      });
+    });
+  })();
+</script>
+
+<!-- Phase 3 タイトル文字フェード -->
+<script>
+  (function() {
+    function splitText(el) {
+      var idx = 0;
+      function walk(node) {
+        Array.from(node.childNodes).forEach(function(child) {
+          if (child.nodeType === 3) {
+            var text = child.textContent;
+            var frag = document.createDocumentFragment();
+            for (var i = 0; i < text.length; i++) {
+              var ch = text[i];
+              if (ch === ' ' || ch === '　' || ch === '\n') {
+                frag.appendChild(document.createTextNode(ch));
+              } else {
+                var span = document.createElement('span');
+                span.textContent = ch;
+                span.className = 'char-fade';
+                span.style.animationDelay = (idx * 0.05) + 's';
+                idx++;
+                frag.appendChild(span);
+              }
+            }
+            node.replaceChild(frag, child);
+          } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+            walk(child);
+          }
+        });
+      }
+      walk(el);
+    }
+    document.querySelectorAll('.hero h1, .article-title').forEach(splitText);
+  })();
+</script>
+</body>
+</html>
