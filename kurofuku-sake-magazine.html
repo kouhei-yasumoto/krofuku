@@ -854,6 +854,12 @@
         min-height: 660px;
         padding: 112px 20px 54px;
       }
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(12,8,7,0.88) 0%, rgba(12,8,7,0.58) 52%, rgba(12,8,7,0.22) 100%),
+          linear-gradient(0deg, rgba(12,8,7,0.9) 0%, rgba(12,8,7,0.2) 50%),
+          url('images/hero-editor-silhouette.png') 25% center / auto 100% no-repeat;
+      }
       .hero-tag {
         margin-left: auto;
       }
@@ -863,7 +869,28 @@
       }
       .cat-cards-inner {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
         margin-bottom: 32px;
+        background: transparent;
+        border: 0;
+      }
+      .cat-card {
+        aspect-ratio: 3 / 2;
+      }
+      .cat-card img {
+        filter: brightness(0.55);
+      }
+      .cat-card-label {
+        padding: 14px;
+        background: transparent;
+        gap: 4px;
+      }
+      .cat-card-name {
+        font-size: 13px;
+      }
+      .cat-card-en {
+        font-size: 8px;
+        letter-spacing: 0.14em;
       }
       .article-card,
       .article-card-featured {
