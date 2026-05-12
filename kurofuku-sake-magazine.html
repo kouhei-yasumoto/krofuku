@@ -530,6 +530,375 @@
     @keyframes heroImgReveal {
       to { opacity: 1; }
     }
+
+    /* ===== EDITORIAL REDESIGN ===== */
+    :root {
+      --ink: #17110f;
+      --paper: #f4efe6;
+      --paper-2: #fffaf0;
+      --copper: #b46d35;
+      --moss: #5f6948;
+      --wine: #6f263d;
+      --line-soft: rgba(23, 17, 15, 0.12);
+    }
+    body {
+      background:
+        linear-gradient(180deg, #15100e 0, #15100e 340px, var(--paper) 340px),
+        var(--paper);
+      color: var(--ink);
+      font-feature-settings: "palt";
+    }
+    header {
+      background: rgba(18, 13, 11, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-inner {
+      max-width: 1180px;
+      height: 72px;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo-en {
+      color: #d7b56d;
+      letter-spacing: 0.28em;
+    }
+    .logo-ja {
+      font-size: 16px;
+      letter-spacing: 0.08em;
+    }
+    .site-menu {
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      list-style: none;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .menu-toggle::marker { display: none; }
+    .menu-toggle::-webkit-details-marker { display: none; }
+    .menu-toggle:hover {
+      border-color: rgba(215,181,109,0.7);
+      background: rgba(215,181,109,0.08);
+    }
+    .menu-icon {
+      width: 18px;
+      display: grid;
+      gap: 5px;
+    }
+    .menu-icon span {
+      display: block;
+      height: 1px;
+      background: #fffaf0;
+      transform-origin: center;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+    .site-menu[open] .menu-icon span { background: #d7b56d; }
+    .site-menu[open] .menu-icon span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .site-menu[open] .menu-icon span:nth-child(2) { opacity: 0; }
+    .site-menu[open] .menu-icon span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .menu-panel {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 12px);
+      min-width: 250px;
+      padding: 12px;
+      background: rgba(16, 12, 10, 0.96);
+      border: 1px solid rgba(215,181,109,0.28);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.42);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 20;
+    }
+    .menu-panel a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 44px;
+      padding: 0 12px;
+      color: rgba(255,250,240,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .menu-panel a:last-child { border-bottom: 0; }
+    .menu-panel a::after {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: rgba(215,181,109,0.7);
+    }
+    .menu-panel a:hover {
+      color: #d7b56d;
+      background: rgba(255,255,255,0.04);
+    }
+    .hero {
+      min-height: min(720px, 78svh);
+      padding: 138px 24px 74px;
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: left;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(12,8,7,0.88) 0%, rgba(12,8,7,0.58) 44%, rgba(12,8,7,0.12) 100%),
+        linear-gradient(0deg, rgba(12,8,7,0.86) 0%, rgba(12,8,7,0.05) 44%),
+        url('images/hero-editor-silhouette.png') center / cover no-repeat;
+      transform: scale(1.03);
+    }
+    .hero::after {
+      content: 'KUROFUKU';
+      position: absolute;
+      right: max(24px, 5vw);
+      bottom: 34px;
+      z-index: -1;
+      color: rgba(255,255,255,0.055);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(60px, 13vw, 188px);
+      line-height: 0.8;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+    }
+    .hero > * {
+      width: min(1120px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-tag {
+      width: min(1120px, 100%);
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #d7b56d;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      backdrop-filter: none;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      opacity: 0.9;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 44px;
+      height: 1px;
+      background: rgba(215,181,109,0.82);
+    }
+    .hero h1 {
+      max-width: 790px;
+      margin: 0 auto 18px;
+      color: #fffaf0;
+      font-size: clamp(32px, 7vw, 78px);
+      line-height: 1.18;
+      letter-spacing: 0.03em;
+      text-shadow: 0 12px 36px rgba(0,0,0,0.38);
+    }
+    .hero h1 em { color: #e5c57b; }
+    .hero-desc {
+      max-width: 790px;
+      margin: 20px auto 0;
+      color: rgba(255,250,240,0.78);
+      font-size: 15px;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .main-wrap {
+      max-width: 1120px;
+      padding: 48px 24px 70px;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .sec-label,
+    .cat-cards-inner,
+    .coming-soon,
+    .profile-block {
+      grid-column: 2 / 12;
+    }
+    .sec-label {
+      margin: 14px 0 2px;
+    }
+    .sec-label h2 {
+      color: rgba(23,17,15,0.64);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+    }
+    .sec-label .line { background: var(--line-soft); }
+    .cat-cards-inner {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--ink);
+      border: 1px solid rgba(23,17,15,0.16);
+      margin-bottom: 12px;
+      max-height: none;
+    }
+    .cat-card {
+      aspect-ratio: 16 / 9;
+      background: #111;
+    }
+    .cat-card img {
+      filter: brightness(0.68) saturate(0.92);
+    }
+    .cat-card:hover img {
+      filter: brightness(0.5) saturate(1.05);
+      transform: scale(1.06);
+    }
+    .cat-card-label {
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
+      text-align: center;
+      background: rgba(0,0,0,0.34);
+    }
+    .cat-card-name {
+      font-size: clamp(16px, 2vw, 24px);
+      letter-spacing: 0.08em;
+    }
+    .cat-card-en {
+      color: #d7b56d;
+      letter-spacing: 0.18em;
+    }
+    .article-card {
+      grid-column: 2 / 12;
+      margin-top: 0 !important;
+      border: 1px solid rgba(23,17,15,0.12);
+      background: var(--paper-2);
+      box-shadow: 0 18px 44px rgba(36,24,14,0.07);
+      overflow: hidden;
+    }
+    .article-card-featured {
+      grid-column: 2 / 12;
+      display: block;
+      min-height: 0;
+    }
+    .card-thumb {
+      aspect-ratio: 16 / 7;
+      background: #120d0b;
+    }
+    .card-thumb img {
+      object-fit: contain !important;
+      background: #120d0b !important;
+      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
+    }
+    .card-body {
+      padding: clamp(22px, 3vw, 36px);
+    }
+    .card-cat {
+      color: var(--wine);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+    }
+    .card-body h3 {
+      color: var(--ink);
+      font-size: clamp(21px, 2.4vw, 32px);
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+    }
+    .card-excerpt {
+      color: rgba(23,17,15,0.66);
+      line-height: 1.95;
+    }
+    .card-meta {
+      color: rgba(23,17,15,0.42);
+      letter-spacing: 0.08em;
+    }
+    .amz-cta {
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(23,17,15,0.1);
+    }
+    .amz-btn, .raku-btn {
+      border-radius: 0;
+      min-height: 40px;
+      letter-spacing: 0.04em;
+    }
+    .read-link {
+      color: var(--copper);
+      border-bottom-color: var(--copper);
+      font-weight: bold;
+    }
+    .profile-block {
+      margin-top: 28px;
+      background: #17110f;
+      border: 0;
+      color: #fffaf0;
+      padding: 32px;
+      align-items: center;
+    }
+    .profile-name { color: #fffaf0; }
+    .profile-role { color: #d7b56d; }
+    .profile-bio { color: rgba(255,250,240,0.7); }
+    footer {
+      background: #100c0a;
+      margin-top: 0;
+    }
+    @media (max-width: 880px) {
+      .hero {
+        min-height: 660px;
+        padding: 112px 20px 54px;
+      }
+      .hero-tag {
+        margin-left: auto;
+      }
+      .main-wrap {
+        display: block;
+        padding: 40px 18px 56px;
+      }
+      .cat-cards-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-bottom: 32px;
+      }
+      .article-card,
+      .article-card-featured {
+        display: block;
+        margin-top: 20px !important;
+      }
+    }
+    @media (max-width: 560px) {
+      .header-inner {
+        height: 62px;
+        padding: 0 16px;
+      }
+      .logo-en { font-size: 8px; letter-spacing: 0.2em; }
+      .logo-ja { font-size: 14px; }
+      .hero {
+        min-height: 600px;
+        padding: 96px 18px 44px;
+      }
+      .hero h1 {
+        font-size: clamp(31px, 10vw, 46px);
+      }
+      .hero-desc {
+        font-size: 13px;
+        white-space: normal;
+      }
+      .cat-card-label {
+        padding: 16px;
+      }
+      .card-body {
+        padding: 22px 18px 24px;
+      }
+      .profile-block {
+        padding: 24px 20px;
+      }
+    }
   </style>
 
   <!-- OGP -->
@@ -555,6 +924,21 @@
       <span class="logo-en">Kurofuku's Sake Magazine</span>
       <span class="logo-ja">クロフク編集長のお酒マガジン</span>
     </a>
+    <details class="site-menu">
+      <summary class="menu-toggle" aria-label="メニューを開く">
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </summary>
+      <nav class="menu-panel" aria-label="メインメニュー">
+        <a href="#category">カテゴリー</a>
+        <a href="profile">プロフィール</a>
+        <a href="privacy">プライバシーポリシー</a>
+        <a href="contact">お問い合わせ</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -562,13 +946,13 @@
 <section class="hero">
   <div class="hero-tag">Editor's Review Magazine</div>
   <h1>酒販業界の中の人が<em>本音で選ぶ</em>、<br>お酒レビューマガジン</h1>
-  <p class="hero-desc">酒販業界の現場経験と目利きから、<br>情報を発信いたします。<br>本当にいいお酒との出会いをあなたに。</p>
+  <p class="hero-desc">酒販業界の現場経験と目利きから、本当にいいお酒との出会いにつながる確かな情報をお届けします。</p>
 </section>
 
 <!-- MAIN -->
 <div class="main-wrap">
 
-  <div class="sec-label">
+  <div class="sec-label" id="category">
     <h2>Category</h2>
     <div class="line"></div>
   </div>
@@ -605,9 +989,32 @@
     </a>
   </div>
 
-  <div class="sec-label">
+  <div class="sec-label" id="articles">
     <h2>Articles</h2>
     <div class="line"></div>
+  </div>
+
+  <!-- 記事：相模灘 -->
+  <div class="article-card article-card-featured" onclick="window.location.href='article-sagaminada'" style="cursor:pointer;margin-top:20px;">
+    <div class="card-thumb" style="padding:0;">
+      <img src="images/header-sagaminada.jpg" alt="神奈川の地酒・相模灘" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
+    </div>
+    <div class="card-body">
+      <p class="card-cat">🍶 Japanese Sake — Editor's Pick</p>
+      <h3>丹沢の清水が育む誠実な酒<br>相模灘</h3>
+      <p class="card-excerpt">神奈川県相模原市の久保田酒造が1844年から醸す地酒「相模灘」。丹沢山系の清冽な湧水と食中酒への一徹した哲学が宿るラインナップをご紹介します。</p>
+      <p class="card-meta">2026.05.11 — クロフク編集長</p>
+      <div class="amz-cta">
+        <div class="amz-cta-text">
+          <div class="prod">相模灘 特別純米辛口 おりがらみ無濾過生</div>
+        </div>
+        <div class="cta-btns">
+          <a href="https://www.amazon.co.jp/dp/B0GVTHZFVJ/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosaketen%2F10001045&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+        </div>
+      </div>
+      <a href="article-sagaminada" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
+    </div>
   </div>
 
   <!-- 記事：ACOU SPIRITS NEW -->
@@ -622,7 +1029,7 @@
       <p class="card-meta">2026.05.10 — クロフク編集長</p>
       <div class="amz-cta">
         <div class="amz-cta-text"><div class="prod">アコウ ラム シルバー</div></div>
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeishu-honpo%2F14317%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeishu-honpo%2F14317%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
       </div>
       <a href="article-acouspirits" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
     </div>
@@ -642,7 +1049,7 @@
         <div class="amz-cta-text"><div class="prod">デッサンシリーズ フローラ 2025</div></div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B0G4CTH9Y7/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftaka-sake%2Fikawa-flora-2025-700ml%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftaka-sake%2Fikawa-flora-2025-700ml%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-ikawa-distillery" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -665,7 +1072,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B003DU6PUI/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcellar%2F414154%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcellar%2F414154%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
     </div>
@@ -687,7 +1094,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B003Q00E8O/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fono-sake%2Fmei-zyungin1800%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fono-sake%2Fmei-zyungin1800%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-meikyoshisui" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -710,7 +1117,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B0045TV09M/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F4-hennessy-vsop%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F4-hennessy-vsop%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-cognac-vsop" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -734,7 +1141,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B008U7SUDE/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-ardbeg-vt10%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-ardbeg-vt10%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-ardbeg" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -757,7 +1164,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B002JN2US6/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fukigoods%2F0102091010590%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fukigoods%2F0102091010590%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-louisjadot" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -802,7 +1209,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B00DTD7YDQ/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-kilchoman-mb%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F3-kilchoman-mb%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-kilchoman" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -825,7 +1232,7 @@
         </div>
         <div class="cta-btns">
           <a href="https://www.amazon.co.jp/dp/B01LY0P2Q1/?tag=claudeotoko-22" target="_blank" class="amz-btn" onclick="event.stopPropagation()">▶ Amazonで見る</a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F5-kyoto-jin%2F&link_type=hybrid_url" target="_blank" class="raku-btn" onclick="event.stopPropagation()">▶ 楽天で見る</a>
         </div>
       </div>
       <a href="article-kinobi" class="read-link" onclick="event.stopPropagation()">記事を読む →</a>
@@ -1093,6 +1500,29 @@
     });
     window.addEventListener('pageshow', function(e) {
       if (e.persisted) document.body.classList.remove('page-leaving');
+    });
+  })();
+</script>
+
+<!-- メニュー外クリックで閉じる -->
+<script>
+  (function() {
+    var menu = document.querySelector('.site-menu');
+    if (!menu) return;
+
+    document.addEventListener('click', function(e) {
+      if (!menu.open || menu.contains(e.target)) return;
+      menu.open = false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') menu.open = false;
+    });
+
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.open = false;
+      });
     });
   })();
 </script>

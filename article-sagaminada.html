@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta name="google-site-verification" content="yNHUMe9JNnzmblQHcycgte9CPVt_UbIg82FECZzPJc0" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robert Mondavi その夢は、続いている｜クロフク編集長オススメワイン</title>
-  <meta name="description" content="カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。" />
+  <title>相模灘 | クロフク編集長のお酒マガジン</title>
+  <meta name="description" content="神奈川県相模原市の久保田酒造が醸す地酒「相模灘」。1844年創業、廃業の危機を越えた蔵元のこだわりが宿る日本酒を紹介します。" />
   <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon-16.ico">
   <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon-32.ico">
   <style>
@@ -48,14 +48,43 @@
       width: 100%;
       max-height: 360px;
       aspect-ratio: 128/67;
+      background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 45%, #1a0800 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
       overflow: hidden;
     }
-    .article-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      background: #0d0d0d;
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 60px
+      );
+    }
+    .hero-badge {
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 18px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .hero-icon { font-size: 56px; position: relative; }
+    .hero-text {
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      font-family: 'Hiragino Mincho ProN', serif;
+      position: relative;
+      padding: 0 24px;
     }
 
     /* ===== ARTICLE BODY ===== */
@@ -100,6 +129,15 @@
       color: #2a2a2a;
       margin-bottom: 20px;
     }
+    .article-body .note-text {
+      font-size: 13px;
+      color: var(--muted);
+      background: #fafaf8;
+      border-left: 3px solid var(--border);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
 
     .section-heading {
       font-size: 18px;
@@ -124,23 +162,13 @@
       font-size: 16px;
       font-weight: bold;
       color: var(--dark);
-      margin-bottom: 8px;
+      margin-bottom: 20px;
       padding-bottom: 10px;
       border-bottom: 2px solid var(--dark);
       line-height: 1.5;
     }
-    .product-sub {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      margin-bottom: 0;
-    }
-    .product-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 10px 0 20px;
-    }
 
+    /* 実際の商品画像用スタイル */
     .product-img {
       display: block;
       max-width: 240px;
@@ -210,6 +238,30 @@
       justify-content: center;
     }
 
+    /* ===== SPECIAL SECTIONS ===== */
+    .special-section {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .special-section p {
+      font-size: 15px;
+      color: #2a2a2a;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .special-section p:last-child { margin-bottom: 0; }
+    .special-section h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 16px;
+      margin-top: 24px;
+      font-family: 'Hiragino Mincho ProN', serif;
+    }
+    .special-section h3:first-child { margin-top: 0; }
+
     /* ===== AUTHOR ===== */
     .author-block {
       margin-top: 48px;
@@ -258,7 +310,29 @@
     .footer-disclosure { font-size: 10px; color: #444; line-height: 1.7; margin-bottom: 14px; }
     .footer-copy { font-size: 10px; color: #3a3a3a; }
 
+    @media (max-width: 600px) {
+      .author-block { flex-direction: column; }
+      .amz-link, .raku-link { display: flex; width: 100%; justify-content: center; }
+      .special-section { padding: 22px 20px; }
+      .buy-links { width: 100%; }
+      .buy-links a { width: 100%; }
+
+      /* スマホ表示での画像サイズ調整 */
+      .product-img.small {
+        max-width: 130px;
+        max-height: 240px;
+      }
+      .product-img.medium {
+        max-width: 240px;
+        max-height: 380px;
+      }
+      .product-img.large {
+        max-width: 300px;
+        max-height: 450px;
+      }
+    }
     /* CAT NAV */
+    /* CATEGORY CARDS */
     .cat-cards-inner { max-width: calc(360px * 1280 / 670); width: 100%; margin: 0 auto; padding: 0; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
     .cat-card { display: block; position: relative; aspect-ratio: 3/2; overflow: hidden; }
     .cat-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.55); }
@@ -266,7 +340,6 @@
     .cat-card-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
     .cat-card-name { font-size: 12px; font-weight: bold; color: #fff; letter-spacing: 0.1em; font-family: 'Hiragino Mincho ProN', serif; text-align: center; }
     .cat-card-en { font-size: clamp(5.5px, 1.5vw, 8px); color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; text-align: center; }
-
     /* RELATED ARTICLES */
     .related-section { margin-top: 48px; }
     .related-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
@@ -281,20 +354,11 @@
     .related-cat { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
     .related-title { font-size: 12px; line-height: 1.6; color: var(--dark); font-family: 'Hiragino Mincho ProN', serif; font-weight: bold; }
 
-    @media (max-width: 768px) {
-      .article-wrap { padding: 24px 12px; }
-      .author-block { flex-direction: column; }
-      .product-img, .product-img.medium, .product-img.large { max-width: 100%; }
-      .buy-links { width: 100%; }
-      .buy-links a { width: 100%; }
-      .related-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-  
     /* ===== PAGE TRANSITION ===== */
     @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
     body { animation: pageFadeIn 0.4s ease-out; }
     body.page-leaving { opacity: 0; transition: opacity 0.3s ease-out; }
-  
+
     /* ===== PHASE 1: SCROLL EFFECTS ===== */
     header {
       position: sticky;
@@ -336,13 +400,13 @@
     }
     .article-hero { overflow: hidden; }
     .article-hero img { will-change: transform; }
-  
+
     /* ===== PHASE 1 FIXES ===== */
     html, body { overflow-x: clip; }
     * { -webkit-tap-highlight-color: transparent; }
     .article-card, [onclick] { -webkit-user-select: none; user-select: none; }
     .article-body, .product-desc, p, h1, h2, h3 { -webkit-user-select: text; user-select: text; }
-  
+
     /* ===== PHASE 2: HOVER & MAGNETIC ===== */
     /* カードホバー強化 */
     .article-card {
@@ -375,7 +439,7 @@
     .amz-btn, .raku-btn, .amz-link, .raku-link, .back-nav a {
       transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.2s ease, color 0.2s ease;
     }
-  
+
     /* ===== PHASE 3: TITLE FADE & IMAGE REVEAL ===== */
     /* 文字単位フェードイン */
     .char-fade {
@@ -416,17 +480,16 @@
   </style>
 
   <!-- OGP -->
-  <meta property="og:title" content="Robert Mondavi その夢は、続いている｜クロフク編集長オススメワイン">
-  <meta property="og:description" content="カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。">
-  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-robert-mondavi.jpg">
-  <meta property="og:url" content="https://kurofuku-magazine.com/article-robert-mondavi">
+  <meta property="og:title" content="丹沢の清水が育む誠実な酒 相模灘">
+  <meta property="og:description" content="神奈川県相模原市の久保田酒造が醸す地酒「相模灘」。丹沢山系の清冽な湧水と食中酒への一徹した哲学が宿る、厳選ラインナップをご紹介します。">
+  <meta property="og:image" content="https://kurofuku-magazine.com/images/header-sagaminada.jpg">
+  <meta property="og:url" content="https://kurofuku-magazine.com/article-sagaminada">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="クロフク編集長のお酒マガジン">
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Robert Mondavi その夢は、続いている｜クロフク編集長オススメワイン">
-  <meta name="twitter:description" content="カリフォルニアワインを世界の舞台に押し上げた男、ロバート・モンダヴィ。プライベートセレクションの赤白からウッドブリッジ、そして革新のバーボンバレルエイジドまで厳選5本をご紹介します。">
-  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-robert-mondavi.jpg">
+  <meta name="twitter:title" content="丹沢の清水が育む誠実な酒 相模灘">
+  <meta name="twitter:description" content="神奈川県相模原市の久保田酒造が醸す地酒「相模灘」。丹沢山系の清冽な湧水と食中酒への一徹した哲学が宿る、厳選ラインナップをご紹介します。">
+  <meta name="twitter:image" content="https://kurofuku-magazine.com/images/header-sagaminada.jpg">
 </head>
 <body>
 <div id="scroll-progress"></div>
@@ -438,156 +501,127 @@
       <span class="logo-en">Kurofuku's Sake Magazine</span>
       <span class="logo-ja">クロフク編集長のお酒マガジン</span>
     </a>
-    <a href="kurofuku-sake-magazine" class="back-link">← 記事一覧へ</a>
+    <a href="kurofuku-sake-magazine" class="back-link">← トップへ戻る</a>
   </div>
   <!-- CATEGORY CARDS -->
-  <div class="cat-cards-inner">
-    <a href="category-whisky" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
-    <a href="category-wine" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
-    <a href="category-sake" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
-    <a href="category-other" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
-  </div>
+    <div class="cat-cards-inner">
+      <a href="category-whisky" class="cat-card"><img src="images/category-whisky.jpg" alt="ウイスキー"><div class="cat-card-label"><span class="cat-card-name">ウイスキー</span><span class="cat-card-en">Whisky</span></div></a>
+      <a href="category-wine" class="cat-card"><img src="images/category-wine.jpg" alt="ワイン"><div class="cat-card-label"><span class="cat-card-name">ワイン</span><span class="cat-card-en">Wine</span></div></a>
+      <a href="category-sake" class="cat-card"><img src="images/category-sake.jpg" alt="日本酒"><div class="cat-card-label"><span class="cat-card-name">日本酒</span><span class="cat-card-en">Japanese Sake</span></div></a>
+      <a href="category-other" class="cat-card"><img src="images/category-other.jpg" alt="その他"><div class="cat-card-label"><span class="cat-card-name">その他</span><span class="cat-card-en">Others</span></div></a>
+    </div>
 </header>
 
 <!-- ARTICLE HERO -->
 <div class="article-hero">
-  <img src="images/header-robert-mondavi.jpg" alt="Robert Mondavi ロバートモンダヴィ ワインラインナップ">
+  <img src="images/header-sagaminada.jpg" alt="神奈川の地酒・相模灘の世界へようこそ" style="width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0d;">
 </div>
 
 <!-- ARTICLE BODY -->
 <div class="article-wrap">
 
   <div class="article-meta">
-    <span class="meta-cat">🍷 Wine</span>
-    <span class="meta-date">2026.05.01</span>
+    <span class="meta-cat">🍶 Japanese Sake</span>
+    <span class="meta-date">2026年5月11日</span>
     <span class="meta-author">クロフク編集長</span>
   </div>
 
-  <h1 class="article-title">ROBERT MONDAVI<br>その夢は、続いている。</h1>
+  <h1 class="article-title">丹沢の清水が育む誠実な酒<br>相模灘</h1>
 
   <div class="article-body">
     <p>こんにちは、クロフク編集長です。</p>
-    <p>今回は、カリフォルニアワインの歴史を語るうえで絶対に外せない名前、ロバート・モンダヴィ（Robert Mondavi）をご紹介します。</p>
-    <p>「ワインは、人々の生活をより豊かにする文化そのものだ」——ロバート・モンダヴィが残したこの言葉は、彼が生涯かけて追い求めた夢を、そのまま表しています。</p>
-    <p>彼がいなければ、今のカリフォルニアワインはなかった。そう言っても過言ではありません。</p>
+    <p>今回紹介するのは、神奈川県相模原市に蔵を構える久保田酒造の地酒「相模灘」です。創業は1844年（弘化元年）。神奈川という酒どころのイメージが薄いなかで、丹沢山地に連なる山里で170年以上にわたって酒を醸してきた蔵元です。</p>
+    <p>その相模灘の歴史には、ある転機があります。1990年代、長く蔵を支えてきた番頭が亡くなり、久保田酒造は廃業寸前まで追い込まれました。そのとき、会社員だった現蔵元が48歳という年齢で脱サラし、先祖から続く蔵を継ぐ決断をしたのです。</p>
+    <p>その覚悟が、相模灘というお酒に宿っています。</p>
   </div>
 
   <div class="article-body">
-    <h2 class="section-heading">一人の男が、カリフォルニアワインを変えた</h2>
-    <p>1966年、ロバート・モンダヴィは当時まだ「テーブルワインの産地」に過ぎなかったナパ・ヴァレーに、自らの名を冠したワイナリーを設立しました。54歳のことです。</p>
-    <p>当時のカリフォルニアワインは、ヨーロッパの名醸地に比べて格下と見られていた。質より量、安売り競争が当たり前の世界。モンダヴィはその常識に真っ向から反発した。</p>
-    <p>「カリフォルニアの土壌と太陽は、世界最高のワインを生む可能性を秘めている。なぜ、誰もそれを本気で証明しようとしないのか」</p>
-    <p>彼は醸造技術の革新に投資し、フランスの名門と対等に渡り合うためにナパの可能性を世界に発信し続けた。その執念が、1976年の「パリの審判」という歴史的事件につながっていく。ブラインドテイスティングで、カリフォルニアワインがフランスの格付けワインを次々と上回ったあの衝撃の日——モンダヴィの夢が、世界に認められた瞬間でした。</p>
-    <p>2008年、94歳でその生涯を閉じたロバート・モンダヴィ。しかし彼が作り上げたブランドは、今もカリフォルニアワインの象徴として世界中で愛飲されています。</p>
-    <p>その夢は、続いている。</p>
+    <h2 class="section-heading">山里の蔵が守り続けてきたもの</h2>
+    <p>久保田酒造の蔵は、神奈川県相模原市緑区根小屋にあります。城山ダム（津久井湖）にほど近い山間部で、南側に森が広がるため一年を通じて気温の変化が少なく、冬には氷点下にまで冷え込む。日本酒の醸造に理想的な環境です。</p>
+    <p>仕込み水には、丹沢山系から湧き出る清冽な水を使用。この水と厳しい寒さがあってこそ、相模灘の味わいが生まれます。山田錦、美山錦、雄町と多彩な酒米を使いながら、そのすべてに「食中酒として料理に寄り添う」という一貫した哲学が貫かれています。</p>
+    <p>派手さより誠実さを。それが、久保田酒造の仕事です。</p>
   </div>
 
-  <div class="article-body">
-    <h2 class="section-heading">編集長が選ぶ、ロバートモンダヴィ厳選5本</h2>
-    <p>ロバートモンダヴィのワインラインナップは大きく2つ。ナパ・ヴァレーを中心とした高品質な「プライベートセレクション」シリーズと、日常飲みに最適な「ウッドブリッジ」シリーズです。今回は赤白交互に、編集長セレクションの5本をご紹介します。</p>
-  </div>
-
-  <!-- ① PS カベルネ・ソーヴィニヨン -->
+  <!-- ① 相模灘 特別純米辛口 おりがらみ無濾過生 1800ml -->
   <div class="product-item">
-    <div class="product-heading">① ロバートモンダヴィ プライベートセレクション カベルネ・ソーヴィニヨン 750ml</div>
-    <div class="product-sub">タイプ：赤ワイン</div>
-    <hr class="product-divider">
-    <img src="https://m.media-amazon.com/images/I/41X2hTFbpnL._AC_SX679_.jpg" alt="Robert Mondavi Private Selection Cabernet Sauvignon" class="product-img">
-    <p class="product-desc">プライベートセレクションシリーズの代名詞とも言える赤ワイン。カリフォルニアの豊かな陽光と肥沃な大地が育てたカベルネ・ソーヴィニヨンを100%使用しています。</p>
-    <p class="product-desc">グラスに注ぐと深いルビーレッド。香りはブラックチェリーやカシス、プラムなどの黒系果実が豊かに広がり、オーク由来のバニラや甘いスパイスが優しく追いかけてくる。口に含むと、しっかりとしたボディとなめらかなタンニンが出迎えてくれます。</p>
-    <p class="product-desc">後味は長くウォーム。ステーキやラム肉、熟成チーズとの相性は抜群ですが、ハンバーグや肉じゃがのような和洋折衷の料理にも違和感なく寄り添ってくれる懐の深さがあります。</p>
-    <p class="product-desc">「カリフォルニアの赤といえばこれ」と言い切れるほどの完成度。初めてロバートモンダヴィを飲む方は、ここからスタートしてください。</p>
+    <div class="product-heading">① 相模灘 特別純米辛口 おりがらみ無濾過生 1800ml</div>
+    <img src="https://m.media-amazon.com/images/I/51Pg1QzgbBL._AC_SY500_.jpg" alt="相模灘 特別純米辛口 おりがらみ無濾過生 1800ml" class="product-img">
+    <p class="product-desc">相模灘を代表する特別純米辛口に、季節限定のおりがらみ仕立てを施した一本です。「おりがらみ」とは、醪の澱をあえて少量残した状態で瓶詰めしたもの。うっすらと白く濁った色合いの中に、フレッシュな旨みとガス感が閉じ込められています。</p>
+    <p class="product-desc">口に含むと、辛口らしいキリッとした輪郭がありながら、おりの旨みがそれを柔らかく包んでいます。辛さと旨みが口の中で押し引きして、余韻に濃密なコクが残る。グラスを傾けるたびに澱が舞う様子も、日本酒らしい美しさを感じさせてくれます。</p>
+    <p class="product-desc">ふだん辛口の日本酒を好む方にも、フレッシュな季節酒を初めて試したい方にも手に取ってもらいたい一本です。冷酒でキリッと、あるいは旬の食材を使った和食とともに楽しんでみてください。</p>
     <div class="buy-links">
-      <a href="https://www.amazon.co.jp/dp/B003DU6PUI/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcellar%2F414154%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      <a href="https://www.amazon.co.jp/dp/B0GVTHZFVJ/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosaketen%2F10001045&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
     </div>
   </div>
 
-  <!-- ② PS シャルドネ -->
+  <!-- ② 相模灘 槽場直詰 純米吟醸しぼりたて 美山錦 1800ml -->
   <div class="product-item">
-    <div class="product-heading">② ロバートモンダヴィ プライベートセレクション シャルドネ 750ml</div>
-    <div class="product-sub">タイプ：白ワイン</div>
-    <hr class="product-divider">
-    <img src="https://m.media-amazon.com/images/I/41UQ+E8DO6L._SX522_.jpg" alt="Robert Mondavi Private Selection Chardonnay" class="product-img medium">
-    <p class="product-desc">プライベートセレクションの白ワインを代表する一本。カリフォルニアらしいふくよかさと、程よい爽やかさを兼ね備えたシャルドネです。</p>
-    <p class="product-desc">色合いはきれいなゴールデンイエロー。グラスを傾けると、桃やマンゴーといったトロピカルフルーツの甘やかな香りがやってきて、その後ろからバニラやバタースコッチのようなオーク由来の温かみが続く。</p>
-    <p class="product-desc">口当たりはリッチでまろやか。でも、きちんと酸がある。だからしつこくなくて、グラスが空になるのが早い。このバランスこそが、カリフォルニアシャルドネの真骨頂。</p>
-    <p class="product-desc">シーフードや鶏のクリームソース、パスタとの相性が良く、アペリティフとしてもすっきり楽しめます。「白ワインが得意じゃない」という方にこそ飲んでほしい。きっと、印象が変わります。</p>
+    <div class="product-heading">② 相模灘 槽場直詰 純米吟醸しぼりたて 美山錦 1800ml</div>
+    <img src="https://m.media-amazon.com/images/I/51XGzp35U6L._AC_SY500_.jpg" alt="相模灘 槽場直詰 純米吟醸しぼりたて 美山錦 1800ml" class="product-img">
+    <p class="product-desc">蔵が得意とする美山錦を使った純米吟醸の、しぼりたて槽場直詰版です。槽（ふね）から直接瓶に詰め、余計な処理を加えない状態でお届けしてくれます。搾りたての酒が持つ、ありのままの輝きが凝縮された一本です。久保田酒造の丁寧な仕事がもっとも率直に伝わってくる形で飲める、そんな感覚があります。</p>
+    <p class="product-desc">香りはフレッシュな青りんごや梨を思わせる穏やかな吟醸香。口に含むと、純米吟醸らしい米の旨みがふわりと広がり、その後に爽やかな酸がきれいに伸びていきます。余韻はすっきりとしていて、次の一口を自然に誘う飲み心地です。</p>
+    <p class="product-desc">日本酒の奥深さを知りたい方に、ぜひ最初の一本として飲んでもらいたいと思っています。鮮度が命の生酒なので、届いたらなるべく早めに楽しむのがおすすめです。刺身や白身魚のシンプルな料理とよく合います。</p>
     <div class="buy-links">
-      <a href="https://www.amazon.co.jp/dp/B002N0KOXI/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fse-sake%2F17761a01%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      <a href="https://www.amazon.co.jp/dp/B007JIB30W/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
     </div>
   </div>
 
-  <!-- ③ ウッドブリッジ ピノノワール -->
+  <!-- ③ 相模灘 純米吟醸 山田錦 無濾過生酒 1800ml -->
   <div class="product-item">
-    <div class="product-heading">③ ロバートモンダヴィ ウッドブリッジ ピノ・ノワール 750ml</div>
-    <div class="product-sub">タイプ：赤ワイン</div>
-    <hr class="product-divider">
-    <img src="https://m.media-amazon.com/images/I/51OFU1S-rLL._SX522_.jpg" alt="Robert Mondavi Woodbridge Pinot Noir" class="product-img medium">
-    <p class="product-desc">「日常にワインを」というコンセプトで生まれたウッドブリッジシリーズから、赤ワインの王様・ピノ・ノワールをご紹介します。</p>
-    <p class="product-desc">ウッドブリッジのピノノワールは、難しいことを考えずに飲める赤ワイン。色は明るいルビー、香りはチェリーやラズベリー、イチゴといった赤系果実が中心。タンニンは柔らかく、口当たりはシルキー。酸味も穏やかで、とにかく飲みやすい。</p>
-    <p class="product-desc">「赤ワインって渋いから……」という方が、これを飲んで「あ、こういう赤ワインならいける」となるケースをよく見ます。ピノノワールならではの繊細なフルーティさが、敷居を低くしてくれる。</p>
-    <p class="product-desc">サーモンのソテー、鴨肉のロースト、きのこ系の料理との相性が特に良い。食事の途中でも、食後にゆっくり飲むのも、どちらにも向いている万能選手です。</p>
+    <div class="product-heading">③ 相模灘 純米吟醸 山田錦 無濾過生酒 1800ml</div>
+    <img src="https://m.media-amazon.com/images/I/61hxv9wY++L._AC_SY500_.jpg" alt="相模灘 純米吟醸 山田錦 無濾過生酒 1800ml" class="product-img">
+    <p class="product-desc">酒米の王様・山田錦を使った純米吟醸の無濾過生酒です。濾過や火入れを行わず、搾りたての状態を瓶に閉じ込めることで、米の旨みと香りをそのまま届けてくれます。山田錦ならではのふくよかで重心のある味わいが、相模灘の丁寧な仕事によって引き出されています。</p>
+    <p class="product-desc">立ち上がりは芳醇な果実香。口に入れると山田錦らしいどっしりとした旨みと甘みが広がり、そのあとにやわらかな苦みが輪郭を引き締めます。無濾過ならではの密度感がありながら、後味のキレは意外なほど爽快です。</p>
+    <p class="product-desc">山田錦好きの方に特に飲んでもらいたい一本です。濃いめの味付けの料理、たとえば肉料理や濃厚な和食とよく合います。冷やして飲むのはもちろん、燗にするとまた違った表情を見せてくれます。</p>
     <div class="buy-links">
-      <a href="https://www.amazon.co.jp/dp/B003DUAUN6/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fledled%2F1-r-mon-wb-pn-zz%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      <a href="https://www.amazon.co.jp/dp/B0F2YNBVF7/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/52f91c97.23196ea3.52f91c98.43be8074/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosaketen%2F10001287&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
     </div>
   </div>
 
-  <!-- ④ ウッドブリッジ シャルドネ -->
+  <!-- ④ 相模灘 純米吟醸 雄町 無濾過生酒 1800ml -->
   <div class="product-item">
-    <div class="product-heading">④ ロバートモンダヴィ ウッドブリッジ シャルドネ 750ml</div>
-    <div class="product-sub">タイプ：白ワイン</div>
-    <hr class="product-divider">
-    <img src="https://m.media-amazon.com/images/I/616xIooMlSL._AC_SY741_.jpg" alt="Robert Mondavi Woodbridge Chardonnay" class="product-img">
-    <p class="product-desc">ウッドブリッジシリーズの白ワイン代表格。「毎日飲みたい白ワインを、手の届く価格で」——そのコンセプトが、この1本に凝縮されています。</p>
-    <p class="product-desc">グラスに注ぐと、淡いゴールドの色合い。青リンゴや洋梨のような爽やかな果実香と、柑橘系のさっぱりした香りが広がる。プライベートセレクションに比べてオークのニュアンスは控えめで、よりクリーンでフレッシュな印象です。</p>
-    <p class="product-desc">飲み口は軽やかで、キリリとした酸がある。暑い季節に冷やして飲むと格別に気持ちいい。食前酒としてはもちろん、魚介の天ぷら、冷奴、白身魚の塩焼きなど、和食にも自然と合わせられる懐の広さが魅力です。</p>
-    <p class="product-desc">「とにかく毎日飲めるコスパの良い白を探している」という方に、自信を持っておすすめできる1本。冷蔵庫に常備しておきたいワインです。</p>
+    <div class="product-heading">④ 相模灘 純米吟醸 雄町 無濾過生酒 1800ml</div>
+    <img src="https://m.media-amazon.com/images/I/51+AXa9Pt4L._AC_SY500_.jpg" alt="相模灘 純米吟醸 雄町 無濾過生酒 1800ml" class="product-img">
+    <p class="product-desc">現代の酒米のルーツとも言われる希少米・雄町を使った純米吟醸の無濾過生酒です。雄町は酸味とコクのバランスが際立つ個性的な品種。その個性を相模灘の手で丁寧に醸すことで、力強さと繊細さを兼ね備えた味わいに仕上がっています。</p>
+    <p class="product-desc">香りはやや野趣があり、果物よりも土や穀物を連想させるアーシーなニュアンス。口に含むと最初に雄町らしい酸の張り出しがあり、その後でふくよかな甘みがじわりと広がります。余韻は長く、複雑なコクが口の中に残ります。</p>
+    <p class="product-desc">「日本酒の個性をちゃんと感じたい」というこだわりのある方に、<strong>自信を持っておすすめしたい</strong>一本です。単体でじっくり飲んでその深みを探るのもよし、チーズや燻製といった香りの強いつまみに合わせるのもよしです。</p>
     <div class="buy-links">
-      <a href="https://www.amazon.co.jp/dp/B001M2FIQQ/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineuki%2F1600001006934%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      <a href="https://www.amazon.co.jp/dp/B0GW3YY92V/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgosenya%2Fn010014245%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
     </div>
   </div>
 
-  <!-- ⑤ PS バーボン・バレルエイジド CS -->
+  <!-- ⑤ 相模灘 純米大吟醸 1800ml -->
   <div class="product-item">
-    <div class="product-heading" style="font-size: 13px;"><span style="font-size: 16px;">⑤</span> ロバートモンダヴィ プライベートセレクション バーボンバレルエイジド カベルネ・ソーヴィニヨン 750ml</div>
-    <div class="product-sub">タイプ：赤ワイン</div>
-    <hr class="product-divider">
-    <img src="https://m.media-amazon.com/images/I/41xPpZd-47L._AC_SX679_.jpg" alt="Robert Mondavi Private Selection Bourbon Barrel-Aged Cabernet Sauvignon" class="product-img">
-    <p class="product-desc">ここで一本、異端の赤ワインを紹介させてください。</p>
-    <p class="product-desc">「バーボン・バレルエイジド」——その名の通り、ケンタッキー州の蒸留所で使われた本物のバーボン樽で熟成させたカベルネ・ソーヴィニヨンです。ワインの世界とウイスキーの世界が、1本のボトルの中で交差する。</p>
-    <p class="product-desc">バーボン樽には、かつてバーボンウイスキーが宿っていたフレーバーが染み込んでいる。バニラ、キャラメル、トーストしたオーク、そかすかなスモーキーさ。それらがカベルネ・ソーヴィニヨンの黒系果実の風味と混ざり合うことで、ほかのワインにはない複雑な味わいが生まれます。</p>
-    <p class="product-desc">飲んでみると、最初は「あ、これはカベルネだ」とわかる。でもしばらくすると、バーボン由来の甘くスモーキーなニュアンスが鼻の奥でじんわりと広がってくる。「ワインを飲んでいるのに、ウイスキーの記憶がよみがえる」——そんな不思議な体験をさせてくれる1本です。</p>
-    <p class="product-desc">ウイスキー好きな方が「ワインも飲んでみようかな」と思ったとき、最初の1本として最高。逆に、ワイン好きな方がウイスキーへの扉を開くきっかけにもなる。両方の世界を繋ぐ、革新的なワインです。</p>
+    <div class="product-heading">⑤ 相模灘 純米大吟醸 1800ml</div>
+    <img src="https://m.media-amazon.com/images/I/51bK77KEkDL._AC_SY500_.jpg" alt="相模灘 純米大吟醸 1800ml" class="product-img">
+    <p class="product-desc">相模灘の最高峰に位置する純米大吟醸です。精米歩合を高め、低温でじっくりと醸すことで生まれる、繊細で澄んだ味わい。久保田酒造のすべての技術が結集した一本で、特別な場面にこそ手に取ってもらいたい存在です。</p>
+    <p class="product-desc">香りは白い花や桃を思わせる、上品で清楚な吟醸香。口に入れると極めて柔らかな口当たりとともに、純米ならではの米の旨みがしなやかに伸びていきます。苦みや渋みはほとんどなく、ただただ滑らかで、余韻はすっと消えていく。</p>
+    <p class="product-desc">大切な人と特別な食事を囲む席に、ぜひ選んでいただきたい一本です。食中酒としての相模灘の哲学は、この純米大吟醸にも貫かれており、繊細な料理とのペアリングで真価を発揮します。</p>
     <div class="buy-links">
-      <a href="https://www.amazon.co.jp/dp/B07NDJS1CM/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/53bc9040.d631d8ba.53bc9041.e55b933c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwineuki%2F1600001005234%2F&link_type=hybrid_url" target="_blank" class="raku-link">▶ 楽天で見る</a>
+      <a href="https://www.amazon.co.jp/dp/B0CY5PRSBC/?tag=claudeotoko-22" target="_blank" class="amz-link">▶ Amazonで見る</a>
     </div>
   </div>
 
-  <hr class="section-divider">
-
-  <!-- CONCLUSION -->
   <div class="article-body">
     <h2 class="section-heading">最後に</h2>
-    <p>ロバート・モンダヴィが1966年にナパ・ヴァレーへ植えた夢は、彼が世を去った後も、静かに実り続けています。</p>
-    <p>グラスを傾けるたびに、その時間がそっと流れ込んでくる気がします。カリフォルニアの陽光、土の匂い、1本のワインにかけた男の執念——そういうものが、液体の中に溶けている。</p>
-    <p>その夢の続きが、あなたのグラスの中にあります。</p>
+    <p>久保田酒造の蔵元は、誰かに「継いでほしい」と頼まれたわけではありません。廃業寸前の蔵を、自分の意志で継いだ。その決断には、相当な覚悟があったはずです。</p>
+    <p>それから約30年。久保田酒造は神奈川を代表する地酒蔵として、多くの酒飲みに愛されています。相模原の山里から、山田錦・美山錦・雄町それぞれの個性を丁寧に引き出したお酒が全国へと届けられています。</p>
+    <p>グラスに注がれた相模灘に、僕はいつも職人の静かな矜持を感じます。派手さより誠実さを。食卓に寄り添うことを。その一本一本に込められたこだわりをグラスの向こうに感じながら、ゆっくり味わってほしいです。</p>
   </div>
 
   <!-- RELATED ARTICLES -->
   <div id="other-articles"></div>
   <script>
-    fetch('partials/other-articles-wine.html')
+    fetch('partials/other-articles-sake.html')
       .then(function(r) { return r.text(); })
       .then(function(html) {
         var el = document.getElementById('other-articles');
         el.innerHTML = html;
         el.querySelectorAll('.related-card').forEach(function(card) {
-          if (card.getAttribute('href') === 'article-robert-mondavi') card.style.display = 'none';
+          if (card.getAttribute('href') === 'article-sagaminada') card.style.display = 'none';
         });
       });
   </script>
@@ -621,7 +655,7 @@
       <a href="privacy">プライバシーポリシー</a>
     </div>
     <div class="footer-disclosure">
-      このサイトはAmazonアソシエイトプログラム及び楽天アフィリエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
+      このサイトはAmazonアソシエイトプログラムに参加しています。記事内の商品リンクはアフィリエイトリンクです。
     </div>
     <div class="footer-copy">© 2026 Kurofuku's Sake Magazine. All rights reserved.</div>
   </div>
