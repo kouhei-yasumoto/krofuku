@@ -915,8 +915,7 @@
         line-height: 1.38;
       }
       .hero .char-fade {
-        animation-delay: 0s !important;
-        animation-duration: 0.25s;
+        animation-duration: 0.45s;
       }
       .hero-desc {
         font-size: 13px;
@@ -1038,7 +1037,7 @@
       <p class="card-cat">🍶 Japanese Sake — Editor's Pick</p>
       <h3>丹沢の清水が育む誠実な酒<br>相模灘</h3>
       <p class="card-excerpt">神奈川県相模原市の久保田酒造が1844年から醸す地酒「相模灘」。丹沢山系の清冽な湧水と食中酒への一徹した哲学が宿るラインナップをご紹介します。</p>
-      <p class="card-meta">2026.05.11 — クロフク編集長</p>
+      <p class="card-meta">2026.05.13 — クロフク編集長</p>
       <div class="amz-cta">
         <div class="amz-cta-text">
           <div class="prod">相模灘 特別純米辛口 おりがらみ無濾過生</div>
@@ -1639,6 +1638,7 @@
   (function() {
     function splitText(el) {
       var idx = 0;
+      var delayStep = window.matchMedia('(max-width: 560px)').matches ? 0.012 : 0.05;
       function walk(node) {
         Array.from(node.childNodes).forEach(function(child) {
           if (child.nodeType === 3) {
@@ -1652,7 +1652,7 @@
                 var span = document.createElement('span');
                 span.textContent = ch;
                 span.className = 'char-fade';
-                span.style.animationDelay = (idx * 0.05) + 's';
+                span.style.animationDelay = (idx * delayStep) + 's';
                 idx++;
                 frag.appendChild(span);
               }
